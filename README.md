@@ -1,6 +1,6 @@
 # Sean Lin — GitHub Pages portfolio
 
-A clean academic portfolio inspired by https://ycsun2113.github.io/, independently implemented with no third-party template code. Left sidebar, publications, image-and-text project rows, work experience, research, education, résumé links, responsive layout and dark mode.
+A clean academic portfolio. independently implemented with no third-party template code. Left sidebar, publications, image-and-text project rows, work experience, research, education, résumé links, responsive layout and dark mode.
 
 ## Publish at https://sean-thl.github.io/
 
