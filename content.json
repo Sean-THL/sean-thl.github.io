@@ -284,9 +284,9 @@
         "Simscape"
       ],
       "fit": "contain",
-      "image": "project-formula-student-cover.jpg",
-      "alt": "Nottingham Formula Student car with team members in the workshop.",
-      "caption": "Formula Student car and workshop team.",
+      "image": "project-formula-student-cad-cover.png",
+      "alt": "Formula Student vehicle CAD showing the sidepod and aerodynamic bodywork.",
+      "caption": "Formula Student sidepod and aerodynamic-bodywork CAD.",
       "gallery": [
         {
           "image": "project-formula-student-cover-full.jpg",
@@ -314,8 +314,8 @@
           "caption": "Formula Student vehicle in the workshop."
         }
       ],
-      "width": 1642,
-      "height": 1026,
+      "width": 1586,
+      "height": 992,
       "group": "mechanical",
       "paragraphs": [
         "Formula Student work spanned mechanical design and aerodynamics in the UK and China, connecting component packaging with vehicle performance and manufacturability.",
@@ -343,7 +343,7 @@
         "Manufacturing"
       ],
       "fit": "contain",
-      "image": "project-centrifugal-clutch.png",
+      "image": "project-centrifugal-clutch-cover.png",
       "alt": "Annotated centrifugal-clutch assembly and component layout.",
       "caption": "Annotated centrifugal-clutch assembly and component layout.",
       "gallery": [
@@ -358,8 +358,8 @@
           "caption": "Early mechanism concepts and design notes."
         }
       ],
-      "width": 956,
-      "height": 478,
+      "width": 1904,
+      "height": 1190,
       "group": "mechanical",
       "paragraphs": [
         "This group design-and-make project developed a centrifugal clutch to transfer rotational power from a motor to a generator once the motor reaches a chosen engagement speed. The design balances centrifugal force, spring restraint and frictional contact to connect the rotating input with the output drum.",
