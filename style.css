@@ -19,3 +19,6 @@ body{font-size:17px;line-height:1.7}.position{font-size:16px}.sidebar nav a{font
 /* Inter typography and the 220px / 850px desktop proportions of the reference. */
 body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;letter-spacing:-.005em}.layout{max-width:1220px;padding:50px;grid-template-columns:220px minmax(0,850px);gap:50px}.sidebar{top:50px}.sidebar h1{font-size:28px;letter-spacing:-.03em}.full-name{font-size:13px}.position{font-size:14px;line-height:1.6}.sidebar nav{width:190px}.sidebar nav a{font-size:14px}h2{font-size:25px;letter-spacing:-.025em}h3{font-size:18px;letter-spacing:-.015em}.media-row p{font-size:15px;line-height:1.6}.project-row .project-affiliation,.project-row .project-time{font-size:13px}.entry-heading .role{font-size:14px!important}.entry-summary,.entry-detail,.entry-row ul{font-size:14px}.skills dt,.skills dd,.resume-links{font-size:15px}
 @media(max-width:960px){body{font-size:16px;letter-spacing:0}.layout{max-width:850px;padding:28px 20px}.sidebar nav{width:auto}h2{font-size:25px}.media-row p{font-size:15px}}
+
+/* Institution and lab marks are unboxed, just like project artwork. */
+.logo-frame{padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}.logo-frame img{background:transparent;border:0;border-radius:0;box-shadow:none}

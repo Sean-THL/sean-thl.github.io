@@ -16,7 +16,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261021-5"><script src="{prefix}script.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-6"><script src="{prefix}script.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):

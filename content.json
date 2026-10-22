@@ -605,8 +605,8 @@
       "role": "University of Michigan · Prof. Dimitra Panagou",
       "dates": "Jan 2026–present",
       "summary": "Safety-critical multi-agent aerial autonomy, hardware deployment and perception-aware exploration.",
-      "logo": "michigan-logo.png",
-      "logo_alt": "University of Michigan logo"
+      "logo": "dasc-logo.png",
+      "logo_alt": "DASC Lab University of Michigan logo"
     },
     {
       "name": "Zoetic Robotics Lab",
@@ -629,7 +629,7 @@
       "role": "University of Nottingham",
       "dates": "Aug 2024–Jun 2025",
       "summary": "Bio-inspired manta-ray locomotion, pneumatic actuator fabrication, kinematic modeling and finite-element analysis.",
-      "logo": "nottingham-logo.svg",
+      "logo": "nottingham-heraldic.png",
       "logo_alt": "University of Nottingham logo"
     }
   ],
@@ -639,7 +639,7 @@
       "role": "M.S. Mechanical Engineering · Robotics",
       "dates": "2025–2027",
       "detail": "Ann Arbor, Michigan",
-      "logo": "michigan-logo.png",
+      "logo": "michigan-logo.jpeg",
       "logo_alt": "University of Michigan logo"
     },
     {
@@ -647,7 +647,7 @@
       "role": "B.Eng. (Hons) Mechanical Engineering",
       "dates": "2021–2025",
       "detail": "GPA 3.90 / 4.00 · Top 1%",
-      "logo": "nottingham-logo.svg",
+      "logo": "nottingham-heraldic.png",
       "logo_alt": "University of Nottingham logo"
     }
   ],
