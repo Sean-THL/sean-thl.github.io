@@ -17,11 +17,11 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-10"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-11"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
-    nav = "".join(f'<a href="{prefix}index.html#{anchor}">{label}</a>' for anchor, label in (("about", "About"), ("news", "News"), ("publications", "Publications"), ("projects", "Selected Projects"), ("experience", "Experience"), ("education", "Education"), ("skills", "Skills"), ("resume", "Résumé")))
+    nav = f'<a href="{prefix}about/">About</a><a href="{prefix}index.html#research">Research</a><a href="{prefix}index.html#projects">Projects</a>'
     return f'''<aside class="sidebar"><a class="portrait-link" href="{prefix}index.html"><img class="portrait" src="{prefix}assets/{escape(data['profile_image'])}" alt="{escape(data['profile_image_alt'])}" width="200" height="200"></a><h1>{escape(data['short_name'])}</h1><p class="full-name">{escape(data['name'])}</p><p class="position">{escape(data['role'])}<br><strong>{escape(data['university'])}</strong></p><nav aria-label="Main navigation">{nav}</nav><div class="socials"><a href="{escape(data['github'])}" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-1.8-.8-2.3 3-.3 6-1.5 6-5.6 0-1.2-.4-2.3-1.1-3.1.1-.8.1-1.8-.5-3-1.8-.1-3.2.9-3.8 1.3a13 13 0 0 0-6.8 0C7.4 4.9 6 3.9 4.2 4c-.6 1.2-.6 2.2-.5 3C3 7.8 2.6 8.9 2.6 10.1c0 4.1 3 5.3 6 5.6-.5.5-.8 1.3-.8 2.3v4"/></svg></a><a href="{escape(data['linkedin'])}" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10v.1M11 17v-7m0 3c0-4 6-4 6 0v4"/></svg></a><a href="mailto:{escape(data['email'])}" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a></div><a class="email" href="mailto:{escape(data['email'])}">{escape(data['email'])}</a><p class="location">{escape(data['location'])}</p><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button></aside>'''
 
 
@@ -61,10 +61,8 @@ def logo_entry(item, css_class="entry-row"):
 
 
 parts = [page_head("Robotics & Mechanical Engineering"), '<div class="layout">', sidebar(), '<main id="main">']
-parts += ['<section id="about"><h2>About</h2>'] + [f'<p>{inline(text)}</p>' for text in data["about"]]
-parts += [f'<p class="interest-line"><strong>Research interests</strong> &nbsp; {escape(" · ".join(data["research_interests"]))}</p></section>']
 parts += ['<section id="news"><h2>News</h2><ul class="news">'] + [f'<li><span class="news-date">{escape(item["date"])}</span><span>{inline(item["text"])}</span></li>' for item in data["news"]]
-parts += ['</ul></section><section id="publications"><h2>Publications &amp; Manuscripts</h2>']
+parts += ['</ul></section><section id="research"><h2>Research &amp; Publications</h2>']
 for publication in data["publications"]:
     authors = escape(publication["authors"]).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
     parts.append(f'<article class="media-row publication"><a class="media" href="projects/{escape(publication["project"])}/">{picture(publication)}</a><div><h3><a href="projects/{escape(publication["project"])}/">{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
@@ -85,6 +83,11 @@ for skill in data["skills"]:
 parts += ['</dl></section><section id="resume"><h2>Résumé</h2><div class="resume-links">'] + [f'<a href="assets/{escape(item["file"])}">{escape(item["label"])} ↗</a>' for item in data["resumes"]]
 parts += ['</div></section>', footer(), '</main></div></body></html>']
 (ROOT / "index.html").write_text("".join(parts), encoding="utf-8")
+
+about_target = ROOT / "about"
+about_target.mkdir(parents=True, exist_ok=True)
+about_body = page_head("About", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><section class="about-intro"><img class="about-photo" src="../assets/' + escape(data["profile_image"]) + '" alt="' + escape(data["profile_image_alt"]) + '"><div><p class="about-eyebrow">About</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data["about"]) + f'<p class="interest-line"><strong>Research interests</strong> &nbsp; {escape(" · ".join(data["research_interests"]))}</p></div></section>' + footer() + '</main></div></body></html>'
+(about_target / "index.html").write_text(about_body, encoding="utf-8")
 
 for project in data["projects"]:
     target = ROOT / "projects" / project["slug"]
