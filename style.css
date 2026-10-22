@@ -22,3 +22,8 @@ body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-size:16px;line-h
 
 /* Institution and lab marks are unboxed, just like project artwork. */
 .logo-frame{padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}.logo-frame img{background:transparent;border:0;border-radius:0;box-shadow:none}
+
+/* Motion covers stay consistent; detail pages continue to use static images. */
+.media .project-cover-video{display:block;width:260px;max-width:100%;aspect-ratio:16/9;object-fit:cover;background:transparent;border:0;border-radius:0;box-shadow:none}
+@media(max-width:960px){.media .project-cover-video{width:240px}}
+@media(max-width:640px){.media .project-cover-video{width:100%}}

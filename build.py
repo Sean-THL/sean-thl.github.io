@@ -16,7 +16,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-6"><script src="{prefix}script.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-7"><script src="{prefix}script.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -28,7 +28,10 @@ def footer():
     return f'<footer>{escape(data["footer"]["copyright"])}<span>{escape(data["footer"]["tagline"])}</span></footer>'
 
 
-def picture(item, prefix=""):
+def picture(item, prefix="", cover=False):
+    if cover and item.get("cover_video"):
+        poster = f' poster="{prefix}assets/{escape(item.get("video_poster", item.get("image", "")))}"' if item.get("video_poster", item.get("image")) else ""
+        return f'<video class="project-cover-video" autoplay muted loop playsinline preload="metadata"{poster} aria-hidden="true"><source src="{prefix}videos/{escape(item["cover_video"])}" type="video/mp4"></video>'
     if not item.get("image"):
         return '<div class="image-placeholder">Project image forthcoming</div>'
     note = f'<span class="image-note">{escape(item["image_note"])}</span>' if item.get("image_note") else ""
@@ -53,7 +56,7 @@ for publication in data["publications"]:
 parts += ['</section><section id="projects"><h2>Selected Projects</h2>']
 for project in data["projects"]:
     tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
-    parts.append(f'<article class="media-row project-row"><a class="media" href="projects/{escape(project["slug"])}/">{picture(project)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p><p class="project-time">{escape(project["time"])}</p><p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
+    parts.append(f'<article class="media-row project-row"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p><p class="project-time">{escape(project["time"])}</p><p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
 parts += ['<h3 class="subsection-title">Research Experience</h3>'] + [logo_entry(item, "entry-row research-row") for item in data["research"]]
 parts += ['</section><section id="education"><h2>Education</h2>'] + [logo_entry(item, "entry-row education-row") for item in data["education"]]

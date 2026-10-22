@@ -91,7 +91,7 @@
     {
       "slug": "teg-slam",
       "name": "TEG-SLAM",
-      "image": "project-teg-slam.jpg",
+      "image": "project-teg-slam-analysis.png",
       "category": "Project · Perception",
       "summary": "Temporal evidence and memory-aware pose estimation in a 3D Gaussian SLAM pipeline.",
       "tags": [
@@ -99,8 +99,8 @@
         "SLAM",
         "State estimation"
       ],
-      "alt": "TEG-SLAM pipeline showing temporal evidence accumulation, posterior-guided optimization and Gaussian cleanup.",
-      "caption": "TEG-SLAM pipeline: temporal evidence, posterior-guided optimization and Gaussian-level cleanup.",
+      "alt": "TEG-SLAM rendering, depth, uncertainty and reconstruction-error analysis.",
+      "caption": "TEG-SLAM qualitative analysis of rendered RGB, metric depth, uncertainty and reconstruction error.",
       "fit": "contain",
       "width": 2048,
       "height": 944,
@@ -123,6 +123,8 @@
       "slug": "robot-arm",
       "name": "5-DoF Robotics Arm",
       "image": "project-robot-arm.jpeg",
+      "cover_video": "robot-arm.mp4",
+      "video_poster": "project-robot-arm.jpeg",
       "category": "Project · Manipulation",
       "summary": "RGB-D block detection, camera calibration and kinematics for semi-autonomous pick-and-place.",
       "tags": [
@@ -155,6 +157,8 @@
       "slug": "mobile-robot",
       "name": "Mobile Robot Autonomy",
       "image": "project-mobile-robot.png",
+      "cover_video": "mobile-robot.mp4",
+      "video_poster": "project-mobile-robot.png",
       "category": "Project · Navigation",
       "summary": "Embedded mapping, particle-filter localization, A* planning and feedback control.",
       "tags": [
@@ -382,6 +386,9 @@
     {
       "slug": "bladeless-drone",
       "name": "Bladeless Drone System Development",
+      "image": "project-bladeless-drone.jpg",
+      "alt": "ANSYS particle-path visualization for the bladeless-drone flow simulation.",
+      "caption": "ANSYS particle-path visualization from the bladeless-drone system study.",
       "category": "Project · Mechanical design",
       "group": "mechanical",
       "summary": "Exploring single-motor bladeless propulsion through fluid-dynamics analysis and ANSYS simulation.",
