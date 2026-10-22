@@ -14,7 +14,7 @@ Alternatively, because the generated HTML is included, choose **Deploy from a br
 ## Edit your content
 
 - Edit **content.json** using GitHub's pencil button. Commit the change to `main`; the Actions workflow regenerates every page and publishes automatically.
-- `about`: biography paragraphs. `publications`: titles, authors and manuscript status. `projects`: cards and detailed project paragraphs. `experience`: employment dates and bullet points.
+- `about`: biography paragraphs. `news`: dated updates. `publications`: titles, authors and manuscript status. `projects`: cards and detailed project paragraphs. `experience` and `research`: work and research entries. `education`, `skills`, and `resumes`: the remaining homepage sections.
 - Upload a project image to `assets/`, then add `image`, `alt`, `caption`, `width`, `height` to its project record. `image` is just the filename; use `fit: contain`.
 - Keep the online-reference note on the micro-soft aerial robotics image.
 - Change design in `style.css`; interactions in `script.js`; page structure in `build.py`.

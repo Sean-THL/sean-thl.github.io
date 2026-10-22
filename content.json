@@ -6,6 +6,17 @@
   "email": "szlin@umich.edu",
   "github": "https://github.com/Sean-THL",
   "linkedin": "https://www.linkedin.com/in/sean-z-lin",
+  "meta_description": "Sean Lin — robotics, safe control, perception, and mechanical engineering at the University of Michigan.",
+  "profile_image": "sean-profile.jpg",
+  "profile_image_alt": "Sean Lin in London",
+  "location": "Ann Arbor, Michigan",
+  "research_interests": [
+    "Safe control",
+    "Aerial robotics",
+    "3D perception",
+    "SLAM",
+    "Mechanical design"
+  ],
   "about": [
     "I am a master’s student in Mechanical Engineering at the University of Michigan, focusing on robotics. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
     "At Michigan, research spans multi-agent aerial systems in the DASC Lab, pneumatic micro-actuation in the Zoetic Robotics Lab, and magnetic microrobot control in the SAM Lab. Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
@@ -525,9 +536,12 @@
   "experience": [
     {
       "company": "Apple",
+      "name": "Apple",
       "role": "Product Design Engineering Intern · Apple Watch",
       "dates": "May–Sep 2026",
       "image": "project-apple.jpeg",
+      "logo": "apple-logo.svg",
+      "logo_alt": "Apple logo",
       "bullets": [
         "Supported Apple Watch NPI builds through failure analysis, tolerance analysis, hardware validation and design of experiments.",
         "Developed an LLM-assisted tolerance-analysis tool, reducing engineering workflow time by 87%.",
@@ -537,9 +551,12 @@
     },
     {
       "company": "Bellwether Industries",
+      "name": "Bellwether Industries",
       "role": "Mechanical Engineering Intern",
       "dates": "Aug–Oct 2024",
       "image": "project-bellwether.jpeg",
+      "logo": "bellwether-logo.png",
+      "logo_alt": "Bellwether Industries logo",
       "bullets": [
         "Designed and integrated mechanical, propulsion and electronic systems for a 1/8-scale eVTOL prototype.",
         "Built a multi-orientation flight-dynamics test platform for vehicle testing and propulsion evaluation.",
@@ -581,5 +598,85 @@
       "date": "Sep 2025",
       "text": "Began graduate study in Mechanical Engineering at the University of Michigan."
     }
-  ]
+  ],
+  "research": [
+    {
+      "name": "DASC Lab",
+      "role": "University of Michigan · Prof. Dimitra Panagou",
+      "dates": "Jan 2026–present",
+      "summary": "Safety-critical multi-agent aerial autonomy, hardware deployment and perception-aware exploration.",
+      "logo": "michigan-logo.png",
+      "logo_alt": "University of Michigan logo"
+    },
+    {
+      "name": "Zoetic Robotics Lab",
+      "role": "University of Michigan · Prof. Cameron Aubin",
+      "dates": "Sep 2025–present",
+      "summary": "Pneumatic micro-actuation, high-speed experimental measurement and bio-inspired aerial robotics.",
+      "logo": "zoetic-logo.webp",
+      "logo_alt": "Zoetic Robotics Lab logo"
+    },
+    {
+      "name": "SAM Lab",
+      "role": "University of Michigan · Prof. Steven Ceron",
+      "dates": "Sep 2025–present",
+      "summary": "Magnetic microrobot locomotion, experimental systems and high-level field control.",
+      "logo": "sam-logo.webp",
+      "logo_alt": "Synergetic Adaptive Machinas Lab logo"
+    },
+    {
+      "name": "Advanced Robotics Laboratory",
+      "role": "University of Nottingham",
+      "dates": "Aug 2024–Jun 2025",
+      "summary": "Bio-inspired manta-ray locomotion, pneumatic actuator fabrication, kinematic modeling and finite-element analysis.",
+      "logo": "nottingham-logo.svg",
+      "logo_alt": "University of Nottingham logo"
+    }
+  ],
+  "education": [
+    {
+      "name": "University of Michigan",
+      "role": "M.S. Mechanical Engineering · Robotics",
+      "dates": "2025–2027",
+      "detail": "Ann Arbor, Michigan",
+      "logo": "michigan-logo.png",
+      "logo_alt": "University of Michigan logo"
+    },
+    {
+      "name": "University of Nottingham",
+      "role": "B.Eng. (Hons) Mechanical Engineering",
+      "dates": "2021–2025",
+      "detail": "GPA 3.90 / 4.00 · Top 1%",
+      "logo": "nottingham-logo.svg",
+      "logo_alt": "University of Nottingham logo"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Robotics & Control",
+      "items": "ROS / ROS2, SLAM, state estimation, MPC, CBF, trajectory planning"
+    },
+    {
+      "category": "Programming & Simulation",
+      "items": "Python, C++, MATLAB, Simulink, PX4, Gazebo, Isaac Sim"
+    },
+    {
+      "category": "Mechanical Design",
+      "items": "SolidWorks, CATIA, NX, CFD, FEA, Abaqus, manufacturing and prototyping"
+    }
+  ],
+  "resumes": [
+    {
+      "label": "Robotics résumé",
+      "file": "Sean-Lin-Robotics-Resume.pdf"
+    },
+    {
+      "label": "Mechanical engineering résumé",
+      "file": "Sean-Lin-Mechanical-Resume.pdf"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2026 Tzu-Hsiang (Sean) Lin",
+    "tagline": "Robotics · Control · Perception · Design"
+  }
 }
