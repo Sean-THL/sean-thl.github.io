@@ -31,13 +31,16 @@ def footer():
 
 def picture(item, prefix="", cover=False):
     if cover and item.get("cover_video"):
-        poster = f' poster="{prefix}assets/{escape(item.get("video_poster", item.get("image", "")))}"' if item.get("video_poster", item.get("image")) else ""
+        poster_name = item.get("video_poster", item.get("cover_image", item.get("image", "")))
+        poster = f' poster="{prefix}assets/{escape(poster_name)}"' if poster_name else ""
         return f'<video class="project-cover-video" autoplay muted loop playsinline preload="metadata"{poster} aria-hidden="true"><source src="{prefix}videos/{escape(item["cover_video"])}" type="video/mp4"></video>'
-    if not item.get("image"):
+    image_name = item.get("cover_image", item.get("image")) if cover else item.get("image")
+    if not image_name:
         return '<div class="image-placeholder">Project image forthcoming</div>'
     note = f'<span class="image-note">{escape(item["image_note"])}</span>' if item.get("image_note") else ""
     zoom = f' class="cover-zoom" style="--cover-zoom:{float(item["cover_zoom"]):.2f}"' if cover and item.get("cover_zoom") else ""
-    return f'<img{zoom} src="{prefix}assets/{escape(item["image"])}" alt="{escape(item.get("alt", item.get("title", item.get("name", "Project image"))))}" loading="lazy">{note}'
+    alt = item.get("cover_alt", item.get("alt", item.get("title", item.get("name", "Project image")))) if cover else item.get("alt", item.get("title", item.get("name", "Project image")))
+    return f'<img{zoom} src="{prefix}assets/{escape(image_name)}" alt="{escape(alt)}" loading="lazy">{note}'
 
 
 def gallery_item(item, prefix="../../"):

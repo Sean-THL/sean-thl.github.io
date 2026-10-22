@@ -28,6 +28,8 @@
       "categories": ["control", "perception"],
       "name": "SEAMLiS",
       "image": "project-seamlis.png",
+      "cover_image": "project-seamlis-combined.png",
+      "cover_alt": "SEAMLiS comparison results above the multi-robot autonomy system architecture.",
       "category": "Research · Safe autonomy",
       "summary": "Perception-aware safety for multi-robot exploration, from simulation to Crazyflie hardware.",
       "tags": [
@@ -688,6 +690,38 @@
         "YOLOv12",
         "Object Detection",
         "Aerial Perception"
+      ]
+    },
+    {
+      "slug": "se3-lissajous-control",
+      "categories": ["control"],
+      "name": "SE(3) Geometric Control for Lissajous Trajectory Tracking",
+      "image": "project-se3-lissajous.png",
+      "alt": "Gazebo simulation and coordinate-frame visualization for a Crazyflie geometric-control project.",
+      "caption": "Gazebo simulation and pose-frame visualization for SE(3) trajectory tracking.",
+      "width": 1684,
+      "height": 802,
+      "summary": "Simulating SE(3) geometric control for Crazyflie Lissajous trajectory tracking.",
+      "group": "robotics",
+      "category": "Project · Control",
+      "tags": [
+        "SE(3) control",
+        "Trajectory tracking",
+        "Crazyflie",
+        "Gazebo"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "This project develops and simulates a geometric controller on SE(3) for a Crazyflie quadrotor to track a Lissajous reference trajectory.",
+        "The workflow uses Gazebo to visualize the quadrotor simulation alongside coordinate-frame and pose visualization. It focuses on connecting position and attitude control with a three-dimensional reference path while respecting the coupled translational and rotational dynamics of the aerial platform.",
+        "The supplied material demonstrates the simulation setup; quantitative tracking-error or hardware-deployment results are not claimed."
+      ],
+      "card_summary": "Developing an SE(3) geometric-control simulation for Crazyflie Lissajous trajectory tracking. The project connects position and attitude control with Gazebo-based aerial-robot simulation and coordinate-frame visualization.",
+      "affiliation": "Geometric Control Project",
+      "keywords": [
+        "Geometric Control",
+        "Trajectory Tracking",
+        "Aerial Robotics"
       ]
     }
   ],
