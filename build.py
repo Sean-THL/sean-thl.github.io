@@ -61,6 +61,8 @@ def logo_entry(item, css_class="entry-row"):
 
 
 parts = [page_head("Robotics & Mechanical Engineering"), '<div class="layout">', sidebar(), '<main id="main">']
+parts += ['<section id="about"><h2>About</h2>'] + [f'<p>{inline(text)}</p>' for text in data["about"]]
+parts += [f'<p class="interest-line"><strong>Research interests</strong> &nbsp; {escape(" · ".join(data["research_interests"]))}</p></section>']
 parts += ['<section id="news"><h2>News</h2><ul class="news">'] + [f'<li><span class="news-date">{escape(item["date"])}</span><span>{inline(item["text"])}</span></li>' for item in data["news"]]
 parts += ['</ul></section><section id="research"><h2>Research &amp; Publications</h2>']
 for publication in data["publications"]:
@@ -86,7 +88,7 @@ parts += ['</div></section>', footer(), '</main></div></body></html>']
 
 about_target = ROOT / "about"
 about_target.mkdir(parents=True, exist_ok=True)
-about_body = page_head("About", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><section class="about-intro"><img class="about-photo" src="../assets/' + escape(data["profile_image"]) + '" alt="' + escape(data["profile_image_alt"]) + '"><div><p class="about-eyebrow">About</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data["about"]) + f'<p class="interest-line"><strong>Research interests</strong> &nbsp; {escape(" · ".join(data["research_interests"]))}</p></div></section>' + footer() + '</main></div></body></html>'
+about_body = page_head("About", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><section class="about-intro"><img class="about-photo" src="../assets/' + escape(data["profile_image"]) + '" alt="' + escape(data["profile_image_alt"]) + '"><div><p class="about-eyebrow">About</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</div></section>' + footer() + '</main></div></body></html>'
 (about_target / "index.html").write_text(about_body, encoding="utf-8")
 
 for project in data["projects"]:
