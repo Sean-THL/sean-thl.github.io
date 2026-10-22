@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-11"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-12"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -88,7 +88,12 @@ parts += ['</div></section>', footer(), '</main></div></body></html>']
 
 about_target = ROOT / "about"
 about_target.mkdir(parents=True, exist_ok=True)
-about_body = page_head("About", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><section class="about-intro"><img class="about-photo" src="../assets/' + escape(data["profile_image"]) + '" alt="' + escape(data["profile_image_alt"]) + '"><div><p class="about-eyebrow">About</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</div></section>' + footer() + '</main></div></body></html>'
+about_body = page_head("About", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><header class="personal-header"><p class="about-eyebrow">Beyond engineering</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</header>'
+for index, interest in enumerate(data.get("personal_interests", [])):
+    images = "".join(f'<img src="../assets/{escape(image["file"])}" alt="{escape(image["alt"])}" loading="lazy">' for image in interest.get("images", []))
+    about_body += f'<section class="personal-interest{" reverse" if index % 2 else ""}"><div class="personal-interest-media count-{len(interest.get("images", []))}">{images}</div><div class="personal-interest-copy"><h3>{escape(interest["title"])}</h3><p>{inline(interest["summary"])}</p></div></section>'
+other_interests = "".join(f'<li>{escape(interest)}</li>' for interest in data.get("other_interests", []))
+about_body += '<section class="other-interests"><h3>Other interests</h3><ul>' + other_interests + '</ul></section>' + footer() + '</main></div></body></html>'
 (about_target / "index.html").write_text(about_body, encoding="utf-8")
 
 for project in data["projects"]:
