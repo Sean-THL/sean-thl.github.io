@@ -15,8 +15,7 @@
     "Trajectory optimization",
     "Aerial & Space robotics",
     "Multi-robot system",
-    "SLAM",
-    "Bio-inspired robotics"
+    "SLAM"
   ],
   "about": [
     "I am a graduate student in **Mechanical Engineering (Robotics)** at the **[University of Michigan](https://umich.edu/)** in the **USA**. I graduate from **[University of Nottingham](https://www.nottingham.ac.uk/)** in the **UK** with the first honour class degree in Mechanical Engineering. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
@@ -777,19 +776,19 @@
   "news": [
     {
       "date": "Sep 2026",
-      "text": "Completed a Product Design Engineering internship with the Apple Watch team."
-    },
-    {
-      "date": "Sep 2026",
-      "text": "Started developing a 3D Gaussian Splatting aerial simulation pipeline."
+      "text": "Completed a Product Design Engineering internship with the **Apple**."
     },
     {
       "date": "Jan 2026",
       "text": "Joined the DASC Lab at the University of Michigan to work on multi-agent aerial robotics."
     },
     {
+      "date": "Jan 2026",
+      "text": "Began graduate study in Mechanical Engineering (robotics) at the University of Michigan."
+    },
+    {
       "date": "Sep 2025",
-      "text": "Began graduate study in Mechanical Engineering at the University of Michigan."
+      "text": "Graduate from University of Nottingham, UK."
     }
   ],
   "research": [
