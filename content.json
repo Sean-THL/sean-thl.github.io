@@ -1,0 +1,585 @@
+{
+  "name": "Tzu-Hsiang (Sean) Lin",
+  "short_name": "Sean Lin",
+  "role": "Graduate Student · Mechanical Engineering (Robotics)",
+  "university": "University of Michigan",
+  "email": "szlin@umich.edu",
+  "github": "https://github.com/Sean-THL",
+  "linkedin": "https://www.linkedin.com/in/sean-z-lin",
+  "about": [
+    "I am a master’s student in Mechanical Engineering at the University of Michigan, focusing on robotics. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
+    "At Michigan, research spans multi-agent aerial systems in the DASC Lab, pneumatic micro-actuation in the Zoetic Robotics Lab, and magnetic microrobot control in the SAM Lab. Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
+    "Previously, I studied Mechanical Engineering at the University of Nottingham and worked in product design at Apple and eVTOL development at Bellwether Industries. The long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
+  ],
+  "projects": [
+    {
+      "slug": "seamlis",
+      "name": "SEAMLiS",
+      "image": "project-seamlis.png",
+      "category": "Research · Safe autonomy",
+      "summary": "Perception-aware safety for multi-robot exploration, from simulation to Crazyflie hardware.",
+      "tags": [
+        "Multi-robot",
+        "CBF",
+        "Hardware"
+      ],
+      "alt": "SEAMLiS architecture connecting planning, perception, attitude control and positional control.",
+      "caption": "SEAMLiS team framework: planning, perception and safety control.",
+      "fit": "contain",
+      "width": 1586,
+      "height": 704,
+      "group": "robotics",
+      "paragraphs": [
+        "Limited sensing can leave a robot moving toward an obstacle while its sensor looks elsewhere. The team developed a safety framework for exploration under these perception constraints.",
+        "Supported deployment of the system on Crazyflie platforms, integrated planning, control and motion capture through ROS interfaces and coordinate transformations, and conducted hardware experiments.",
+        "Work focused on the interface between the team’s planning and safety modules and physical flight. Investigated controller instability, estimation error, communication latency and model mismatch.",
+        "Single-robot and multi-agent hardware experiments were conducted in GPS-denied environments. The supplied material does not establish a quantitative performance comparison for the deployment work.",
+        "SEAMLiS preprint on arXiv ↗"
+      ],
+      "card_summary": "Perception-aware safety for multi-robot aerial exploration under limited sensing. Work includes Crazyflie deployment, ROS integration of planning, control and motion capture, and hardware experiments investigating estimation error, delay and controller behavior.",
+      "affiliation": "DASC Lab · University of Michigan",
+      "time": "Jan 2026–present",
+      "keywords": [
+        "Safe Control",
+        "Multi-Robot Planning",
+        "Aerial Robotics"
+      ]
+    },
+    {
+      "slug": "gaussian-aerial",
+      "name": "3DGS Aerial Simulator",
+      "image": "project-gaussian-aerial.png",
+      "category": "Research · Sim-to-real",
+      "summary": "Building a photorealistic simulation pipeline for visual policies and aerial robot deployment.",
+      "tags": [
+        "3DGS",
+        "Visual policies",
+        "Sim-to-real"
+      ],
+      "alt": "3DGS aerial-simulator project outline with reconstruction, visual-policy training and sim-to-real stages.",
+      "caption": "Project outline and related work. Visual-policy training, sim-to-real and safety-filter integration are development goals.",
+      "fit": "contain",
+      "width": 2048,
+      "height": 1079,
+      "group": "robotics",
+      "paragraphs": [
+        "Vision policies need useful training observations and a credible path to hardware. This project combines a reconstructed laboratory appearance with aerial-robot dynamics.",
+        "Developing the simulator and the training/deployment pipeline, investigating how scene reconstruction, camera observations and robot dynamics fit together.",
+        "The planned pipeline links 3DGS scene appearance, collision geometry, synchronized robot/camera poses and policy training. Training-method selection and hardware transfer remain development work.",
+        "The pipeline is being established. Completed visual-policy training, faster deployment and successful zero-shot transfer are not claimed."
+      ],
+      "card_summary": "Developing a photorealistic aerial simulation pipeline using 3D Gaussian Splatting to reconstruct the laboratory environment. The project connects scene appearance with collision geometry and camera rendering, with visual-policy training and future sim-to-real deployment as development goals.",
+      "affiliation": "DASC Lab · University of Michigan",
+      "time": "Sep 2026–present",
+      "keywords": [
+        "3D Gaussian Splatting",
+        "Visual Simulation",
+        "Sim-to-Real"
+      ]
+    },
+    {
+      "slug": "teg-slam",
+      "name": "TEG-SLAM",
+      "image": "project-teg-slam.jpg",
+      "category": "Project · Perception",
+      "summary": "Temporal evidence and memory-aware pose estimation in a 3D Gaussian SLAM pipeline.",
+      "tags": [
+        "3DGS",
+        "SLAM",
+        "State estimation"
+      ],
+      "alt": "TEG-SLAM pipeline showing temporal evidence accumulation, posterior-guided optimization and Gaussian cleanup.",
+      "caption": "TEG-SLAM pipeline: temporal evidence, posterior-guided optimization and Gaussian-level cleanup.",
+      "fit": "contain",
+      "width": 2048,
+      "height": 944,
+      "group": "robotics",
+      "paragraphs": [
+        "Work on TEG-SLAM focuses on extending Wild-GS SLAM with temporal information to improve camera trajectory estimation and scene reconstruction. This 3D Gaussian SLAM project includes a memory-aware pose-estimation module that modifies Lie-group state updates and integrates temporal features within the optimization pipeline.",
+        "Rather than processing each observation independently, the pipeline incorporates information across successive frames into tracking and mapping. Temporal evidence supports pose estimation and helps maintain a more consistent Gaussian representation of the scene.",
+        "The project results reported in the resume include an 18% reduction in absolute trajectory error (ATE) and 2–5% improvements in PSNR and SSIM over the baseline."
+      ],
+      "card_summary": "Work on TEG-SLAM extends Wild-GS SLAM with temporal information to improve trajectory estimation and scene reconstruction. The project includes memory-aware pose estimation, Lie-group state updates and temporal feature integration within a 3D Gaussian SLAM optimization pipeline.",
+      "affiliation": "University of Michigan",
+      "time": "Oct 2025–present",
+      "keywords": [
+        "SLAM",
+        "3D Gaussian Splatting",
+        "Pose Estimation"
+      ]
+    },
+    {
+      "slug": "robot-arm",
+      "name": "5-DoF Robotics Arm",
+      "image": "project-robot-arm.jpeg",
+      "category": "Project · Manipulation",
+      "summary": "RGB-D block detection, camera calibration and kinematics for semi-autonomous pick-and-place.",
+      "tags": [
+        "Computer vision",
+        "RGB-D",
+        "Kinematics"
+      ],
+      "alt": "Detected colored blocks and calibrated markers in the robot-arm workspace.",
+      "caption": "Block-detection view from the 5-DoF arm project.",
+      "fit": "cover",
+      "width": 1920,
+      "height": 1069,
+      "group": "robotics",
+      "paragraphs": [
+        "This project connects computer vision with the motion of a 5-DoF robotic arm for semi-autonomous pick-and-place. An Intel RealSense RGB-D camera observes colored blocks in the workspace, while a Python pipeline combines visual detections, coordinate transformations and kinematic reasoning to identify reachable targets.",
+        "Intrinsic camera calibration relates image measurements to camera geometry, and extrinsic calibration aligns the camera with the robot coordinate frame. This alignment allows detected block locations to be interpreted in the same coordinate system used to command the arm.",
+        "OpenCV-based block detection identifies objects in the camera view. Product-of-exponentials kinematics describes the relationship between the arm’s joint configuration and end-effector pose, connecting the perception pipeline with physical manipulation.",
+        "The implementation brings together sensing, calibration and arm execution in a single workflow. The resume reports an average positional error of 1.9% for the project."
+      ],
+      "card_summary": "Integrated RGB-D perception, camera calibration and kinematic reasoning for a 5-DoF robotic arm. OpenCV-based block detection and calibrated coordinate transformations connect visual observations with semi-autonomous pick-and-place motion.",
+      "affiliation": "Robotics System Lab · University of Michigan",
+      "time": "Sep–Nov 2025",
+      "keywords": [
+        "Manipulation",
+        "Computer Vision",
+        "Kinematics"
+      ]
+    },
+    {
+      "slug": "mobile-robot",
+      "name": "Mobile Robot Autonomy",
+      "image": "project-mobile-robot.png",
+      "category": "Project · Navigation",
+      "summary": "Embedded mapping, particle-filter localization, A* planning and feedback control.",
+      "tags": [
+        "SLAM",
+        "Planning",
+        "C++"
+      ],
+      "alt": "Mobile robot hardware alongside its occupancy-grid map in RViz.",
+      "caption": "Mobile robot platform and occupancy-grid mapping in RViz.",
+      "fit": "contain",
+      "width": 2048,
+      "height": 806,
+      "group": "robotics",
+      "paragraphs": [
+        "This project integrates perception, localization, planning and feedback control on a differential-drive mobile robot. A C++ and ROS2 environment running on a Raspberry Pi connects 2D LiDAR, an IMU and wheel encoders to support navigation with noisy sensor measurements.",
+        "Occupancy-grid mapping represents free space and obstacles from LiDAR measurements, using Bresenham’s algorithm to trace sensor rays through the grid. Monte Carlo localization maintains a set of possible robot poses and updates their likelihood as motion and sensor observations become available.",
+        "A* planning searches the map for a route to a target, while cascade PID controllers translate motion commands into wheel-level behavior. Together, these components connect a map and pose estimate with executable robot motion.",
+        "Runtime analysis examined whether particle-filter localization could run within the embedded system’s computation budget. The resume reports real-time localization at 10 Hz with up to thousands of particles, linking algorithm design with practical onboard performance."
+      ],
+      "card_summary": "Built an embedded autonomy stack connecting perception, localization, planning and feedback control. The differential-drive platform combines occupancy-grid mapping, Monte Carlo Localization, A* planning and PID control using LiDAR, IMU and wheel-encoder data.",
+      "affiliation": "Robotics System Lab · University of Michigan",
+      "time": "Oct 2025–present",
+      "keywords": [
+        "SLAM",
+        "Planning",
+        "Localization",
+        "Control"
+      ]
+    },
+    {
+      "slug": "micro-soft-robotics",
+      "name": "Micro-soft Aerial Robotics",
+      "image": "project-micro-soft-robotics-reference.jpeg",
+      "category": "Project · Mechanical design",
+      "summary": "Pneumatic micro-muscle modeling and experimental characterization for bio-inspired micro aerial robots.",
+      "tags": [
+        "Pneumatic actuation",
+        "Micro robotics",
+        "Experimental modeling"
+      ],
+      "alt": "Online reference image of flapping-wing micro aerial robots; illustrative reference only.",
+      "caption": "Online reference image — illustrative only; not a photograph of the research prototype or experimental results.",
+      "image_note": "Online reference image · Illustrative only",
+      "fit": "contain",
+      "width": 1920,
+      "height": 1080,
+      "group": "mechanical",
+      "paragraphs": [
+        "This collaborative research explores pneumatically actuated, bio-inspired micro aerial robots. The research connects nonlinear actuator models with instrumentation and experimental measurements.",
+        "Developed experimental instrumentation and data-acquisition workflows for pneumatically actuated aerial robots, including design, simulation and mathematical modeling. Built image-processing and tracking workflows to measure small actuator displacements from high-speed video and characterize dynamic response across operating conditions.",
+        "Developed physics-based and semi-empirical models of nonlinear pneumatic actuator behavior and compared model predictions with experimental measurements.",
+        "Explore the pneumatic micro-muscle modeling work ↗",
+        "Related manuscript: Controlled hovering flight in a sub-gram micro aerial vehicle powered by pneumatic micro-muscles",
+        "S. Kim*, Y.-H. Hsiao*, A. Yin*, T.-H. Lin, J. Brown, G. Matt, Y. Chen and C. Aubin.",
+        "Co-authored this collaborative manuscript, with contributions focused on actuator modeling, experimental instrumentation and high-speed measurement workflows."
+      ],
+      "card_summary": "Research on pneumatic micro-muscles for bio-inspired, sub-gram aerial robots. Work connects actuator modeling with experimental instrumentation and high-speed-video tracking to characterize small displacements and nonlinear actuator response.",
+      "affiliation": "Zoetic Robotics Lab · University of Michigan",
+      "time": "Sep 2025–present",
+      "keywords": [
+        "Soft Robotics",
+        "Aerial Robotics",
+        "Pneumatic Actuation"
+      ]
+    },
+    {
+      "slug": "variable-pitch",
+      "name": "Variable-Pitch Propeller",
+      "category": "Project · Mechanical design",
+      "summary": "Translating linear hydraulic motion into controllable blade pitch.",
+      "tags": [
+        "SolidWorks",
+        "Mechanism design",
+        "DFM / DFA",
+        "Structural analysis"
+      ],
+      "fit": "contain",
+      "group": "mechanical",
+      "image": "project-variable-pitch.png",
+      "alt": "Variable-pitch propeller CAD assembly with blade-pitch mechanism.",
+      "caption": "Variable-pitch propeller CAD assembly with blade-pitch mechanism.",
+      "width": 317,
+      "height": 282,
+      "paragraphs": [
+        "The design study explored a variable-pitch mechanism with manufacturing and assembly feasibility considered alongside mechanical performance.",
+        "Designed a hydraulic system and a Scotch-yoke mechanism in SolidWorks, and optimized critical components using structural-analysis results.",
+        "Linear-to-rotational motion was implemented through the mechanism. Design for Manufacturing and Assembly informed component and assembly choices.",
+        "The resume reports a safety factor greater than 2.5 for critical components. Load cases, material assumptions and physical testing are not supplied here."
+      ],
+      "card_summary": "Designed a variable-pitch propeller mechanism that converts linear hydraulic motion into controlled blade rotation through a Scotch-yoke mechanism. SolidWorks modeling and structural analysis informed component optimization, with manufacturing and assembly feasibility considered throughout the design study.",
+      "affiliation": "Engineering Design · University of Nottingham",
+      "time": "Jan–Jun 2023",
+      "keywords": [
+        "Mechanical Design",
+        "Mechanisms",
+        "FEA"
+      ]
+    },
+    {
+      "slug": "formula-student",
+      "name": "Formula Student",
+      "category": "Project · Mechanical design",
+      "summary": "Designing aerodynamic components and evaluating a hydraulic braking system.",
+      "tags": [
+        "CATIA",
+        "CFD",
+        "Braking",
+        "Simscape"
+      ],
+      "fit": "contain",
+      "image": "project-formula-student.png",
+      "alt": "Formula Student vehicle CAD with side-pod and aerodynamic components.",
+      "caption": "Formula Student vehicle CAD with side-pod and aerodynamic components.",
+      "width": 418,
+      "height": 142,
+      "group": "mechanical",
+      "paragraphs": [
+        "Formula Student work spanned mechanical design and aerodynamics in the UK and China, connecting component packaging with vehicle performance and manufacturability.",
+        "Contributed to side-pod design for aerodynamic efficiency and cooling of the radiator and accumulator. Built prototype frame and aerodynamic components, used CFD for performance analysis, and studied aerodynamic-package mounting.",
+        "Worked on an ergonomic pedal-box design, calculated pedal ratios and simulated the hydraulic braking system in Simulink and Simscape. Other team work included differential supports, a lithium-battery enclosure and carbon-fiber manufacturing processes."
+      ],
+      "card_summary": "Mechanical and aerodynamic design for Formula Student race cars, spanning side-pod packaging, radiator cooling and structural integration. Work includes CATIA design, CFD analysis, pedal-box geometry and hydraulic braking simulation in Simulink and Simscape.",
+      "affiliation": "Notts Racing · University of Nottingham",
+      "time": "Oct 2022–Jan 2025",
+      "keywords": [
+        "Aerodynamics",
+        "CFD",
+        "Mechanical Design"
+      ]
+    },
+    {
+      "slug": "centrifugal-clutch",
+      "name": "Centrifugal Clutch",
+      "category": "Project · Mechanical design",
+      "summary": "A speed-dependent clutch combining mechanical analysis, CAD and manufacturing design.",
+      "tags": [
+        "Mechanisms",
+        "CAD",
+        "Manufacturing"
+      ],
+      "fit": "contain",
+      "image": "project-centrifugal-clutch.png",
+      "alt": "Annotated centrifugal-clutch assembly and component layout.",
+      "caption": "Annotated centrifugal-clutch assembly and component layout.",
+      "width": 956,
+      "height": 478,
+      "group": "mechanical",
+      "paragraphs": [
+        "This group design-and-make project developed a centrifugal clutch to transfer rotational power from a motor to a generator once the motor reaches a chosen engagement speed. The design balances centrifugal force, spring restraint and frictional contact to connect the rotating input with the output drum.",
+        "The team design uses twin leading shoes, dowel pins, an adjustable spring arrangement and a drive plate. Nylon 12 shoes carry Permali friction linings that contact an aluminum drum when centrifugal force exceeds the spring restraint.",
+        "Design requirements included engagement around 1,200 rpm and a minimum transmitted torque of 0.5 N·m at 2,300 rpm. Calculations informed spring stiffness, shoe geometry and mass, shaft sizing, material selection and component fits.",
+        "The critical design review combined annotated CAD, mechanical calculations, manufacturing considerations and an iterative design process. These are team design targets and analysis documented in the report, rather than claimed measured test results."
+      ],
+      "card_summary": "A team design-and-make project developing a centrifugal clutch for speed-dependent power transmission. Annotated CAD and mechanical calculations connect spring restraint, shoe geometry, frictional contact and material selection with engagement-speed and torque requirements.",
+      "affiliation": "MMME2044 · Group 22 · University of Nottingham",
+      "time": "2023–2024",
+      "keywords": [
+        "Mechanical Design",
+        "Power Transmission",
+        "Manufacturing"
+      ]
+    },
+    {
+      "slug": "opad",
+      "name": "OPAD · Assistive Design",
+      "category": "Project · Mechanical design",
+      "summary": "Grip design and force analysis for an instrumented Nordic walking aid.",
+      "tags": [
+        "Assistive design",
+        "Sensing",
+        "CAD"
+      ],
+      "fit": "contain",
+      "image": "project-opad.png",
+      "alt": "OPAD Nordic walking sensor enclosure: CAD, electronics packaging and pole attachment.",
+      "caption": "OPAD Nordic walking sensor enclosure: CAD, electronics packaging and pole attachment.",
+      "width": 1510,
+      "height": 408,
+      "group": "mechanical",
+      "paragraphs": [
+        "The OPAD Nordic Walking project aimed to help therapists track patients’ walking conditions through an instrumented walking aid.",
+        "Designed the walking-pole hand grip and selected suitable materials, with attention to the physical interface between the user and the device. Conducted force analysis and calculations to support measurement and data collection.",
+        "Collaborated with electrical-engineering and computer-science teammates to connect mechanical design with sensing and patient-walking data.",
+        "The walking-pole attachment uses a clamping enclosure and rubber contact surfaces to secure the device around the pole. CAD packaging accommodates three AAA batteries, an ESP32 and an MPU6050, with external LEDs indicating battery and electronics status."
+      ],
+      "card_summary": "Designed an instrumented Nordic walking aid to help therapists monitor walking conditions. Work combines grip design, material selection, force analysis and sensor-enclosure packaging, coordinating the mechanical interface with electrical and software teammates.",
+      "affiliation": "UoN OPAD · University of Nottingham",
+      "time": "Oct 2023–Aug 2024",
+      "keywords": [
+        "Assistive Robotics",
+        "Product Design",
+        "Sensor Integration"
+      ]
+    },
+    {
+      "slug": "manta-ray",
+      "name": "Manta-ray Research",
+      "category": "Project · Mechanical design",
+      "summary": "Modeling, fabrication and testing of soft pneumatic locomotion.",
+      "tags": [
+        "Soft robotics",
+        "Abaqus",
+        "Pneumatic actuation"
+      ],
+      "fit": "contain",
+      "image": "project-manta-ray.png",
+      "alt": "Abaqus finite-element analysis of the manta-ray soft robot.",
+      "caption": "Manta-ray actuator and body analysis in Abaqus.",
+      "width": 606,
+      "height": 290,
+      "group": "mechanical",
+      "paragraphs": [
+        "Developed a bio-inspired manta-ray locomotion system using pneumatic actuators. Implemented Piecewise Constant Curvature kinematics in MATLAB for undulation and oscillation control.",
+        "Used Abaqus finite-element analysis to investigate actuator behavior under pressures from 30 to 100 kPa. Fabricated and tested soft pneumatic actuators to validate the simulation and develop a feasible robot prototype."
+      ],
+      "card_summary": "Developed a bio-inspired manta-ray locomotion system using soft pneumatic actuators. MATLAB kinematic modeling and Abaqus finite-element analysis supported actuator design, followed by fabrication and testing to connect simulation with a feasible robot prototype.",
+      "affiliation": "Advanced Robotics Laboratory · University of Nottingham",
+      "time": "Aug 2024–Jun 2025",
+      "keywords": [
+        "Soft Robotics",
+        "Kinematic Modeling",
+        "FEA"
+      ]
+    },
+    {
+      "slug": "bladeless-drone",
+      "name": "Bladeless Drone System Development",
+      "category": "Project · Mechanical design",
+      "group": "mechanical",
+      "summary": "Exploring single-motor bladeless propulsion through fluid-dynamics analysis and ANSYS simulation.",
+      "tags": [
+        "ANSYS",
+        "CFD",
+        "Propulsion"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "This study analyzed a bladeless-drone concept and compared its fluid mechanics with traditional systems.",
+        "Performed fluid-dynamics analysis and ANSYS simulation of a single-motor bladeless drone and Dyson-fan-related flow behavior.",
+        "Simulation was used to study the flow field. The supplied material does not define the final geometry, turbulence model, mesh study or comparison conditions.",
+        "No verified thrust advantage, efficiency gain or successful flight is claimed."
+      ],
+      "card_summary": "Investigated a single-motor bladeless-drone propulsion concept through fluid-mechanics analysis and ANSYS simulation. The study examines flow behavior in bladeless and Dyson-fan-related systems to inform propulsion-system development.",
+      "affiliation": "Robotics Laboratory · University of Nottingham",
+      "time": "Aug 2024–Jun 2025",
+      "keywords": [
+        "Aerospace Design",
+        "CFD",
+        "Propulsion"
+      ]
+    },
+    {
+      "slug": "gnn-robustness",
+      "name": "GNN-Based r-Robustness",
+      "summary": "Exploring learned graph representations for distributed robot coordination.",
+      "group": "robotics",
+      "category": "Project · Robotics",
+      "tags": [
+        "GNN",
+        "Multi-robot",
+        "Connectivity",
+        "Distributed control"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "Multi-robot coordination depends on communication structure. This project investigates graph-based learning with the aim of maintaining connectivity and r-robustness.",
+        "Investigating graph-neural-network-based control using local interaction structure to produce distributed control inputs.",
+        "The research direction is to relate learned graph representations to system-level coordination constraints. Architectural and evaluation details are still being developed.",
+        "No verified robustness certificate, benchmark gain or hardware deployment result is claimed in the supplied material."
+      ],
+      "card_summary": "Exploring learned graph representations for distributed robot coordination and communication-network robustness. The project studies how graph neural networks can support reasoning about r-robustness in multi-robot systems.",
+      "affiliation": "DASC Lab · University of Michigan",
+      "time": "2026–present",
+      "keywords": [
+        "GNN",
+        "Multi-Robot Systems",
+        "Network Robustness"
+      ]
+    },
+    {
+      "slug": "haptic-sensors",
+      "name": "Tactile Sensors & Walking Robot Control",
+      "summary": "Open-TacTip skin prototypes, PCB design and OpenCV tracking for tactile sensing and robot motion.",
+      "group": "robotics",
+      "category": "Project · Robotics",
+      "tags": [
+        "Tactile sensing",
+        "SolidWorks",
+        "OpenCV",
+        "PCB design"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "Research combined tactile sensing for robot end-effectors with the study of walking-robot kinematics, dynamics and motion control. Literature review examined soft haptic sensors and surface-roughness analysis.",
+        "Designed molded sensor skins in SolidWorks for an existing Open-TacTip base. Built prototypes using different soft materials and 3D printing, and used OpenCV to track displacement.",
+        "Designed electrical-system packaging and participated in haptic-sensor PCB design using Fusion 360, connecting mechanical prototypes with sensing electronics."
+      ],
+      "card_summary": "Developed tactile-sensor prototypes and supporting electronics for robotic sensing and motion research. Work includes Open-TacTip-inspired skin design, soft-material fabrication, OpenCV-based displacement tracking and PCB integration.",
+      "affiliation": "University of Nottingham · Robotics research",
+      "time": "Feb–Aug 2023",
+      "keywords": [
+        "Tactile Sensing",
+        "Computer Vision",
+        "PCB Design"
+      ]
+    },
+    {
+      "slug": "robomaster",
+      "name": "RoboMaster Infantry Robot",
+      "summary": "Mechanical shell design and comparison of competition robot configurations.",
+      "group": "robotics",
+      "category": "Project · Robotics",
+      "tags": [
+        "Fusion 360",
+        "Mechanical design",
+        "Robot systems"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "RoboMaster team work explored the mechanical design of an infantry robot through research on competing university robot configurations and their performance characteristics.",
+        "Used Excel to compare robot behavior and performance parameters, then designed the infantry robot’s external shell in Fusion 360."
+      ],
+      "card_summary": "Mechanical design for a RoboMaster infantry robot, combining comparisons of competition configurations with CAD development. Work focuses on the external shell and its integration with the robot’s mechanical systems using Fusion 360.",
+      "affiliation": "University student RoboMaster team",
+      "time": "Sep 2021–Jun 2022",
+      "keywords": [
+        "Mechanical Design",
+        "Robot Integration"
+      ]
+    },
+    {
+      "slug": "sam-microrobotics",
+      "name": "Magnetic Microrobot Control",
+      "summary": "Experimental systems and high-level control for magnetically actuated microrobots.",
+      "group": "robotics",
+      "category": "Project · Robotics",
+      "tags": [],
+      "fit": "contain",
+      "paragraphs": [
+        "Developing high-level control to change the magnetic field and manipulate microrobot locomotion. Set up the experimental environment and designed circuits for magnetic-field control.",
+        "Ongoing research at the Synergetic Adaptive Machina’s Lab, University of Michigan."
+      ],
+      "card_summary": "Experimental systems for magnetically actuated microrobots, linking high-level magnetic-field control with locomotion. Work includes experimental setup and control-circuit design to support repeatable microrobot manipulation.",
+      "affiliation": "SAM Lab · University of Michigan",
+      "time": "Sep 2025–present",
+      "keywords": [
+        "Microrobotics",
+        "Magnetic Control",
+        "Experiment Design"
+      ]
+    },
+    {
+      "slug": "uav-team",
+      "name": "UAV Aircraft Design & Simulation",
+      "summary": "Aircraft configuration, aerodynamic analysis and flight simulation with XFLR5 and X-Plane.",
+      "group": "mechanical",
+      "category": "Project · Mechanical design",
+      "tags": [
+        "Aircraft dynamics",
+        "XFLR5",
+        "X-Plane"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "Student UAV team work focused on aircraft configuration and simulation, connecting aerodynamic design decisions with static and dynamic flight characteristics.",
+        "Researched aircraft types and selected wing, tail and airfoil configurations using constraint diagrams and aerodynamic calculations. Collaborated on dimensional adjustments in XFLR5 to examine static and dynamic characteristics.",
+        "Built UAV configuration and airfoil models in X-Plane for simulation, linking aircraft geometry with a virtual flight model."
+      ],
+      "card_summary": "Aircraft configuration and aerodynamic simulation for a student UAV team. Wing, tail and airfoil studies combine engineering calculations with XFLR5 analysis and X-Plane configuration to investigate stability and flight behavior.",
+      "affiliation": "University of Nottingham · Student UAV team",
+      "time": "Started Sep 2023",
+      "keywords": [
+        "Aircraft Dynamics",
+        "Aerodynamics",
+        "Flight Simulation"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Apple",
+      "role": "Product Design Engineering Intern · Apple Watch",
+      "dates": "May–Sep 2026",
+      "image": "project-apple.jpeg",
+      "bullets": [
+        "Supported Apple Watch NPI builds through failure analysis, tolerance analysis, hardware validation and design of experiments.",
+        "Developed an LLM-assisted tolerance-analysis tool, reducing engineering workflow time by 87%.",
+        "Designed the control algorithm for an automated water-seal test fixture, reducing test cycle time by 91%.",
+        "Developed a computer-vision dimensional inspection pipeline and collaborated across engineering and operations to investigate product reliability."
+      ]
+    },
+    {
+      "company": "Bellwether Industries",
+      "role": "Mechanical Engineering Intern",
+      "dates": "Aug–Oct 2024",
+      "image": "project-bellwether.jpeg",
+      "bullets": [
+        "Designed and integrated mechanical, propulsion and electronic systems for a 1/8-scale eVTOL prototype.",
+        "Built a multi-orientation flight-dynamics test platform for vehicle testing and propulsion evaluation.",
+        "Developed MATLAB, Simulink and PX4 simulation workflows for eVTOL system analysis and validation.",
+        "Performed CFD and FEA to evaluate aerodynamic performance and structural loading."
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "SEAMLiS: Perception-Limited Multi-Robots Autonomous Exploration with Safe Guarantees",
+      "authors": "T. Kim*, R. H. Kumar*, A. D. Menon, T.-H. Lin, D. Panagou",
+      "status": "Manuscript in preparation · 2026",
+      "project": "seamlis",
+      "image": "project-seamlis.png"
+    },
+    {
+      "title": "Controlled hovering flight in a sub-gram micro aerial vehicle powered by pneumatic micro-muscles",
+      "authors": "S. Kim*, Y.-H. Hsiao*, A. Yin*, T.-H. Lin, J. Brown, G. Matt, Y. Chen, C. Aubin",
+      "status": "Manuscript in preparation · 2025",
+      "project": "micro-soft-robotics",
+      "image": "project-micro-soft-robotics-reference.jpeg"
+    }
+  ],
+  "news": [
+    {
+      "date": "Sep 2026",
+      "text": "Completed a Product Design Engineering internship with the Apple Watch team."
+    },
+    {
+      "date": "Sep 2026",
+      "text": "Started developing a 3D Gaussian Splatting aerial simulation pipeline."
+    },
+    {
+      "date": "Jan 2026",
+      "text": "Joined the DASC Lab at the University of Michigan to work on multi-agent aerial robotics."
+    },
+    {
+      "date": "Sep 2025",
+      "text": "Began graduate study in Mechanical Engineering at the University of Michigan."
+    }
+  ]
+}
