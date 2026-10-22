@@ -18,9 +18,9 @@
     "Mechanical design"
   ],
   "about": [
-    "I am a master’s student in Mechanical Engineering at the University of Michigan, focusing on robotics. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
-    "At Michigan, research spans multi-agent aerial systems in the DASC Lab, pneumatic micro-actuation in the Zoetic Robotics Lab, and magnetic microrobot control in the SAM Lab. Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
-    "Previously, I studied Mechanical Engineering at the University of Nottingham and worked in product design at Apple and eVTOL development at Bellwether Industries. The long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
+    "I am a graduate student in **Mechanical Engineering (Robotics)** at the **University of Michigan** in the **USA**. I graduated from the **University of Nottingham** in the **UK** with a first-class honours degree in Mechanical Engineering. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
+    "At Michigan, research spans multi-agent aerial systems in the **Distributed Autonomous System and Control (DASC) Lab**, pneumatic micro-actuation in the **Zoetic Robotics Lab**, and magnetic microrobot control in the **SAM Lab**. Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
+    "Previously, I conducted research in the **Advanced Robotics Laboratory** at the University of Nottingham, working on **underwater bio-inspired soft robotics**. This summer, I worked as a **Product Design Engineering Intern** at **Apple**. I have also worked in the aerospace industry on eVTOL development at **Bellwether Industries**. My long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
   ],
   "projects": [
     {

@@ -2,10 +2,17 @@
 from pathlib import Path
 import html
 import json
+import re
 
 ROOT = Path(__file__).resolve().parent
 data = json.loads((ROOT / "content.json").read_text(encoding="utf-8"))
 escape = lambda value: html.escape(str(value), quote=True)
+
+
+def inline(value):
+    """Escape content, then support paired Markdown-style **bold** spans."""
+    text = escape(value)
+    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
 
 
 def page_head(title, prefix=""):
@@ -29,16 +36,16 @@ def picture(item, prefix=""):
 
 
 def logo_entry(item, css_class="entry-row"):
-    bullets = "<ul>" + "".join(f"<li>{escape(line)}</li>" for line in item.get("bullets", [])) + "</ul>" if item.get("bullets") else ""
-    summary = f'<p class="entry-summary">{escape(item["summary"])}</p>' if item.get("summary") else ""
-    detail = f'<p class="entry-detail">{escape(item["detail"])}</p>' if item.get("detail") else ""
+    bullets = "<ul>" + "".join(f"<li>{inline(line)}</li>" for line in item.get("bullets", [])) + "</ul>" if item.get("bullets") else ""
+    summary = f'<p class="entry-summary">{inline(item["summary"])}</p>' if item.get("summary") else ""
+    detail = f'<p class="entry-detail">{inline(item["detail"])}</p>' if item.get("detail") else ""
     return f'''<article class="{css_class}"><div class="logo-frame"><img src="assets/{escape(item['logo'])}" alt="{escape(item['logo_alt'])}" loading="lazy"></div><div class="entry-content"><div class="entry-heading"><div><h3>{escape(item['name'])}</h3><p class="role">{escape(item['role'])}</p></div><span class="dates">{escape(item['dates'])}</span></div>{detail}{summary}{bullets}</div></article>'''
 
 
 parts = [page_head("Robotics & Mechanical Engineering"), '<div class="layout">', sidebar(), '<main id="main">']
-parts += ['<section id="about"><h2>About</h2>'] + [f'<p>{escape(text)}</p>' for text in data["about"]]
+parts += ['<section id="about"><h2>About</h2>'] + [f'<p>{inline(text)}</p>' for text in data["about"]]
 parts += [f'<p class="interest-line"><strong>Research interests</strong> &nbsp; {escape(" · ".join(data["research_interests"]))}</p></section>']
-parts += ['<section id="news"><h2>News</h2><ul class="news">'] + [f'<li><span class="news-date">{escape(item["date"])}</span><span>{escape(item["text"])}</span></li>' for item in data["news"]]
+parts += ['<section id="news"><h2>News</h2><ul class="news">'] + [f'<li><span class="news-date">{escape(item["date"])}</span><span>{inline(item["text"])}</span></li>' for item in data["news"]]
 parts += ['</ul></section><section id="publications"><h2>Publications &amp; Manuscripts</h2>']
 for publication in data["publications"]:
     authors = escape(publication["authors"]).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
@@ -46,7 +53,7 @@ for publication in data["publications"]:
 parts += ['</section><section id="projects"><h2>Selected Projects</h2>']
 for project in data["projects"]:
     tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
-    parts.append(f'<article class="media-row project-row"><a class="media" href="projects/{escape(project["slug"])}/">{picture(project)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p><p class="project-time">{escape(project["time"])}</p><p>{escape(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
+    parts.append(f'<article class="media-row project-row"><a class="media" href="projects/{escape(project["slug"])}/">{picture(project)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p><p class="project-time">{escape(project["time"])}</p><p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
 parts += ['<h3 class="subsection-title">Research Experience</h3>'] + [logo_entry(item, "entry-row research-row") for item in data["research"]]
 parts += ['</section><section id="education"><h2>Education</h2>'] + [logo_entry(item, "entry-row education-row") for item in data["education"]]
@@ -60,10 +67,10 @@ parts += ['</div></section>', footer(), '</main></div></body></html>']
 for project in data["projects"]:
     target = ROOT / "projects" / project["slug"]
     target.mkdir(parents=True, exist_ok=True)
-    body = page_head(project["name"], "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="project-detail"><a class="back-link" href="../../index.html#projects">← All projects</a><p class="category">' + escape(project["category"]) + '</p><h2>' + escape(project["name"]) + '</h2><p class="detail-lead">' + escape(project["summary"]) + '</p>'
+    body = page_head(project["name"], "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="project-detail"><a class="back-link" href="../../index.html#projects">← All projects</a><p class="category">' + escape(project["category"]) + '</p><h2>' + escape(project["name"]) + '</h2><p class="detail-lead">' + inline(project["summary"]) + '</p>'
     if project.get("image"):
         body += '<figure class="detail-image">' + picture(project, "../../") + f'<figcaption>{escape(project.get("caption", ""))}</figcaption></figure>'
-    body += '<section><h3>Project overview</h3>' + "".join(f'<p>{escape(text)}</p>' for text in project["paragraphs"]) + '</section>' + footer() + '</main></div></body></html>'
+    body += '<section><h3>Project overview</h3>' + "".join(f'<p>{inline(text)}</p>' for text in project["paragraphs"]) + '</section>' + footer() + '</main></div></body></html>'
     (target / "index.html").write_text(body, encoding="utf-8")
 
 print(f'Built homepage and {len(data["projects"])} project pages.')
