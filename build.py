@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-9"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-10"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -36,7 +36,8 @@ def picture(item, prefix="", cover=False):
     if not item.get("image"):
         return '<div class="image-placeholder">Project image forthcoming</div>'
     note = f'<span class="image-note">{escape(item["image_note"])}</span>' if item.get("image_note") else ""
-    return f'<img src="{prefix}assets/{escape(item["image"])}" alt="{escape(item.get("alt", item.get("title", item.get("name", "Project image"))))}" loading="lazy">{note}'
+    zoom = f' class="cover-zoom" style="--cover-zoom:{float(item["cover_zoom"]):.2f}"' if cover and item.get("cover_zoom") else ""
+    return f'<img{zoom} src="{prefix}assets/{escape(item["image"])}" alt="{escape(item.get("alt", item.get("title", item.get("name", "Project image"))))}" loading="lazy">{note}'
 
 
 def gallery_item(item, prefix="../../"):
@@ -70,7 +71,8 @@ parts += [f'</section><section id="projects"><div class="heading-row"><h2>Select
 for project in data["projects"]:
     tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
     categories = " ".join(project["categories"])
-    parts.append(f'<article class="media-row project-row" data-categories="{escape(categories)}"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p><p class="project-time">{escape(project["time"])}</p><p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
+    time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
+    parts.append(f'<article class="media-row project-row" data-categories="{escape(categories)}"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
 parts += ['<h3 class="subsection-title">Research Experience</h3>'] + [logo_entry(item, "entry-row research-row") for item in data["research"]]
 parts += ['</section><section id="education"><h2>Education</h2>'] + [logo_entry(item, "entry-row education-row") for item in data["education"]]

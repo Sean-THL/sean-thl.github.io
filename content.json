@@ -169,7 +169,7 @@
       "categories": ["control", "perception", "mechatronics"],
       "name": "Mobile Robot Autonomy System",
       "image": "project-mobile-robot.png",
-      "cover_video": "mobile-robot.mp4",
+      "cover_video": "mobile-robot-new.mp4",
       "video_poster": "project-mobile-robot.png",
       "category": "Project · Navigation",
       "summary": "Embedded mapping, particle-filter localization, A* planning and feedback control.",
@@ -251,11 +251,12 @@
       ],
       "fit": "contain",
       "group": "mechanical",
-      "image": "project-variable-pitch.png",
+      "image": "project-variable-pitch-large.png",
+      "cover_zoom": 1.15,
       "alt": "Variable-pitch propeller CAD assembly with blade-pitch mechanism.",
       "caption": "Variable-pitch propeller CAD assembly with blade-pitch mechanism.",
-      "width": 317,
-      "height": 282,
+      "width": 1268,
+      "height": 1128,
       "paragraphs": [
         "The design study explored a variable-pitch mechanism with manufacturing and assembly feasibility considered alongside mechanical performance.",
         "Designed a hydraulic system and a Scotch-yoke mechanism in SolidWorks, and optimized critical components using structural-analysis results.",
@@ -344,6 +345,7 @@
       ],
       "fit": "contain",
       "image": "project-centrifugal-clutch-cover.png",
+      "cover_zoom": 1.16,
       "alt": "Annotated centrifugal-clutch assembly and component layout.",
       "caption": "Annotated centrifugal-clutch assembly and component layout.",
       "gallery": [
@@ -388,11 +390,11 @@
         "CAD"
       ],
       "fit": "contain",
-      "image": "project-opad.png",
+      "image": "project-opad-square.png",
       "alt": "OPAD Nordic walking sensor enclosure: CAD, electronics packaging and pole attachment.",
       "caption": "OPAD Nordic walking sensor enclosure: CAD, electronics packaging and pole attachment.",
-      "width": 1510,
-      "height": 408,
+      "width": 1200,
+      "height": 1200,
       "group": "mechanical",
       "paragraphs": [
         "The OPAD Nordic Walking project aimed to help therapists track patients’ walking conditions through an instrumented walking aid.",
@@ -413,8 +415,6 @@
       "slug": "manta-ray",
       "categories": ["control", "mechatronics"],
       "name": "Bio-Inspired Manta-Ray Soft Robotics: Design, Modelling, Simulation and Control",
-      "cover_video": "manta-ray.mp4",
-      "video_poster": "project-manta-ray.png",
       "category": "Project · Mechanical design",
       "summary": "Modeling, fabrication and testing of soft pneumatic locomotion.",
       "tags": [
@@ -453,9 +453,11 @@
       "slug": "bladeless-drone",
       "categories": ["mechatronics"],
       "name": "Bladeless Drone System Development",
-      "image": "project-bladeless-drone.jpg",
+      "image": "project-bladeless-drone-cover.png",
       "alt": "ANSYS particle-path visualization for the bladeless-drone flow simulation.",
       "caption": "ANSYS particle-path visualization from the bladeless-drone system study.",
+      "width": 1586,
+      "height": 992,
       "category": "Project · Mechanical design",
       "group": "mechanical",
       "summary": "Exploring single-motor bladeless propulsion through fluid-dynamics analysis and ANSYS simulation.",
@@ -647,6 +649,45 @@
         "Aircraft Dynamics",
         "Aerodynamics",
         "Flight Simulation"
+      ]
+    },
+    {
+      "slug": "yolov12-aerial-detection",
+      "categories": ["perception"],
+      "name": "YOLOv12-Based Aerial Traffic Object Detection",
+      "image": "project-yolov12-detection.png",
+      "cover_video": "yolov12-detection.mp4",
+      "video_poster": "project-yolov12-detection.png",
+      "alt": "YOLOv12 detections for pedestrians and vehicles in an aerial traffic scene.",
+      "caption": "Object detections and confidence scores in aerial urban footage.",
+      "width": 1360,
+      "height": 765,
+      "gallery": [
+        {
+          "video": "yolov12-detection.mp4",
+          "poster": "project-yolov12-detection.png",
+          "caption": "YOLOv12 inference across aerial urban traffic footage."
+        }
+      ],
+      "summary": "Applying YOLOv12 to aerial urban footage for vehicle and pedestrian detection.",
+      "group": "robotics",
+      "category": "Project · Perception",
+      "tags": [
+        "YOLOv12",
+        "Object detection",
+        "Aerial vision"
+      ],
+      "fit": "contain",
+      "paragraphs": [
+        "This project applies YOLOv12 inference to aerial urban footage and visualizes detected road users with class labels, bounding boxes and confidence scores.",
+        "The demonstration includes cars, pedestrians and other traffic participants across scenes with changing viewpoint, object scale, lighting and traffic density. It provides a visual workflow for inspecting model predictions and detection behavior without claiming an accuracy benchmark not established by the supplied material."
+      ],
+      "card_summary": "Applied YOLOv12 to aerial urban footage for traffic-scene perception. The visualization pipeline displays class predictions, bounding boxes and confidence scores for vehicles, pedestrians and other road users across varied viewpoints and lighting conditions.",
+      "affiliation": "Computer Vision Project",
+      "keywords": [
+        "YOLOv12",
+        "Object Detection",
+        "Aerial Perception"
       ]
     }
   ],

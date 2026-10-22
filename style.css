@@ -40,3 +40,6 @@ body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-size:16px;line-h
 /* Project-page media galleries for supporting photographs and demonstrations. */
 .project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:25px 0 34px}.project-gallery figure{margin:0;min-width:0}.project-gallery img,.project-gallery video{display:block;width:100%;max-height:520px;object-fit:contain;background:transparent;border:0}.project-gallery figcaption{margin-top:7px;color:var(--muted);font-size:12px;line-height:1.5}
 @media(max-width:640px){.project-gallery{grid-template-columns:1fr;gap:20px}.project-gallery img,.project-gallery video{max-height:none}}
+
+/* Per-project cover scaling removes excess internal whitespace without changing detail-page media. */
+#projects .media img.cover-zoom{transform:scale(var(--cover-zoom));transform-origin:center}
