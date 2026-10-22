@@ -543,10 +543,10 @@
       "logo": "apple-logo.svg",
       "logo_alt": "Apple logo",
       "bullets": [
-        "Supported Apple Watch NPI builds through failure analysis, tolerance analysis, hardware validation and design of experiments.",
-        "Developed an LLM-assisted tolerance-analysis tool, reducing engineering workflow time by 87%.",
-        "Designed the control algorithm for an automated water-seal test fixture, reducing test cycle time by 91%.",
-        "Developed a computer-vision dimensional inspection pipeline and collaborated across engineering and operations to investigate product reliability."
+        "Supported Apple Watch NPI builds through failure, tolerance and validation analysis.",
+        "Built an LLM-assisted tolerance tool that cut engineering workflow time by 87%.",
+        "Designed automated water-seal fixture control, reducing test cycle time by 91%.",
+        "Built computer-vision inspection and supported cross-functional reliability work."
       ]
     },
     {
@@ -558,10 +558,10 @@
       "logo": "bellwether-logo.png",
       "logo_alt": "Bellwether Industries logo",
       "bullets": [
-        "Designed and integrated mechanical, propulsion and electronic systems for a 1/8-scale eVTOL prototype.",
-        "Built a multi-orientation flight-dynamics test platform for vehicle testing and propulsion evaluation.",
-        "Developed MATLAB, Simulink and PX4 simulation workflows for eVTOL system analysis and validation.",
-        "Performed CFD and FEA to evaluate aerodynamic performance and structural loading."
+        "Designed mechanical, propulsion and electronic systems for a 1/8-scale eVTOL.",
+        "Built a multi-orientation platform for flight-dynamics and propulsion testing.",
+        "Developed MATLAB, Simulink and PX4 workflows for eVTOL simulation and validation.",
+        "Used CFD and FEA to evaluate aerodynamic performance and structural loading."
       ]
     }
   ],
