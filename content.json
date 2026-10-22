@@ -18,13 +18,14 @@
     "Mechanical design"
   ],
   "about": [
-    "I am a graduate student in **Mechanical Engineering (Robotics)** at the **University of Michigan** in the **USA**. I graduated from the **University of Nottingham** in the **UK** with a first-class honours degree in Mechanical Engineering. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
-    "At Michigan, research spans multi-agent aerial systems in the **Distributed Autonomous System and Control (DASC) Lab**, pneumatic micro-actuation in the **Zoetic Robotics Lab**, and magnetic microrobot control in the **SAM Lab**. Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
-    "Previously, I conducted research in the **Advanced Robotics Laboratory** at the University of Nottingham, working on **underwater bio-inspired soft robotics**. This summer, I worked as a **Product Design Engineering Intern** at **Apple**. I have also worked in the aerospace industry on eVTOL development at **Bellwether Industries**. My long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
+    "I am a graduate student in **Mechanical Engineering (Robotics)** at the **[University of Michigan](https://umich.edu/)** in the **USA**. I graduated from the **[University of Nottingham](https://www.nottingham.ac.uk/)** in the **UK** with a first-class honours degree in Mechanical Engineering. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
+    "At Michigan, research spans multi-agent aerial systems in the **[Distributed Autonomous System and Control (DASC) Lab](https://dasc-lab.github.io/)**, pneumatic micro-actuation in the **[Zoetic Robotics Lab](https://www.zoeticrobotics.com/)**, and magnetic microrobot control in the **[SAM Lab](https://samlab.robotics.umich.edu/)**. Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
+    "Previously, I conducted research in the **Advanced Robotics Laboratory** at the University of Nottingham, working on **underwater bio-inspired soft robotics**. This summer, I worked as a **Product Design Engineering Intern** at **[Apple](https://www.apple.com/)**. I have also worked in the aerospace industry on eVTOL development at **[Bellwether Industries](https://www.bellwether-industries.com/)**. My long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
   ],
   "projects": [
     {
       "slug": "seamlis",
+      "categories": ["control", "perception"],
       "name": "SEAMLiS",
       "image": "project-seamlis.png",
       "category": "Research · Safe autonomy",
@@ -58,6 +59,7 @@
     },
     {
       "slug": "gaussian-aerial",
+      "categories": ["perception"],
       "name": "3DGS Aerial Simulator",
       "image": "project-gaussian-aerial.png",
       "category": "Research · Sim-to-real",
@@ -90,6 +92,7 @@
     },
     {
       "slug": "teg-slam",
+      "categories": ["perception"],
       "name": "TEG-SLAM",
       "image": "project-teg-slam-analysis.png",
       "category": "Project · Perception",
@@ -121,6 +124,7 @@
     },
     {
       "slug": "robot-arm",
+      "categories": ["control", "perception", "mechatronics"],
       "name": "5-DoF Robotics Arm",
       "image": "project-robot-arm.jpeg",
       "cover_video": "robot-arm.mp4",
@@ -155,6 +159,7 @@
     },
     {
       "slug": "mobile-robot",
+      "categories": ["control", "perception", "mechatronics"],
       "name": "Mobile Robot Autonomy",
       "image": "project-mobile-robot.png",
       "cover_video": "mobile-robot.mp4",
@@ -190,6 +195,7 @@
     },
     {
       "slug": "micro-soft-robotics",
+      "categories": ["control", "mechatronics"],
       "name": "Micro-soft Aerial Robotics",
       "image": "project-micro-soft-robotics-reference.jpeg",
       "category": "Project · Mechanical design",
@@ -226,6 +232,7 @@
     },
     {
       "slug": "variable-pitch",
+      "categories": ["mechatronics"],
       "name": "Variable-Pitch Propeller",
       "category": "Project · Mechanical design",
       "summary": "Translating linear hydraulic motion into controllable blade pitch.",
@@ -259,6 +266,7 @@
     },
     {
       "slug": "formula-student",
+      "categories": ["mechatronics"],
       "name": "Formula Student",
       "category": "Project · Mechanical design",
       "summary": "Designing aerodynamic components and evaluating a hydraulic braking system.",
@@ -291,6 +299,7 @@
     },
     {
       "slug": "centrifugal-clutch",
+      "categories": ["mechatronics"],
       "name": "Centrifugal Clutch",
       "category": "Project · Mechanical design",
       "summary": "A speed-dependent clutch combining mechanical analysis, CAD and manufacturing design.",
@@ -323,6 +332,7 @@
     },
     {
       "slug": "opad",
+      "categories": ["perception", "mechatronics"],
       "name": "OPAD · Assistive Design",
       "category": "Project · Mechanical design",
       "summary": "Grip design and force analysis for an instrumented Nordic walking aid.",
@@ -355,6 +365,7 @@
     },
     {
       "slug": "manta-ray",
+      "categories": ["control", "mechatronics"],
       "name": "Manta-ray Research",
       "category": "Project · Mechanical design",
       "summary": "Modeling, fabrication and testing of soft pneumatic locomotion.",
@@ -385,6 +396,7 @@
     },
     {
       "slug": "bladeless-drone",
+      "categories": ["mechatronics"],
       "name": "Bladeless Drone System Development",
       "image": "project-bladeless-drone.jpg",
       "alt": "ANSYS particle-path visualization for the bladeless-drone flow simulation.",
@@ -415,6 +427,7 @@
     },
     {
       "slug": "gnn-robustness",
+      "categories": ["control"],
       "name": "GNN-Based r-Robustness",
       "summary": "Exploring learned graph representations for distributed robot coordination.",
       "group": "robotics",
@@ -443,6 +456,7 @@
     },
     {
       "slug": "haptic-sensors",
+      "categories": ["perception", "mechatronics"],
       "name": "Tactile Sensors & Walking Robot Control",
       "summary": "Open-TacTip skin prototypes, PCB design and OpenCV tracking for tactile sensing and robot motion.",
       "group": "robotics",
@@ -470,6 +484,7 @@
     },
     {
       "slug": "robomaster",
+      "categories": ["mechatronics"],
       "name": "RoboMaster Infantry Robot",
       "summary": "Mechanical shell design and comparison of competition robot configurations.",
       "group": "robotics",
@@ -494,6 +509,7 @@
     },
     {
       "slug": "sam-microrobotics",
+      "categories": ["control", "mechatronics"],
       "name": "Magnetic Microrobot Control",
       "summary": "Experimental systems and high-level control for magnetically actuated microrobots.",
       "group": "robotics",
@@ -515,6 +531,7 @@
     },
     {
       "slug": "uav-team",
+      "categories": ["control", "mechatronics"],
       "name": "UAV Aircraft Design & Simulation",
       "summary": "Aircraft configuration, aerodynamic analysis and flight simulation with XFLR5 and X-Plane.",
       "group": "mechanical",
