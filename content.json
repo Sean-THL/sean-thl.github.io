@@ -60,7 +60,7 @@
     {
       "slug": "gaussian-aerial",
       "categories": ["perception"],
-      "name": "3DGS Aerial Simulator",
+      "name": "Toward Safe Sim-to-Real Visual Control Using a 3DGS Aerial Simulator",
       "image": "project-gaussian-aerial.png",
       "category": "Research · Sim-to-real",
       "summary": "Building a photorealistic simulation pipeline for visual policies and aerial robot deployment.",
@@ -125,7 +125,7 @@
     {
       "slug": "robot-arm",
       "categories": ["control", "perception", "mechatronics"],
-      "name": "5-DoF Robotics Arm",
+      "name": "5-DoF Robotics Arm Perception and Control",
       "image": "project-robot-arm.jpeg",
       "cover_video": "robot-arm.mp4",
       "video_poster": "project-robot-arm.jpeg",
@@ -160,7 +160,7 @@
     {
       "slug": "mobile-robot",
       "categories": ["control", "perception", "mechatronics"],
-      "name": "Mobile Robot Autonomy",
+      "name": "Mobile Robot Autonomy System",
       "image": "project-mobile-robot.png",
       "cover_video": "mobile-robot.mp4",
       "video_poster": "project-mobile-robot.png",
@@ -196,7 +196,7 @@
     {
       "slug": "micro-soft-robotics",
       "categories": ["control", "mechatronics"],
-      "name": "Micro-soft Aerial Robotics",
+      "name": "Microscale Bio-Inspired Soft Aerial Robotics",
       "image": "project-micro-soft-robotics-reference.jpeg",
       "category": "Project · Mechanical design",
       "summary": "Pneumatic micro-muscle modeling and experimental characterization for bio-inspired micro aerial robots.",
@@ -267,7 +267,7 @@
     {
       "slug": "formula-student",
       "categories": ["mechatronics"],
-      "name": "Formula Student",
+      "name": "Sidepod Aerodynamics Design",
       "category": "Project · Mechanical design",
       "summary": "Designing aerodynamic components and evaluating a hydraulic braking system.",
       "tags": [
@@ -333,7 +333,7 @@
     {
       "slug": "opad",
       "categories": ["perception", "mechatronics"],
-      "name": "OPAD · Assistive Design",
+      "name": "OPAD · Assistive Design — Nordic Walking Sticks",
       "category": "Project · Mechanical design",
       "summary": "Grip design and force analysis for an instrumented Nordic walking aid.",
       "tags": [
@@ -366,7 +366,7 @@
     {
       "slug": "manta-ray",
       "categories": ["control", "mechatronics"],
-      "name": "Manta-ray Research",
+      "name": "Bio-Inspired Manta-Ray Soft Robotics: Design, Modelling, Simulation and Control",
       "category": "Project · Mechanical design",
       "summary": "Modeling, fabrication and testing of soft pneumatic locomotion.",
       "tags": [
@@ -428,7 +428,7 @@
     {
       "slug": "gnn-robustness",
       "categories": ["control"],
-      "name": "GNN-Based r-Robustness",
+      "name": "GNN-Based r-Robustness for Multi-Robot Aerial Systems",
       "summary": "Exploring learned graph representations for distributed robot coordination.",
       "group": "robotics",
       "category": "Project · Robotics",
@@ -510,7 +510,7 @@
     {
       "slug": "sam-microrobotics",
       "categories": ["control", "mechatronics"],
-      "name": "Magnetic Microrobot Control",
+      "name": "Magnetic Microrobot Swarm Control",
       "summary": "Experimental systems and high-level control for magnetically actuated microrobots.",
       "group": "robotics",
       "category": "Project · Robotics",
@@ -525,14 +525,14 @@
       "time": "Sep 2025–present",
       "keywords": [
         "Microrobotics",
-        "Magnetic Control",
-        "Experiment Design"
+        "Swarm Control",
+        "Electronic System Design"
       ]
     },
     {
       "slug": "uav-team",
       "categories": ["control", "mechatronics"],
-      "name": "UAV Aircraft Design & Simulation",
+      "name": "UAV Aircraft Dynamics & Simulation",
       "summary": "Aircraft configuration, aerodynamic analysis and flight simulation with XFLR5 and X-Plane.",
       "group": "mechanical",
       "category": "Project · Mechanical design",
