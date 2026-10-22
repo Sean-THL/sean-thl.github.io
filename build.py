@@ -39,6 +39,16 @@ def picture(item, prefix="", cover=False):
     return f'<img src="{prefix}assets/{escape(item["image"])}" alt="{escape(item.get("alt", item.get("title", item.get("name", "Project image"))))}" loading="lazy">{note}'
 
 
+def gallery_item(item, prefix="../../"):
+    caption = f'<figcaption>{escape(item["caption"])}</figcaption>' if item.get("caption") else ""
+    if item.get("video"):
+        poster = f' poster="{prefix}assets/{escape(item["poster"])}"' if item.get("poster") else ""
+        media = f'<video controls muted loop playsinline preload="metadata"{poster}><source src="{prefix}videos/{escape(item["video"])}" type="video/mp4"></video>'
+    else:
+        media = f'<img src="{prefix}assets/{escape(item["image"])}" alt="{escape(item.get("alt", "Project media"))}" loading="lazy">'
+    return f'<figure>{media}{caption}</figure>'
+
+
 def logo_entry(item, css_class="entry-row"):
     bullets = "<ul>" + "".join(f"<li>{inline(line)}</li>" for line in item.get("bullets", [])) + "</ul>" if item.get("bullets") else ""
     summary = f'<p class="entry-summary">{inline(item["summary"])}</p>' if item.get("summary") else ""
@@ -77,6 +87,8 @@ for project in data["projects"]:
     body = page_head(project["name"], "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="project-detail"><a class="back-link" href="../../index.html#projects">← All projects</a><p class="category">' + escape(project["category"]) + '</p><h2>' + escape(project["name"]) + '</h2><p class="detail-lead">' + inline(project["summary"]) + '</p>'
     if project.get("image"):
         body += '<figure class="detail-image">' + picture(project, "../../") + f'<figcaption>{escape(project.get("caption", ""))}</figcaption></figure>'
+    if project.get("gallery"):
+        body += '<div class="project-gallery">' + "".join(gallery_item(item) for item in project["gallery"]) + '</div>'
     body += '<section><h3>Project overview</h3>' + "".join(f'<p>{inline(text)}</p>' for text in project["paragraphs"]) + '</section>' + footer() + '</main></div></body></html>'
     (target / "index.html").write_text(body, encoding="utf-8")
 

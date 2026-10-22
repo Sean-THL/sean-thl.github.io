@@ -71,6 +71,13 @@
       ],
       "alt": "3DGS aerial-simulator project outline with reconstruction, visual-policy training and sim-to-real stages.",
       "caption": "Project outline and related work. Visual-policy training, sim-to-real and safety-filter integration are development goals.",
+      "gallery": [
+        {
+          "image": "project-gaussian-aerial-lab.jpg",
+          "alt": "Aerial robot in the DASC Lab flight-testing space.",
+          "caption": "Aerial platform in the laboratory flight-testing environment."
+        }
+      ],
       "fit": "contain",
       "width": 2048,
       "height": 1079,
@@ -277,11 +284,38 @@
         "Simscape"
       ],
       "fit": "contain",
-      "image": "project-formula-student.png",
-      "alt": "Formula Student vehicle CAD with side-pod and aerodynamic components.",
-      "caption": "Formula Student vehicle CAD with side-pod and aerodynamic components.",
-      "width": 418,
-      "height": 142,
+      "image": "project-formula-student-cover.jpg",
+      "alt": "Nottingham Formula Student car with team members in the workshop.",
+      "caption": "Formula Student car and workshop team.",
+      "gallery": [
+        {
+          "image": "project-formula-student-cover-full.jpg",
+          "alt": "Nottingham Formula Student car with team members in the workshop.",
+          "caption": "Formula Student car and workshop team."
+        },
+        {
+          "image": "project-formula-student-display.jpg",
+          "alt": "Formula Student aerodynamic components and technical presentation boards.",
+          "caption": "Aerodynamic components and design presentation."
+        },
+        {
+          "image": "project-formula-student-team.jpg",
+          "alt": "Formula Student aerodynamic team beside the sidepod display.",
+          "caption": "Aerodynamic team and sidepod display."
+        },
+        {
+          "image": "project-formula-student-extra.jpg",
+          "alt": "Nottingham Formula Student car at a public engineering display.",
+          "caption": "Formula Student car at an engineering showcase."
+        },
+        {
+          "image": "project-formula-student-car.jpg",
+          "alt": "University of Nottingham Formula Student car in the workshop.",
+          "caption": "Formula Student vehicle in the workshop."
+        }
+      ],
+      "width": 1642,
+      "height": 1026,
       "group": "mechanical",
       "paragraphs": [
         "Formula Student work spanned mechanical design and aerodynamics in the UK and China, connecting component packaging with vehicle performance and manufacturability.",
@@ -312,6 +346,18 @@
       "image": "project-centrifugal-clutch.png",
       "alt": "Annotated centrifugal-clutch assembly and component layout.",
       "caption": "Annotated centrifugal-clutch assembly and component layout.",
+      "gallery": [
+        {
+          "image": "project-centrifugal-clutch-prototype.jpg",
+          "alt": "Manufactured centrifugal-clutch prototype on a workbench.",
+          "caption": "Manufactured centrifugal-clutch prototype."
+        },
+        {
+          "image": "project-centrifugal-clutch-sketch.jpg",
+          "alt": "Early centrifugal-clutch mechanism sketches and design notes.",
+          "caption": "Early mechanism concepts and design notes."
+        }
+      ],
       "width": 956,
       "height": 478,
       "group": "mechanical",
@@ -367,6 +413,8 @@
       "slug": "manta-ray",
       "categories": ["control", "mechatronics"],
       "name": "Bio-Inspired Manta-Ray Soft Robotics: Design, Modelling, Simulation and Control",
+      "cover_video": "manta-ray.mp4",
+      "video_poster": "project-manta-ray.png",
       "category": "Project · Mechanical design",
       "summary": "Modeling, fabrication and testing of soft pneumatic locomotion.",
       "tags": [
@@ -378,6 +426,13 @@
       "image": "project-manta-ray.png",
       "alt": "Abaqus finite-element analysis of the manta-ray soft robot.",
       "caption": "Manta-ray actuator and body analysis in Abaqus.",
+      "gallery": [
+        {
+          "video": "manta-ray.mp4",
+          "poster": "project-manta-ray.png",
+          "caption": "Manta-ray soft-robot prototype demonstration."
+        }
+      ],
       "width": 606,
       "height": 290,
       "group": "mechanical",
@@ -458,6 +513,11 @@
       "slug": "haptic-sensors",
       "categories": ["perception", "mechatronics"],
       "name": "Tactile Sensors & Walking Robot Control",
+      "image": "project-haptic-sensor-camera.jpg",
+      "alt": "Camera and 3D-printed fixture used for tactile-sensor displacement tracking.",
+      "caption": "Camera and custom fixture for tactile-sensor tracking experiments.",
+      "width": 1500,
+      "height": 2000,
       "summary": "Open-TacTip skin prototypes, PCB design and OpenCV tracking for tactile sensing and robot motion.",
       "group": "robotics",
       "category": "Project · Robotics",
@@ -486,6 +546,18 @@
       "slug": "robomaster",
       "categories": ["mechatronics"],
       "name": "RoboMaster Infantry Robot",
+      "image": "project-robomaster-cover.png",
+      "alt": "Illuminated RoboMaster infantry robot in the workshop.",
+      "caption": "RoboMaster infantry robot hardware.",
+      "width": 1586,
+      "height": 992,
+      "gallery": [
+        {
+          "image": "project-robomaster-cad.jpg",
+          "alt": "Fusion 360 CAD view of the RoboMaster infantry robot shell.",
+          "caption": "Mechanical-shell development in Fusion 360."
+        }
+      ],
       "summary": "Mechanical shell design and comparison of competition robot configurations.",
       "group": "robotics",
       "category": "Project · Robotics",
@@ -511,6 +583,15 @@
       "slug": "sam-microrobotics",
       "categories": ["control", "mechatronics"],
       "name": "Magnetic Microrobot Swarm Control",
+      "cover_video": "microrobot-swarm.mp4",
+      "video_poster": "project-microrobot-swarm-poster.jpg",
+      "gallery": [
+        {
+          "video": "microrobot-swarm.mp4",
+          "poster": "project-microrobot-swarm-poster.jpg",
+          "caption": "Magnetic microrobot swarm-control experiment."
+        }
+      ],
       "summary": "Experimental systems and high-level control for magnetically actuated microrobots.",
       "group": "robotics",
       "category": "Project · Robotics",
@@ -533,6 +614,18 @@
       "slug": "uav-team",
       "categories": ["control", "mechatronics"],
       "name": "UAV Aircraft Dynamics & Simulation",
+      "image": "project-uav-dynamics-cover.png",
+      "alt": "UAV aerodynamic coefficient plots in FoilTrans.",
+      "caption": "Lift, drag and moment coefficient analysis for the UAV airfoil.",
+      "width": 1586,
+      "height": 992,
+      "gallery": [
+        {
+          "image": "project-uav-xflr5.jpg",
+          "alt": "XFLR5 pressure-coefficient analysis of a UAV wing and tail configuration.",
+          "caption": "Wing and tail aerodynamic analysis in XFLR5."
+        }
+      ],
       "summary": "Aircraft configuration, aerodynamic analysis and flight simulation with XFLR5 and X-Plane.",
       "group": "mechanical",
       "category": "Project · Mechanical design",
