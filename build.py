@@ -71,7 +71,11 @@ for publication in data["publications"]:
 project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
 filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
 parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(data["projects"])} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
-for project in data["projects"]:
+projects_by_slug = {project["slug"]: project for project in data["projects"]}
+ordered_slugs = data.get("project_order", [])
+display_projects = [projects_by_slug[slug] for slug in ordered_slugs if slug in projects_by_slug]
+display_projects += [project for project in data["projects"] if project["slug"] not in ordered_slugs]
+for project in display_projects:
     tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
     categories = " ".join(project["categories"])
     time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""

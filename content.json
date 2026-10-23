@@ -35,6 +35,13 @@
       ]
     },
     {
+      "title": "Skiing",
+      "summary": "Skiing challenges me to stay focused, adapt quickly, and keep improving through practice. I enjoy the combination of speed, technique, and time outdoors.",
+      "images": [
+        {"file": "personal-ski.jpg", "alt": "Sean skiing in the mountains."}
+      ]
+    },
+    {
       "title": "Surfing",
       "summary": "I enjoy surfing for its combination of balance, patience, and constant adaptation. Every session is shaped by the water and weather, making progress both physical and mental.",
       "images": [
@@ -42,17 +49,17 @@
       ]
     },
     {
+      "title": "Swimming",
+      "summary": "I was a member of the University of Nottingham Swimming Club team. Swimming has helped me develop consistency, endurance, and an appreciation for steady improvement while being part of a wider sporting community.",
+      "images": [
+        {"file": "personal-swimming.jpg", "alt": "University of Nottingham Swimming Club group photograph for 2023–2024."}
+      ]
+    },
+    {
       "title": "Wakeboarding",
       "summary": "Wakeboarding is an energetic challenge that combines coordination, confidence, and persistence. I enjoy the process of refining technique and becoming more comfortable on the water.",
       "images": [
         {"file": "personal-wakeboarding.jpg", "alt": "Sean standing with a green wakeboard."}
-      ]
-    },
-    {
-      "title": "Swimming",
-      "summary": "Swimming has helped me develop consistency, endurance, and an appreciation for steady improvement. It is also a sport through which I have enjoyed being part of a wider community.",
-      "images": [
-        {"file": "personal-swimming.jpg", "alt": "University of Nottingham Swimming Club group photograph for 2023–2024."}
       ]
     }
   ],
@@ -62,6 +69,14 @@
     "Cooking",
     "Guitar",
     "Pour-over coffee"
+  ],
+  "project_order": [
+    "seamlis",
+    "gaussian-aerial",
+    "teg-slam",
+    "gnn-robustness",
+    "yolov12-aerial-detection",
+    "robot-arm"
   ],
   "projects": [
     {
@@ -105,6 +120,7 @@
       "categories": ["perception"],
       "name": "Toward Safe Sim-to-Real Visual Control Using a 3DGS Aerial Simulator",
       "image": "project-gaussian-aerial.png",
+      "cover_zoom": 1.18,
       "category": "Research · Sim-to-real",
       "summary": "Building a photorealistic simulation pipeline for visual policies and aerial robot deployment.",
       "tags": [
