@@ -11,11 +11,11 @@
   "profile_image_alt": "Sean Lin in London",
   "location": "Ann Arbor, Michigan",
   "research_interests": [
-    "**Safe control**",
-    "**Trajectory optimization**",
-    "**Aerial & Space robotics**",
-    "**Multi-robot system**",
-    "**SLAM**"
+    "Safe control",
+    "Trajectory optimization",
+    "Aerial & Space robotics",
+    "Multi-robot system",
+    "SLAM"
   ],
   "about": [
     "I am a graduate student in Mechanical Engineering (Robotics) at the [University of Michigan](https://umich.edu/) in the USA. I graduate from [University of Nottingham](https://www.nottingham.ac.uk/) in the UK with the first honour class degree in Mechanical Engineering. My interests span safe planning and control, aerial autonomy, perception, and the mechanical design of robotic systems.",
