@@ -110,7 +110,7 @@
         "Supported deployment of the system on Crazyflie platforms, integrated planning, control and motion capture through ROS interfaces and coordinate transformations, and conducted hardware experiments.",
         "Work focused on the interface between the team’s planning and safety modules and physical flight. Investigated controller instability, estimation error, communication latency and model mismatch.",
         "Single-robot and multi-agent hardware experiments were conducted in GPS-denied environments. The supplied material does not establish a quantitative performance comparison for the deployment work.",
-        "SEAMLiS preprint on arXiv ↗"
+        "[Read the SEAMLiS preprint on arXiv ↗](https://arxiv.org/abs/2607.09959)"
       ],
       "card_summary": "Perception-aware safety for multi-robot aerial exploration under limited sensing. Work includes Crazyflie deployment, ROS integration of planning, control and motion capture, and hardware experiments investigating estimation error, delay and controller behavior.",
       "affiliation": "DASC Lab · University of Michigan",
@@ -962,10 +962,11 @@
   ],
   "publications": [
     {
-      "title": "SEAMLiS: Perception-Limited Multi-Robots Autonomous Exploration with Safe Guarantees",
+      "title": "SEAMLiS: Visibility-Aware Safety for Perception-Limited Multi-Robot Exploration",
       "authors": "T. Kim*, R. H. Kumar*, A. D. Menon, T.-H. Lin, D. Panagou",
-      "status": "Manuscript in preparation · 2026",
+      "status": "arXiv preprint · 2026",
       "project": "seamlis",
+      "url": "https://arxiv.org/abs/2607.09959",
       "image": "project-seamlis.png"
     },
     {

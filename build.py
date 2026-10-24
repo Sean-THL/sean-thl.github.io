@@ -72,7 +72,9 @@ parts += ['<section id="news"><h2>News</h2><ul class="news">'] + [f'<li><span cl
 parts += ['</ul></section><section id="research"><h2>Research &amp; Publications</h2>']
 for publication in data["publications"]:
     authors = escape(publication["authors"]).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
-    parts.append(f'<article class="media-row publication"><a class="media" href="projects/{escape(publication["project"])}/">{picture(publication)}</a><div><h3><a href="projects/{escape(publication["project"])}/">{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
+    publication_href = escape(publication.get("url", f'projects/{publication["project"]}/'))
+    external = ' target="_blank" rel="noopener noreferrer"' if publication.get("url") else ""
+    parts.append(f'<article class="media-row publication"><a class="media" href="{publication_href}"{external}>{picture(publication)}</a><div><h3><a href="{publication_href}"{external}>{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
 project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
 filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
 parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(data["projects"])} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
