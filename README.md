@@ -23,7 +23,7 @@ Alternatively, because the generated HTML is included, choose **Deploy from a br
 
 ## Content notes
 
-Publication statuses use the supplied résumés and are marked **in preparation**. Update those fields when a public paper URL/status is confirmed. TEG-SLAM attribution follows the corrected project description. BR-MPPI, Apple, Bellwether, Soft Pneumatic Robotics and Pneumatic Micro-muscle Modeling are excluded from the project catalog; Apple and Bellwether remain under employment.
+Publication statuses follow the linked public sources. SEAMLiS is listed as an arXiv preprint with its public title and author list; the pneumatic micro-muscle manuscript remains marked in preparation. TEG-SLAM attribution follows the corrected project description. BR-MPPI, Apple, Bellwether, Soft Pneumatic Robotics and Pneumatic Micro-muscle Modeling are excluded from the project catalog; Apple and Bellwether remain under employment.
 
 The supplied Apple image is a product reference, and the Bellwether image is a concept rendering. Neither represents a photograph of the individual engineering work. Some projects await images.
 

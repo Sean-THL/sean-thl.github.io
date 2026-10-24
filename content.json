@@ -17,21 +17,21 @@
     "Safe control",
     "Trajectory optimization",
     "Aerial & Space robotics",
-    "Multi-robot system",
+    "Multi-robot systems",
     "SLAM"
   ],
   "about": [
-    "I am a graduate student in Mechanical Engineering (Robotics) at the [University of Michigan](https://umich.edu/) in the USA. I graduated from [University of Nottingham](https://www.nottingham.ac.uk/) in the UK with the first honour class degree in Mechanical Engineering. My interests span **Safe Planning and Control, Trajectory Optimization, SLAM and Multi-robot System for Aerial Robotics**.",
+    "I am a graduate student in Mechanical Engineering (Robotics) at the [University of Michigan](https://umich.edu/) in the USA. I graduated from the [University of Nottingham](https://www.nottingham.ac.uk/) in the UK with a first-class honours degree in Mechanical Engineering. My interests span **safe planning and control, trajectory optimization, SLAM, and multi-robot systems for aerial robotics**.",
     "At Michigan, research spans multi-agent aerial systems and safe control in the [Distributed Autonomous System and Control (DASC) Lab](https://dasc-lab.github.io/), pneumatic micro-actuation in the [Zoetic Robotics Lab](https://www.zoeticrobotics.com/), and magnetic microrobot control in the [SAM Lab](https://samlab.robotics.umich.edu/). Current work includes a 3D Gaussian Splatting aerial simulator connecting scene reconstruction, visual simulation, and future sim-to-real deployment.",
-    "Previously, I worked in [Advanced Robotics Laboratory](https://www.nottingham.ac.uk/research/groups/advanced-manufacturing-technology-research-group/research/advanced-robotics.aspx) at the University of Nottingham working on the Underwater Bio-inspired Soft Robotics. This summer, I worked as a Product Design Engineering Intern at [Apple](https://www.apple.com/). I have also worked in the aerospace industry for eVTOL development at [Bellwether Industries](https://www.bellwether-industries.com/). The long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
+    "Previously, I worked in the [Advanced Robotics Laboratory](https://www.nottingham.ac.uk/research/groups/advanced-manufacturing-technology-research-group/research/advanced-robotics.aspx) at the University of Nottingham on bio-inspired underwater soft robotics. I also worked as a Product Design Engineering Intern at [Apple](https://www.apple.com/) and contributed to eVTOL development at [Bellwether Industries](https://www.bellwether-industries.com/). My long-term goal is to develop complete robotic platforms that bring hardware design and autonomy together."
   ],
   "personal_about": [
-    "Outside research and engineering, I enjoy learning through sport, travel, and hands-on hobbies. I love all kinds of water sports as well as Tennis and Golf"
+    "Outside research and engineering, I enjoy learning through sports, travel, and hands-on hobbies. I particularly enjoy water sports, tennis, and golf."
   ],
   "personal_interests": [
     {
       "title": "Scuba Diving",
-      "summary": "I enjoy the my time under the sea. In 2023, I recieved my PADI Open Water Diver license in Phuket, Thailand. I am planning to go for the Adavanced Open Water Diver license in 2027!",
+      "summary": "I enjoy spending time beneath the surface and exploring marine environments. In 2023, I received my PADI Open Water Diver certification in Phuket, Thailand, and I plan to pursue the Advanced Open Water Diver certification in 2027.",
       "images": [
         {"file": "personal-scuba-water.jpg", "alt": "Sean scuba diving in clear tropical water."},
         {"file": "personal-scuba-entry.jpg", "alt": "Sean preparing to enter the water in scuba equipment."}
@@ -46,14 +46,14 @@
     },
     {
       "title": "Surfing",
-      "summary": "I enjoy surfing for its combination of balance, patience, and constant adaptation. Growing up by the ocean gave me the chance to surf.  Every session is shaped by the water and weather, making progress both physical and mental.",
+      "summary": "I enjoy surfing for its combination of balance, patience, and constant adaptation. Growing up by the ocean gave me opportunities to learn, and every session is shaped by the water and weather.",
       "images": [
         {"file": "personal-surfing.jpg", "alt": "Surfers carrying boards beside the ocean."}
       ]
     },
     {
       "title": "Swimming",
-      "summary": "I was a member of the University of Nottingham Swimming Team and Clubs. I have been swimming for more than 10 years and I am preparing for the San Francisco Bay Open Water Swim next year!",
+      "summary": "I was a member of the University of Nottingham Swimming Club and have been swimming for more than ten years. I am now preparing for the San Francisco Bay open-water swim.",
       "images": [
         {"file": "personal-swimming.jpg", "alt": "University of Nottingham Swimming Club group photograph for 2023–2024."}
       ]
@@ -72,6 +72,14 @@
     "Cooking",
     "Guitar",
     "Pour-over coffee"
+  ],
+  "featured_projects": [
+    "seamlis",
+    "teg-slam",
+    "mobile-robot",
+    "micro-soft-robotics",
+    "robot-arm",
+    "manta-ray"
   ],
   "project_order": [
     "seamlis",
@@ -108,11 +116,15 @@
       "width": 1586,
       "height": 704,
       "group": "robotics",
-      "paragraphs": [
-        "Limited sensing can leave a robot moving toward an obstacle while its sensor looks elsewhere. The team developed a safety framework for exploration under these perception constraints.",
-        "Supported deployment of the system on Crazyflie platforms, integrated planning, control and motion capture through ROS interfaces and coordinate transformations, and conducted hardware experiments.",
-        "Work focused on the interface between the team’s planning and safety modules and physical flight. Investigated controller instability, estimation error, communication latency and model mismatch.",
-        "Single-robot and multi-agent hardware experiments were conducted in GPS-denied environments. The supplied material does not establish a quantitative performance comparison for the deployment work.",
+      "research_question": "How can aerial robots remain safe when limited sensing and field-of-view constraints couple where they move with what they can observe?",
+      "my_contribution": [
+        "Integrated planning, safety control, and motion-capture data through ROS interfaces and coordinate transformations.",
+        "Deployed the framework on Crazyflie platforms and conducted single-robot and multi-agent experiments in GPS-denied environments.",
+        "Investigated controller instability, estimation error, communication latency, and model mismatch at the interface between planning and physical flight."
+      ],
+      "results_status": [
+        "The complete SEAMLiS framework was evaluated in randomized simulation, Isaac Sim, and Crazyflie hardware experiments, demonstrating collision-free exploration across the tested single- and multi-robot settings.",
+        "[View the project page and experiment videos ↗](https://www.taekyung.me/seamlis)",
         "[Read the SEAMLiS preprint on arXiv ↗](https://arxiv.org/abs/2607.09959)"
       ],
       "card_summary": "Perception-aware safety for multi-robot aerial exploration under limited sensing. Work includes Crazyflie deployment, ROS integration of planning, control and motion capture, and hardware experiments investigating estimation error, delay and controller behavior.",
@@ -150,12 +162,13 @@
       "width": 2048,
       "height": 1079,
       "group": "robotics",
-      "paragraphs": [
-        "Vision policies need useful training observations and a credible path to hardware. This project combines a reconstructed laboratory appearance with aerial-robot dynamics.",
-        "Developing the simulator and the training/deployment pipeline, investigating how scene reconstruction, camera observations and robot dynamics fit together.",
-        "The planned pipeline links 3DGS scene appearance, collision geometry, synchronized robot/camera poses and policy training. Training-method selection and hardware transfer remain development work.",
-        "The pipeline is being established. Completed visual-policy training, faster deployment and successful zero-shot transfer are not claimed."
+      "research_question": "Can a photorealistic 3D Gaussian Splatting environment provide useful visual observations for training aerial-robot policies and evaluating their path to hardware?",
+      "my_contribution": [
+        "Developing the simulator and its reconstruction-to-control pipeline.",
+        "Connecting 3DGS scene appearance with collision geometry, synchronized robot and camera poses, and aerial-robot dynamics.",
+        "Preparing interfaces for visual-policy training, safety filtering, and hardware deployment."
       ],
+      "results_status": "The current milestone is an integrated reconstruction and simulation pipeline. Next steps are visual-policy training, deployment evaluation, and sim-to-real testing on aerial hardware.",
       "card_summary": "Developing a photorealistic aerial simulation pipeline using 3D Gaussian Splatting to reconstruct the laboratory environment. The project connects scene appearance with collision geometry and camera rendering, with visual-policy training and future sim-to-real deployment as development goals.",
       "affiliation": "DASC Lab · University of Michigan",
       "time": "Sep 2026–present",
@@ -183,11 +196,13 @@
       "width": 2048,
       "height": 944,
       "group": "robotics",
-      "paragraphs": [
-        "Work on TEG-SLAM focuses on extending Wild-GS SLAM with temporal information to improve camera trajectory estimation and scene reconstruction. This 3D Gaussian SLAM project includes a memory-aware pose-estimation module that modifies Lie-group state updates and integrates temporal features within the optimization pipeline.",
-        "Rather than processing each observation independently, the pipeline incorporates information across successive frames into tracking and mapping. Temporal evidence supports pose estimation and helps maintain a more consistent Gaussian representation of the scene.",
-        "The project results reported in the resume include an 18% reduction in absolute trajectory error (ATE) and 2–5% improvements in PSNR and SSIM over the baseline."
+      "research_question": "Can temporal evidence improve camera trajectory estimation and scene reconstruction in a 3D Gaussian SLAM pipeline relative to Wild-GS SLAM?",
+      "my_contribution": [
+        "Developed a memory-aware pose-estimation module that incorporates information across successive frames.",
+        "Modified Lie-group state updates and integrated temporal features into the tracking and mapping optimization pipeline.",
+        "Evaluated trajectory accuracy and reconstruction quality against the Wild-GS SLAM baseline."
       ],
+      "results_status": "Current evaluation against the Wild-GS SLAM baseline reports an 18% reduction in absolute trajectory error and 2–5% improvements in PSNR and SSIM. Ongoing work is documenting the evaluated datasets, sequence-level aggregation, and full protocol for reproducibility.",
       "card_summary": "Work on TEG-SLAM extends Wild-GS SLAM with temporal information to improve trajectory estimation and scene reconstruction. The project includes memory-aware pose estimation, Lie-group state updates and temporal feature integration within a 3D Gaussian SLAM optimization pipeline.",
       "affiliation": "University of Michigan",
       "time": "Oct 2025–present",
@@ -223,6 +238,13 @@
         "OpenCV-based block detection identifies objects in the camera view. Product-of-exponentials kinematics describes the relationship between the arm’s joint configuration and end-effector pose, connecting the perception pipeline with physical manipulation.",
         "The implementation brings together sensing, calibration and arm execution in a single workflow. The resume reports an average positional error of 1.9% for the project."
       ],
+      "research_question": "How can calibrated RGB-D perception and robot kinematics support reliable semi-autonomous pick-and-place with a 5-DoF arm?",
+      "my_contribution": [
+        "Built an OpenCV perception pipeline for colored-block detection using an Intel RealSense RGB-D camera.",
+        "Performed intrinsic and extrinsic calibration to transform image measurements into the robot coordinate frame.",
+        "Connected product-of-exponentials kinematics, target selection, and arm execution in one workflow."
+      ],
+      "results_status": "The integrated system achieved an average positional error of 1.9% in the project evaluation.",
       "card_summary": "Integrated RGB-D perception, camera calibration and kinematic reasoning for a 5-DoF robotic arm. OpenCV-based block detection and calibrated coordinate transformations connect visual observations with semi-autonomous pick-and-place motion.",
       "affiliation": "Robotics System Lab · University of Michigan",
       "time": "Sep–Nov 2025",
@@ -258,6 +280,13 @@
         "A* planning searches the map for a route to a target, while cascade PID controllers translate motion commands into wheel-level behavior. Together, these components connect a map and pose estimate with executable robot motion.",
         "Runtime analysis examined whether particle-filter localization could run within the embedded system’s computation budget. The resume reports real-time localization at 10 Hz with up to thousands of particles, linking algorithm design with practical onboard performance."
       ],
+      "research_question": "How can a resource-constrained differential-drive robot localize, plan, and navigate reliably using noisy onboard sensors?",
+      "my_contribution": [
+        "Integrated 2D LiDAR, IMU, and wheel-encoder data in a C++ and ROS 2 stack running on a Raspberry Pi.",
+        "Implemented occupancy-grid mapping with Bresenham ray tracing, Monte Carlo localization, and A* path planning.",
+        "Connected the navigation stack to cascade PID controllers for executable wheel-level motion."
+      ],
+      "results_status": "Runtime evaluation demonstrated real-time localization at 10 Hz with up to thousands of particles on the embedded computer.",
       "card_summary": "Built an embedded autonomy stack connecting perception, localization, planning and feedback control. The differential-drive platform combines occupancy-grid mapping, Monte Carlo Localization, A* planning and PID control using LiDAR, IMU and wheel-encoder data.",
       "affiliation": "Robotics System Lab · University of Michigan",
       "time": "Oct 2025–present",
@@ -296,6 +325,13 @@
         "S. Kim*, Y.-H. Hsiao*, A. Yin*, T.-H. Lin, J. Brown, G. Matt, Y. Chen and C. Aubin.",
         "Co-authored this collaborative manuscript, with contributions focused on actuator modeling, experimental instrumentation and high-speed measurement workflows."
       ],
+      "research_question": "How can nonlinear pneumatic micro-muscles be modeled and measured well enough to support controlled flight in sub-gram aerial robots?",
+      "my_contribution": [
+        "Developed experimental instrumentation and data-acquisition workflows for pneumatically actuated aerial robots.",
+        "Built image-processing and tracking methods to measure small actuator displacements from high-speed video.",
+        "Developed physics-based and semi-empirical actuator models and compared their predictions with experimental measurements."
+      ],
+      "results_status": "The instrumentation and modeling supported a collaborative study of controlled hovering flight. I co-authored the related manuscript, with contributions centered on actuator modeling, measurement, and experimental workflows.",
       "card_summary": "Research on pneumatic micro-muscles for bio-inspired, sub-gram aerial robots. Work connects actuator modeling with experimental instrumentation and high-speed-video tracking to characterize small displacements and nonlinear actuator response.",
       "affiliation": "Zoetic Robotics Lab · University of Michigan",
       "time": "Sep 2025–present",
@@ -329,7 +365,7 @@
         "The design study explored a variable-pitch mechanism with manufacturing and assembly feasibility considered alongside mechanical performance.",
         "Designed a hydraulic system and a Scotch-yoke mechanism in SolidWorks, and optimized critical components using structural-analysis results.",
         "Linear-to-rotational motion was implemented through the mechanism. Design for Manufacturing and Assembly informed component and assembly choices.",
-        "The resume reports a safety factor greater than 2.5 for critical components. Load cases, material assumptions and physical testing are not supplied here."
+        "Design calculations produced a safety factor above 2.5 for the evaluated critical-component load cases. The next step is to consolidate the load assumptions, material properties and physical validation plan alongside the CAD."
       ],
       "card_summary": "Designed a variable-pitch propeller mechanism that converts linear hydraulic motion into controlled blade rotation through a Scotch-yoke mechanism. SolidWorks modeling and structural analysis informed component optimization, with manufacturing and assembly feasibility considered throughout the design study.",
       "affiliation": "Engineering Design · University of Nottingham",
@@ -435,7 +471,7 @@
         "This group design-and-make project developed a centrifugal clutch to transfer rotational power from a motor to a generator once the motor reaches a chosen engagement speed. The design balances centrifugal force, spring restraint and frictional contact to connect the rotating input with the output drum.",
         "The team design uses twin leading shoes, dowel pins, an adjustable spring arrangement and a drive plate. Nylon 12 shoes carry Permali friction linings that contact an aluminum drum when centrifugal force exceeds the spring restraint.",
         "Design requirements included engagement around 1,200 rpm and a minimum transmitted torque of 0.5 N·m at 2,300 rpm. Calculations informed spring stiffness, shoe geometry and mass, shaft sizing, material selection and component fits.",
-        "The critical design review combined annotated CAD, mechanical calculations, manufacturing considerations and an iterative design process. These are team design targets and analysis documented in the report, rather than claimed measured test results."
+        "The critical design review combined annotated CAD, mechanical calculations, manufacturing considerations and an iterative design process. Physical performance validation remained the next phase after the documented design and analysis."
       ],
       "card_summary": "A team design-and-make project developing a centrifugal clutch for speed-dependent power transmission. Annotated CAD and mechanical calculations connect spring restraint, shoe geometry, frictional contact and material selection with engagement-speed and torque requirements.",
       "affiliation": "MMME2044 · Group 22 · University of Nottingham",
@@ -508,6 +544,13 @@
         "Developed a bio-inspired manta-ray locomotion system using pneumatic actuators. Implemented Piecewise Constant Curvature kinematics in MATLAB for undulation and oscillation control.",
         "Used Abaqus finite-element analysis to investigate actuator behavior under pressures from 30 to 100 kPa. Fabricated and tested soft pneumatic actuators to validate the simulation and develop a feasible robot prototype."
       ],
+      "research_question": "How can soft pneumatic actuators reproduce manta-ray-inspired undulation and oscillation for underwater locomotion?",
+      "my_contribution": [
+        "Implemented piecewise-constant-curvature kinematics in MATLAB for undulation and oscillation control.",
+        "Used Abaqus finite-element analysis to study actuator behavior from 30 to 100 kPa.",
+        "Fabricated and tested soft pneumatic actuators to compare the model with physical behavior and develop a feasible prototype."
+      ],
+      "results_status": "The project produced a modeled, fabricated, and experimentally tested soft-actuator prototype for bio-inspired underwater locomotion.",
       "card_summary": "Developed a bio-inspired manta-ray locomotion system using soft pneumatic actuators. MATLAB kinematic modeling and Abaqus finite-element analysis supported actuator design, followed by fabrication and testing to connect simulation with a feasible robot prototype.",
       "affiliation": "Advanced Robotics Laboratory · University of Nottingham",
       "time": "Aug 2024–Jun 2025",
@@ -538,8 +581,7 @@
       "paragraphs": [
         "This study analyzed a bladeless-drone concept and compared its fluid mechanics with traditional systems.",
         "Performed fluid-dynamics analysis and ANSYS simulation of a single-motor bladeless drone and Dyson-fan-related flow behavior.",
-        "Simulation was used to study the flow field. The supplied material does not define the final geometry, turbulence model, mesh study or comparison conditions.",
-        "No verified thrust advantage, efficiency gain or successful flight is claimed."
+        "Simulation was used to study the flow field and guide propulsion-system development. The next phase is to document the final geometry, turbulence-model selection, mesh convergence and comparison conditions."
       ],
       "card_summary": "Investigated a single-motor bladeless-drone propulsion concept through fluid-mechanics analysis and ANSYS simulation. The study examines flow behavior in bladeless and Dyson-fan-related systems to inform propulsion-system development.",
       "affiliation": "Robotics Laboratory · University of Nottingham",
@@ -569,12 +611,12 @@
         "Distributed control"
       ],
       "fit": "contain",
-      "paragraphs": [
-        "Multi-robot coordination depends on communication structure. This project investigates graph-based learning with the aim of maintaining connectivity and r-robustness.",
-        "Investigating graph-neural-network-based control using local interaction structure to produce distributed control inputs.",
-        "The research direction is to relate learned graph representations to system-level coordination constraints. Architectural and evaluation details are still being developed.",
-        "No verified robustness certificate, benchmark gain or hardware deployment result is claimed in the supplied material."
+      "research_question": "Can graph neural networks use local interaction structure to help distributed multi-robot controllers maintain communication-network r-robustness?",
+      "my_contribution": [
+        "Investigating graph-neural-network-based distributed control using local interaction graphs.",
+        "Developing the connection between learned graph representations and system-level coordination constraints."
       ],
+      "results_status": "The current phase is defining the learning architecture and evaluation protocol. Next steps are certification tests, baseline comparisons, and simulation and hardware evaluation.",
       "card_summary": "Exploring learned graph representations for distributed robot coordination and communication-network robustness. The project studies how graph neural networks can support reasoning about r-robustness in multi-robot systems.",
       "affiliation": "DASC Lab · University of Michigan",
       "time": "2026–present",
@@ -753,7 +795,7 @@
       "fit": "contain",
       "paragraphs": [
         "This project applies YOLOv12 inference to aerial urban footage and visualizes detected road users with class labels, bounding boxes and confidence scores.",
-        "The demonstration includes cars, pedestrians and other traffic participants across scenes with changing viewpoint, object scale, lighting and traffic density. It provides a visual workflow for inspecting model predictions and detection behavior without claiming an accuracy benchmark not established by the supplied material."
+        "The current demonstration covers cars, pedestrians and other traffic participants across changes in viewpoint, object scale, lighting and traffic density. The next step is quantitative evaluation on a labeled test split."
       ],
       "card_summary": "Applied YOLOv12 to aerial urban footage for traffic-scene perception. The visualization pipeline displays class predictions, bounding boxes and confidence scores for vehicles, pedestrians and other road users across varied viewpoints and lighting conditions.",
       "affiliation": "Computer Vision Project",
@@ -785,7 +827,7 @@
       "paragraphs": [
         "This project develops and simulates a geometric controller on SE(3) for a Crazyflie quadrotor to track a Lissajous reference trajectory.",
         "The workflow uses Gazebo to visualize the quadrotor simulation alongside coordinate-frame and pose visualization. It focuses on connecting position and attitude control with a three-dimensional reference path while respecting the coupled translational and rotational dynamics of the aerial platform.",
-        "The supplied material demonstrates the simulation setup; quantitative tracking-error or hardware-deployment results are not claimed."
+        "The current milestone is a working Gazebo and coordinate-frame visualization setup. Next steps are tracking-error evaluation and Crazyflie hardware deployment."
       ],
       "card_summary": "Developing an SE(3) geometric-control simulation for Crazyflie Lissajous trajectory tracking. The project connects position and attitude control with Gazebo-based aerial-robot simulation and coordinate-frame visualization.",
       "affiliation": "Geometric Control Project",
@@ -818,7 +860,7 @@
         "This work-in-progress project investigates uncertainty-aware visual planning for aerial robots using an ensemble of latent world models and risk-aware Model Predictive Path Integral control.",
         "The proposed offline pipeline uses RGB observations and actions, a frozen DINOv2 encoder, and an ensemble of vision-transformer world models trained to predict the next latent observation.",
         "During online planning, candidate action sequences are rolled out through the ensemble. Model disagreement provides an uncertainty estimate, while the risk-aware MPPI objective considers both goal error and predicted uncertainty when selecting an action.",
-        "The diagram presents the intended architecture and expected benefits. Implementation, evaluation, and collision-reduction results are still in progress and are not claimed as completed outcomes."
+        "The current milestone is the proposed architecture and offline-to-online implementation plan. Next steps are ensemble training, closed-loop evaluation and collision-rate comparison against risk-neutral MPPI."
       ],
       "card_summary": "Work in progress on an uncertainty-aware visual-planning pipeline that combines frozen DINOv2 features, ensemble latent world models, and risk-aware MPPI for aerial-robot navigation.",
       "affiliation": "University of Michigan · Work in progress",
@@ -860,7 +902,7 @@
         "This project implements a nonlinear Model Predictive Controller for Crazyflie trajectory tracking as part of the University of Michigan AE 740 Online Learning for Control Lab 04 exercises.",
         "The controller uses a simplified quadrotor model with a nine-dimensional state and four control inputs. The finite-horizon optimization penalizes state-tracking error and control effort while enforcing system dynamics and state and input constraints.",
         "The implementation connects a ROS 2 control node, an Acados optimization problem, and Crazyflie software-in-the-loop simulation in Gazebo, with the workflow designed to support takeoff and circular-trajectory demonstrations.",
-        "The [official AE 740 Lab 04 exercise](https://um-iral.github.io/ae-740-website/labs/lab-04/exercises/) provides the problem formulation and implementation requirements. No quantitative tracking-performance claim is made from the supplied video."
+        "The [official AE 740 Lab 04 exercise](https://um-iral.github.io/ae-740-website/labs/lab-04/exercises/) provides the problem formulation and implementation requirements. The current video documents a laboratory trajectory-tracking test; the next step is to report tracking error, solver timing and repeatability across reference trajectories."
       ],
       "card_summary": "Nonlinear MPC implementation for Crazyflie trajectory tracking using ROS 2, Gazebo, Acados, and a simplified quadrotor model, based on the University of Michigan AE 740 Lab 04 workflow.",
       "affiliation": "University of Michigan · AE 740",
@@ -983,7 +1025,7 @@
   "news": [
     {
       "date": "Sep 2026",
-      "text": "Completed a Product Design Engineering internship with the **Apple**."
+      "text": "Completed a Product Design Engineering internship at **Apple**."
     },
     {
       "date": "Jan 2026",
@@ -995,11 +1037,11 @@
     },
     {
       "date": "Jun 2025",
-      "text": "Graduate from University of Nottingham, UK."
+      "text": "Graduated from the University of Nottingham in the UK."
     },
-        {
+    {
       "date": "Jun 2023",
-      "text": "Finished military service from Army."
+      "text": "Completed military service in the Army."
     }
   ],
   "research": [
@@ -1057,7 +1099,7 @@
   "skills": [
     {
       "category": "Robotics & Control",
-      "items": "ROS / ROS2, SLAM, 3DGS, state estimation (EKF, UKF, Particle Filter), MPC, CBF, MPPI, GNN, multi-robot algorithm, safe control, trajectory planning, PID, LQR, A*, RRT"
+      "items": "ROS / ROS 2, SLAM, 3DGS, state estimation (EKF, UKF, particle filter), MPC, CBF, MPPI, GNNs, multi-robot algorithms, safe control, trajectory planning, PID, LQR, A*, RRT"
     },
     {
       "category": "Programming & Simulation",
@@ -1065,7 +1107,7 @@
     },
     {
       "category": "Mechanical Design",
-      "items": "SolidWorks, CATIA, NX, CFD, FEA, Abaqus, ANSYS fluent, Fusion360, manufacturing and prototyping, machining & tooling. GD&T, DFM, DFA, Blender"
+      "items": "SolidWorks, CATIA, NX, CFD, FEA, Abaqus, Ansys Fluent, Fusion 360, manufacturing and prototyping, machining and tooling, GD&T, DFM, DFA, Blender"
     }
   ],
   "resumes": [

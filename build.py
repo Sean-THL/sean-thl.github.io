@@ -21,7 +21,7 @@ def page_head(title, prefix=""):
 
 
 def sidebar(prefix=""):
-    nav = f'<a href="{prefix}about/">About</a><a href="{prefix}index.html#research">Research</a><a href="{prefix}index.html#projects">Projects</a>'
+    nav = f'<a href="{prefix}about/">Beyond Research</a><a href="{prefix}index.html#research">Research</a><a href="{prefix}projects/">Projects</a><a href="{prefix}assets/Sean-Lin-Robotics-Resume.pdf">CV</a>'
     previous_role = f'<p class="previous-role"><a href="{prefix}{escape(data["previous_role_url"])}">{escape(data["previous_role"])}</a></p>'
     return f'''<aside class="sidebar"><a class="portrait-link" href="{prefix}index.html"><img class="portrait" src="{prefix}assets/{escape(data['profile_image'])}" alt="{escape(data['profile_image_alt'])}" width="200" height="200"></a><h1>{escape(data['short_name'])}</h1><p class="full-name">{escape(data['name'])}</p><p class="position"><span>{escape(data['role'])}</span><span>{escape(data['program'])}</span><strong>{escape(data['university'])}</strong></p>{previous_role}<nav aria-label="Main navigation">{nav}</nav><div class="socials"><a href="{escape(data['github'])}" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-1.8-.8-2.3 3-.3 6-1.5 6-5.6 0-1.2-.4-2.3-1.1-3.1.1-.8.1-1.8-.5-3-1.8-.1-3.2.9-3.8 1.3a13 13 0 0 0-6.8 0C7.4 4.9 6 3.9 4.2 4c-.6 1.2-.6 2.2-.5 3C3 7.8 2.6 8.9 2.6 10.1c0 4.1 3 5.3 6 5.6-.5.5-.8 1.3-.8 2.3v4"/></svg></a><a href="{escape(data['linkedin'])}" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10v.1M11 17v-7m0 3c0-4 6-4 6 0v4"/></svg></a><a href="mailto:{escape(data['email'])}" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a></div><a class="email" href="mailto:{escape(data['email'])}">{escape(data['email'])}</a><p class="location">{escape(data['location'])}</p><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button></aside>'''
 
@@ -66,6 +66,32 @@ def logo_entry(item, css_class="entry-row"):
     return f'''<article class="{css_class}"><div class="logo-frame">{logo}</div><div class="entry-content"><div class="entry-heading"><div><h3>{name}</h3><p class="role">{escape(item['role'])}</p>{prompt}</div><span class="dates">{escape(item['dates'])}</span></div>{detail}{summary}{bullets}</div></article>'''
 
 
+def ordered_projects():
+    projects_by_slug = {project["slug"]: project for project in data["projects"]}
+    ordered_slugs = data.get("project_order", [])
+    projects = [projects_by_slug[slug] for slug in ordered_slugs if slug in projects_by_slug]
+    projects += [project for project in data["projects"] if project["slug"] not in ordered_slugs]
+    return projects
+
+
+def project_card(project, prefix="", href_prefix="projects/"):
+    tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
+    categories = " ".join(project["categories"])
+    time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
+    href = f'{href_prefix}{escape(project["slug"])}/'
+    return f'<article class="media-row project-row" data-categories="{escape(categories)}"><a class="media" href="{href}" aria-label="View {escape(project["name"])} project">{picture(project, prefix, cover=True)}</a><div><h3><a href="{href}">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>'
+
+
+def project_section(title, content):
+    if not content:
+        return ""
+    if isinstance(content, list):
+        body = '<ul class="contribution-list">' + "".join(f'<li>{inline(item)}</li>' for item in content) + '</ul>'
+    else:
+        body = f'<p>{inline(content)}</p>'
+    return f'<section class="project-evidence"><h3>{escape(title)}</h3>{body}</section>'
+
+
 parts = [page_head("Robotics & Mechanical Engineering"), '<div class="layout">', sidebar(), '<main id="main">']
 parts += ['<section id="about"><h2>About</h2>'] + [f'<p>{inline(text)}</p>' for text in data["about"]]
 parts += [f'<p class="interest-line"><strong>Research interests</strong> &nbsp; {escape(" · ".join(data["research_interests"]))}</p></section>']
@@ -78,16 +104,12 @@ for publication in data["publications"]:
     parts.append(f'<article class="media-row publication"><a class="media" href="{publication_href}"{external}>{picture(publication)}</a><div><h3><a href="{publication_href}"{external}>{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
 project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
 filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
-parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(data["projects"])} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
+featured_slugs = data.get("featured_projects", [])
 projects_by_slug = {project["slug"]: project for project in data["projects"]}
-ordered_slugs = data.get("project_order", [])
-display_projects = [projects_by_slug[slug] for slug in ordered_slugs if slug in projects_by_slug]
-display_projects += [project for project in data["projects"] if project["slug"] not in ordered_slugs]
-for project in display_projects:
-    tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
-    categories = " ".join(project["categories"])
-    time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
-    parts.append(f'<article class="media-row project-row" data-categories="{escape(categories)}"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
+featured_projects = [projects_by_slug[slug] for slug in featured_slugs if slug in projects_by_slug]
+parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(featured_projects)} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
+parts += [project_card(project) for project in featured_projects]
+parts += [f'<p class="all-projects-link"><a href="projects/">View all {len(data["projects"])} projects →</a></p>']
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
 parts += ['<h3 class="subsection-title">Research Experience</h3>'] + [logo_entry(item, "entry-row research-row") for item in data["research"]]
 parts += ['</section><section id="education"><h2>Education</h2>'] + [logo_entry(item, "entry-row education-row") for item in data["education"]]
@@ -108,6 +130,14 @@ other_interests = "".join(f'<li>{escape(interest)}</li>' for interest in data.ge
 about_body += '<section class="other-interests"><h3>Other interests</h3><ul>' + other_interests + '</ul></section>' + footer() + '</main></div></body></html>'
 (about_target / "index.html").write_text(about_body, encoding="utf-8")
 
+projects_target = ROOT / "projects"
+projects_target.mkdir(parents=True, exist_ok=True)
+all_projects = ordered_projects()
+catalog = page_head("Projects", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="project-catalog"><header class="catalog-header"><p class="about-eyebrow">Complete portfolio</p><div class="heading-row"><h2>Projects</h2><span id="project-count">' + str(len(all_projects)) + ' projects</span></div><p>Research and engineering work across planning and control, perception, and mechanical design.</p></header><div class="filters" role="group" aria-label="Filter all projects">' + filter_buttons + '</div>'
+catalog += "".join(project_card(project, "../", "") for project in all_projects)
+catalog += footer() + '</main></div></body></html>'
+(projects_target / "index.html").write_text(catalog, encoding="utf-8")
+
 for company in data.get("company_projects", []):
     target = ROOT / "companies" / company["slug"]
     target.mkdir(parents=True, exist_ok=True)
@@ -120,12 +150,18 @@ for company in data.get("company_projects", []):
 for project in data["projects"]:
     target = ROOT / "projects" / project["slug"]
     target.mkdir(parents=True, exist_ok=True)
-    body = page_head(project["name"], "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="project-detail"><a class="back-link" href="../../index.html#projects">← All projects</a><p class="category">' + escape(project["category"]) + '</p><h2>' + escape(project["name"]) + '</h2><p class="detail-lead">' + inline(project["summary"]) + '</p>'
+    body = page_head(project["name"], "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="project-detail"><a class="back-link" href="../">← All projects</a><p class="category">' + escape(project["category"]) + '</p><h2>' + escape(project["name"]) + '</h2><p class="detail-lead">' + inline(project["summary"]) + '</p>'
     if project.get("image"):
         body += '<figure class="detail-image">' + picture(project, "../../") + f'<figcaption>{escape(project.get("caption", ""))}</figcaption></figure>'
     if project.get("gallery"):
         body += '<div class="project-gallery">' + "".join(gallery_item(item) for item in project["gallery"]) + '</div>'
-    body += '<section><h3>Project overview</h3>' + "".join(f'<p>{inline(text)}</p>' for text in project["paragraphs"]) + '</section>' + footer() + '</main></div></body></html>'
+    if project.get("research_question"):
+        body += project_section("Research question", project.get("research_question"))
+        body += project_section("My contribution", project.get("my_contribution"))
+        body += project_section("Results & current status", project.get("results_status"))
+    else:
+        body += '<section><h3>Project overview</h3>' + "".join(f'<p>{inline(text)}</p>' for text in project["paragraphs"]) + '</section>'
+    body += footer() + '</main></div></body></html>'
     (target / "index.html").write_text(body, encoding="utf-8")
 
 print(f'Built homepage, {len(data["projects"])} project pages and {len(data.get("company_projects", []))} company pages.')
