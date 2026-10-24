@@ -1054,15 +1054,15 @@
   "skills": [
     {
       "category": "Robotics & Control",
-      "items": "ROS / ROS2, SLAM, state estimation, MPC, CBF, trajectory planning"
+      "items": "ROS / ROS2, SLAM, 3DGS, state estimation (EKF, UKF, Particle Filter), MPC, CBF, MPPI, GNN, multi-robot algorithm, safe control, trajectory planning, PID, LQR, A*, RRT"
     },
     {
       "category": "Programming & Simulation",
-      "items": "Python, C++, MATLAB, Simulink, PX4, Gazebo, Isaac Sim"
+      "items": "Python, C++, C, MATLAB, Simulink, PX4, Gazebo, Isaac Sim, Rviz2, Git"
     },
     {
       "category": "Mechanical Design",
-      "items": "SolidWorks, CATIA, NX, CFD, FEA, Abaqus, manufacturing and prototyping"
+      "items": "SolidWorks, CATIA, NX, CFD, FEA, Abaqus, ANSYS fluent, Fusion360, manufacturing and prototyping, machining & tooling. GD&T, DFM, DFA, Blender"
     }
   ],
   "resumes": [
