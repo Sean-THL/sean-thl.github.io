@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261024-1"><script src="{prefix}script.js?v=20261024-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261024-2"><script src="{prefix}script.js?v=20261024-2" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -57,7 +57,12 @@ def logo_entry(item, css_class="entry-row"):
     bullets = "<ul>" + "".join(f"<li>{inline(line)}</li>" for line in item.get("bullets", [])) + "</ul>" if item.get("bullets") else ""
     summary = f'<p class="entry-summary">{inline(item["summary"])}</p>' if item.get("summary") else ""
     detail = f'<p class="entry-detail">{inline(item["detail"])}</p>' if item.get("detail") else ""
-    return f'''<article class="{css_class}"><div class="logo-frame"><img src="assets/{escape(item['logo'])}" alt="{escape(item['logo_alt'])}" loading="lazy"></div><div class="entry-content"><div class="entry-heading"><div><h3>{escape(item['name'])}</h3><p class="role">{escape(item['role'])}</p></div><span class="dates">{escape(item['dates'])}</span></div>{detail}{summary}{bullets}</div></article>'''
+    company_href = f'companies/{escape(item["company_slug"])}/' if item.get("company_slug") else ""
+    logo = f'<img src="assets/{escape(item["logo"])}" alt="{escape(item["logo_alt"])}" loading="lazy">'
+    logo = f'<a href="{company_href}" aria-label="View project work at {escape(item["name"])}">{logo}</a>' if company_href else logo
+    name = f'<a href="{company_href}">{escape(item["name"])}</a>' if company_href else escape(item["name"])
+    prompt = f'<a class="company-project-hint" href="{company_href}">View project work from this company →</a>' if company_href else ""
+    return f'''<article class="{css_class}"><div class="logo-frame">{logo}</div><div class="entry-content"><div class="entry-heading"><div><h3>{name}</h3><p class="role">{escape(item['role'])}</p>{prompt}</div><span class="dates">{escape(item['dates'])}</span></div>{detail}{summary}{bullets}</div></article>'''
 
 
 parts = [page_head("Robotics & Mechanical Engineering"), '<div class="layout">', sidebar(), '<main id="main">']
@@ -68,16 +73,18 @@ parts += ['</ul></section><section id="research"><h2>Research &amp; Publications
 for publication in data["publications"]:
     authors = escape(publication["authors"]).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
     parts.append(f'<article class="media-row publication"><a class="media" href="projects/{escape(publication["project"])}/">{picture(publication)}</a><div><h3><a href="projects/{escape(publication["project"])}/">{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
+project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
+filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
+parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(data["projects"])} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
 projects_by_slug = {project["slug"]: project for project in data["projects"]}
-parts += ['</section><section id="projects"><h2>Selected Projects</h2>']
-for project_section in data["project_sections"]:
-    parts.append(f'<div class="project-section"><h3 class="project-section-title">{escape(project_section["title"])}</h3>')
-    for slug in project_section["projects"]:
-        project = projects_by_slug[slug]
-        tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
-        time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
-        parts.append(f'<article class="media-row project-row"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
-    parts.append('</div>')
+ordered_slugs = data.get("project_order", [])
+display_projects = [projects_by_slug[slug] for slug in ordered_slugs if slug in projects_by_slug]
+display_projects += [project for project in data["projects"] if project["slug"] not in ordered_slugs]
+for project in display_projects:
+    tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
+    categories = " ".join(project["categories"])
+    time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
+    parts.append(f'<article class="media-row project-row" data-categories="{escape(categories)}"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
 parts += ['<h3 class="subsection-title">Research Experience</h3>'] + [logo_entry(item, "entry-row research-row") for item in data["research"]]
 parts += ['</section><section id="education"><h2>Education</h2>'] + [logo_entry(item, "entry-row education-row") for item in data["education"]]
@@ -98,6 +105,15 @@ other_interests = "".join(f'<li>{escape(interest)}</li>' for interest in data.ge
 about_body += '<section class="other-interests"><h3>Other interests</h3><ul>' + other_interests + '</ul></section>' + footer() + '</main></div></body></html>'
 (about_target / "index.html").write_text(about_body, encoding="utf-8")
 
+for company in data.get("company_projects", []):
+    target = ROOT / "companies" / company["slug"]
+    target.mkdir(parents=True, exist_ok=True)
+    company_body = page_head(f'{company["name"]} project work', "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="company-detail"><a class="back-link" href="../../index.html#experience">← Work experience</a><header class="company-detail-header"><img src="../../assets/' + escape(company["logo"]) + '" alt="' + escape(company["logo_alt"]) + '"><div><p class="about-eyebrow">Selected internship work</p><h2>' + escape(company["name"]) + '</h2><p class="company-detail-role">' + escape(company["role"]) + ' · ' + escape(company["dates"]) + '</p><p>' + inline(company["intro"]) + '</p><p class="company-confidentiality">' + inline(company["note"]) + '</p></div></header><section class="company-project-list"><h3>Project work</h3>'
+    for index, project in enumerate(company["projects"], 1):
+        company_body += f'<article class="company-project"><span>{index:02d}</span><div><h3>{escape(project["title"])}</h3><p>{inline(project["summary"])}</p></div></article>'
+    company_body += '</section>' + footer() + '</main></div></body></html>'
+    (target / "index.html").write_text(company_body, encoding="utf-8")
+
 for project in data["projects"]:
     target = ROOT / "projects" / project["slug"]
     target.mkdir(parents=True, exist_ok=True)
@@ -109,4 +125,4 @@ for project in data["projects"]:
     body += '<section><h3>Project overview</h3>' + "".join(f'<p>{inline(text)}</p>' for text in project["paragraphs"]) + '</section>' + footer() + '</main></div></body></html>'
     (target / "index.html").write_text(body, encoding="utf-8")
 
-print(f'Built homepage and {len(data["projects"])} project pages.')
+print(f'Built homepage, {len(data["projects"])} project pages and {len(data.get("company_projects", []))} company pages.')

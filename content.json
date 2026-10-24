@@ -70,19 +70,17 @@
     "Guitar",
     "Pour-over coffee"
   ],
-  "project_sections": [
-    {
-      "title": "Robot Planning & Control",
-      "projects": ["seamlis", "gnn-robustness", "mobile-robot", "micro-soft-robotics", "sam-microrobotics", "se3-lissajous-control", "robot-arm"]
-    },
-    {
-      "title": "Perception & Reconstruction",
-      "projects": ["gaussian-aerial", "teg-slam", "yolov12-aerial-detection", "haptic-sensors"]
-    },
-    {
-      "title": "Mechanical Design & Simulation",
-      "projects": ["variable-pitch", "formula-student", "centrifugal-clutch", "opad", "manta-ray", "bladeless-drone", "robomaster", "uav-team"]
-    }
+  "project_order": [
+    "seamlis",
+    "gaussian-aerial",
+    "teg-slam",
+    "gnn-robustness",
+    "yolov12-aerial-detection",
+    "mobile-robot",
+    "micro-soft-robotics",
+    "sam-microrobotics",
+    "se3-lissajous-control",
+    "robot-arm"
   ],
   "projects": [
     {
@@ -802,6 +800,7 @@
       "image": "project-apple.jpeg",
       "logo": "apple-logo.svg",
       "logo_alt": "Apple logo",
+      "company_slug": "apple",
       "bullets": [
         "Supported Apple Watch NPI builds through failure, tolerance and validation analysis.",
         "Built an LLM-assisted tolerance tool that cut engineering workflow time by 87%.",
@@ -815,13 +814,72 @@
       "role": "Mechanical Engineering Intern",
       "dates": "Aug–Oct 2024",
       "image": "project-bellwether.jpeg",
-      "logo": "bellwether-logo.png",
+      "logo": "bellwether-industry-logo.jpeg",
       "logo_alt": "Bellwether Industries logo",
+      "company_slug": "bellwether-industries",
       "bullets": [
         "Designed mechanical, propulsion and electronic systems for a 1/8-scale eVTOL.",
         "Built a multi-orientation platform for flight-dynamics and propulsion testing.",
         "Developed MATLAB, Simulink and PX4 workflows for eVTOL simulation and validation.",
         "Used CFD and FEA to evaluate aerodynamic performance and structural loading."
+      ]
+    }
+  ],
+  "company_projects": [
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "role": "Product Design Engineering Intern · Apple Watch",
+      "dates": "May–Sep 2026",
+      "logo": "apple-logo.svg",
+      "logo_alt": "Apple logo",
+      "intro": "Product design, engineering analysis, automation, and inspection work supporting Apple Watch development and NPI builds.",
+      "note": "Selected work is described at a high level to respect product confidentiality.",
+      "projects": [
+        {
+          "title": "Apple Watch Product Design & NPI",
+          "summary": "Supported Apple Watch new-product-introduction builds through failure analysis, tolerance analysis, hardware validation, and design-of-experiments work during production ramp. Investigated design and manufacturing issues with cross-functional engineering teams to support product reliability."
+        },
+        {
+          "title": "LLM-Assisted Engineering Application",
+          "summary": "Developed an LLM-assisted tolerance-analysis tool that reduced the time required for an engineering workflow by 87%. The application organized engineering inputs and accelerated a repeatable analysis process."
+        },
+        {
+          "title": "Automated Water-Seal Test Platform Control",
+          "summary": "Designed the control algorithm for an automated water-seal testing fixture, integrating the test sequence and control logic to reduce cycle time by 91%."
+        },
+        {
+          "title": "Computer-Vision CT Inspection Workflow",
+          "summary": "Developed a computer-vision dimensional-inspection workflow for CT-scan data to support failure-analysis inspection and improve the consistency of engineering measurements."
+        }
+      ]
+    },
+    {
+      "slug": "bellwether-industries",
+      "name": "Bellwether Industries",
+      "role": "Mechanical Engineering Intern",
+      "dates": "Aug–Oct 2024",
+      "logo": "bellwether-industry-logo.jpeg",
+      "logo_alt": "Bellwether Industries logo",
+      "intro": "Mechanical, propulsion, simulation, and test-platform development for a 1/8-scale eVTOL prototype.",
+      "note": "Project descriptions remain at a high level because detailed prototype work is confidential.",
+      "projects": [
+        {
+          "title": "Multi-Orientation Aerial-Vehicle Test Platform",
+          "summary": "Designed and built a multi-orientation flight-dynamics test platform for vehicle testing and propulsion evaluation, supporting repeatable prototype experiments across different vehicle attitudes."
+        },
+        {
+          "title": "1/8-Scale eVTOL Prototype Integration",
+          "summary": "Contributed to the design and integration of mechanical, propulsion, structural, electronic, and exterior systems for a 1/8-scale eVTOL prototype."
+        },
+        {
+          "title": "Flight-Dynamics Simulation Workflow",
+          "summary": "Developed MATLAB, Simulink, and PX4 workflows for eVTOL system simulation, flight-dynamics analysis, and validation."
+        },
+        {
+          "title": "CFD & Structural Analysis",
+          "summary": "Performed CFD studies for aerodynamic and fixed-wing/rotor investigations, together with finite-element analysis for structural loading and prototype design evaluation."
+        }
       ]
     }
   ],
