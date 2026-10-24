@@ -199,13 +199,9 @@
       "width": 2048,
       "height": 944,
       "group": "robotics",
-      "research_question": "Can temporal evidence improve camera trajectory estimation and scene reconstruction in a 3D Gaussian SLAM pipeline relative to Wild-GS SLAM?",
-      "my_contribution": [
-        "Developed a memory-aware pose-estimation module that incorporates information across successive frames.",
-        "Modified Lie-group state updates and integrated temporal features into the tracking and mapping optimization pipeline.",
-        "Evaluated trajectory accuracy and reconstruction quality against the Wild-GS SLAM baseline."
+      "paragraphs": [
+        "TEG-SLAM extends Wild-GS SLAM with temporal evidence to improve camera trajectory estimation and scene reconstruction. Our contribution is a memory-aware pose-estimation module that incorporates information across successive frames, modifies Lie-group state updates, and integrates temporal features into the tracking and mapping optimization pipeline. Current evaluation against the Wild-GS SLAM baseline reports an 18% reduction in absolute trajectory error and 2–5% improvements in PSNR and SSIM. Ongoing work is documenting the evaluated datasets, sequence-level aggregation, and full protocol for reproducibility."
       ],
-      "results_status": "Current evaluation against the Wild-GS SLAM baseline reports an 18% reduction in absolute trajectory error and 2–5% improvements in PSNR and SSIM. Ongoing work is documenting the evaluated datasets, sequence-level aggregation, and full protocol for reproducibility.",
       "card_summary": "Work on TEG-SLAM extends Wild-GS SLAM with temporal information to improve trajectory estimation and scene reconstruction. The project includes memory-aware pose estimation, Lie-group state updates and temporal feature integration within a 3D Gaussian SLAM optimization pipeline.",
       "affiliation": "University of Michigan",
       "time": "Oct 2025–present",
