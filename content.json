@@ -75,11 +75,14 @@
   ],
   "featured_projects": [
     "seamlis",
+    "gaussian-aerial",
+    "uncertainty-aware-dino-wm",
+    "gnn-robustness",
     "teg-slam",
     "mobile-robot",
+    "yolov12-aerial-detection",
     "micro-soft-robotics",
-    "robot-arm",
-    "manta-ray"
+    "robot-arm"
   ],
   "project_order": [
     "seamlis",
@@ -90,10 +93,10 @@
     "yolov12-aerial-detection",
     "mobile-robot",
     "micro-soft-robotics",
+    "robot-arm",
     "sam-microrobotics",
     "se3-lissajous-control",
-    "crazyflie-mpc",
-    "robot-arm"
+    "crazyflie-mpc"
   ],
   "projects": [
     {
