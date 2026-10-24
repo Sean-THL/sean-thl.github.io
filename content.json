@@ -70,13 +70,19 @@
     "Guitar",
     "Pour-over coffee"
   ],
-  "project_order": [
-    "seamlis",
-    "gaussian-aerial",
-    "teg-slam",
-    "gnn-robustness",
-    "yolov12-aerial-detection",
-    "robot-arm"
+  "project_sections": [
+    {
+      "title": "Robot Planning & Control",
+      "projects": ["seamlis", "gnn-robustness", "mobile-robot", "micro-soft-robotics", "sam-microrobotics", "se3-lissajous-control", "robot-arm"]
+    },
+    {
+      "title": "Perception & Reconstruction",
+      "projects": ["gaussian-aerial", "teg-slam", "yolov12-aerial-detection", "haptic-sensors"]
+    },
+    {
+      "title": "Mechanical Design & Simulation",
+      "projects": ["variable-pitch", "formula-student", "centrifugal-clutch", "opad", "manta-ray", "bladeless-drone", "robomaster", "uav-team"]
+    }
   ],
   "projects": [
     {

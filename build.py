@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261022-12"><script src="{prefix}script.js?v=20261022-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261024-1"><script src="{prefix}script.js?v=20261024-1" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -68,18 +68,16 @@ parts += ['</ul></section><section id="research"><h2>Research &amp; Publications
 for publication in data["publications"]:
     authors = escape(publication["authors"]).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
     parts.append(f'<article class="media-row publication"><a class="media" href="projects/{escape(publication["project"])}/">{picture(publication)}</a><div><h3><a href="projects/{escape(publication["project"])}/">{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
-project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
-filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
-parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(data["projects"])} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
 projects_by_slug = {project["slug"]: project for project in data["projects"]}
-ordered_slugs = data.get("project_order", [])
-display_projects = [projects_by_slug[slug] for slug in ordered_slugs if slug in projects_by_slug]
-display_projects += [project for project in data["projects"] if project["slug"] not in ordered_slugs]
-for project in display_projects:
-    tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
-    categories = " ".join(project["categories"])
-    time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
-    parts.append(f'<article class="media-row project-row" data-categories="{escape(categories)}"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
+parts += ['</section><section id="projects"><h2>Selected Projects</h2>']
+for project_section in data["project_sections"]:
+    parts.append(f'<div class="project-section"><h3 class="project-section-title">{escape(project_section["title"])}</h3>')
+    for slug in project_section["projects"]:
+        project = projects_by_slug[slug]
+        tags = "".join(f"<span>{escape(tag)}</span>" for tag in project["keywords"])
+        time = f'<p class="project-time">{escape(project["time"])}</p>' if project.get("time") else ""
+        parts.append(f'<article class="media-row project-row"><a class="media" href="projects/{escape(project["slug"])}/" aria-label="View {escape(project["name"])} project">{picture(project, cover=True)}</a><div><h3><a href="projects/{escape(project["slug"])}/">{escape(project["name"])}</a></h3><p class="project-affiliation">{escape(project["affiliation"])}</p>{time}<p>{inline(project.get("card_summary", project["summary"]))}</p><div class="tags">{tags}</div></div></article>')
+    parts.append('</div>')
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
 parts += ['<h3 class="subsection-title">Research Experience</h3>'] + [logo_entry(item, "entry-row research-row") for item in data["research"]]
 parts += ['</section><section id="education"><h2>Education</h2>'] + [logo_entry(item, "entry-row education-row") for item in data["education"]]
