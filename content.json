@@ -1,8 +1,11 @@
 {
   "name": "Tzu-Hsiang (Sean) Lin",
   "short_name": "Sean Lin",
-  "role": "Graduate Student · Mechanical Engineering (Robotics)",
+  "role": "Graduate Student",
+  "program": "Mechanical Engineering (Robotics)",
   "university": "University of Michigan",
+  "previous_role": "Prev. Product Design @ Apple 🍎",
+  "previous_role_url": "companies/apple/",
   "email": "szlin@umich.edu",
   "github": "https://github.com/Sean-THL",
   "linkedin": "https://www.linkedin.com/in/sean-z-lin",
