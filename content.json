@@ -1019,6 +1019,20 @@
       "status": "Manuscript in preparation · 2025",
       "project": "micro-soft-robotics",
       "image": "project-micro-soft-robotics-reference.jpeg"
+    },
+    {
+      "title": "Toward Safe Sim-to-Real Visual Control Using a 3DGS Aerial Simulator",
+      "status": "Ongoing research · DASC Lab · University of Michigan",
+      "project": "gaussian-aerial",
+      "image": "project-gaussian-aerial.png",
+      "summary": "Developing a photorealistic aerial simulation pipeline that connects 3D Gaussian Splatting scene reconstruction, visual simulation, and future sim-to-real deployment."
+    },
+    {
+      "title": "GNN-Based r-Robustness for Multi-Robot Aerial Systems",
+      "status": "Ongoing research · DASC Lab · University of Michigan",
+      "project": "gnn-robustness",
+      "image": "project-gnn-robustness.png",
+      "summary": "Investigating graph neural networks for distributed robot coordination and communication-network r-robustness using local interaction structure."
     }
   ],
   "news": [

@@ -98,10 +98,12 @@ parts += [f'<p class="interest-line"><strong>Research interests</strong> &nbsp; 
 parts += ['<section id="news"><h2>News</h2><ul class="news">'] + [f'<li><span class="news-date">{escape(item["date"])}</span><span>{inline(item["text"])}</span></li>' for item in data["news"]]
 parts += ['</ul></section><section id="research"><h2>Research &amp; Publications</h2>']
 for publication in data["publications"]:
-    authors = escape(publication["authors"]).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
+    authors = escape(publication.get("authors", "")).replace("T.-H. Lin", "<strong>T.-H. Lin</strong>")
+    authors_line = f'<p class="authors">{authors}</p>' if authors else ""
+    summary_line = f'<p>{inline(publication["summary"])}</p>' if publication.get("summary") else ""
     publication_href = escape(publication.get("url", f'projects/{publication["project"]}/'))
     external = ' target="_blank" rel="noopener noreferrer"' if publication.get("url") else ""
-    parts.append(f'<article class="media-row publication"><a class="media" href="{publication_href}"{external}>{picture(publication)}</a><div><h3><a href="{publication_href}"{external}>{escape(publication["title"])}</a></h3><p class="authors">{authors}</p><p class="status">{escape(publication["status"])}</p></div></article>')
+    parts.append(f'<article class="media-row publication"><a class="media" href="{publication_href}"{external}>{picture(publication)}</a><div><h3><a href="{publication_href}"{external}>{escape(publication["title"])}</a></h3>{authors_line}{summary_line}<p class="status">{escape(publication["status"])}</p></div></article>')
 project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
 filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
 featured_slugs = data.get("featured_projects", [])
