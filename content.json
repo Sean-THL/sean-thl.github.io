@@ -74,6 +74,7 @@
     "Pour-over coffee"
   ],
   "featured_projects": [
+    "safe-visual-navigation",
     "seamlis",
     "gaussian-aerial",
     "uncertainty-aware-dino-wm",
@@ -85,6 +86,7 @@
     "robot-arm"
   ],
   "project_order": [
+    "safe-visual-navigation",
     "seamlis",
     "uncertainty-aware-dino-wm",
     "gaussian-aerial",
@@ -99,6 +101,32 @@
     "crazyflie-mpc"
   ],
   "projects": [
+    {
+      "slug": "safe-visual-navigation",
+      "categories": ["control", "perception"],
+      "name": "Safe Visual Navigation for Multi-Robot Search & Rescue",
+      "image": "project-safe-visual-navigation-pipeline.png",
+      "cover_video": "safe-visual-navigation.mp4",
+      "cover_fit": "contain",
+      "video_poster": "project-safe-visual-navigation-poster.jpg",
+      "category": "Project · Multi-robot aerial autonomy",
+      "summary": "Work in progress on visual navigation and cooperative payload transport for multi-robot search-and-rescue applications.",
+      "card_summary": "Developing a four-UAV cooperative transport pipeline that connects visual obstacle perception, payload trajectory planning, coupled UAV–cable–payload dynamics, and state estimation. Ongoing work investigates MPC planning and CBF safety constraints for the vehicles, payload, and cables.",
+      "affiliation": "Multi-Robot Aerial Systems Project · Work in progress",
+      "keywords": ["Multi-Robot Systems", "Visual Navigation", "MPC", "CBF", "Cooperative Transport"],
+      "alt": "Proposed multi-UAV navigation pipeline with obstacle perception, payload reference trajectory, centralized MPC, UAV–cable–payload dynamics, EKF estimation, and safety constraints.",
+      "caption": "Proposed pipeline for navigation toward a known goal with unknown obstacles. Safety-filter integration and constraint allocation across the four UAVs remain under investigation.",
+      "gallery": [
+        {
+          "video": "safe-visual-navigation.mp4",
+          "poster": "project-safe-visual-navigation-poster.jpg",
+          "caption": "Five-second excerpt from the middle of the cooperative payload-transport simulation. This demonstration runs with safety bypassed; obstacle-avoidance safety filtering is ongoing work."
+        }
+      ],
+      "paragraphs": [
+        "This project investigates cooperative aerial navigation and payload transport for search-and-rescue applications. The proposed system uses environmental perception to locate obstacles in 3D and generate a payload reference trajectory, then connects centralized MPC planning with four UAVs, coupled UAV–cable–payload dynamics, and EKF state estimation in a closed loop. The current simulation demonstrates four-drone cooperative payload transport. Ongoing work focuses on integrating visual obstacle information and investigating CBF-based constraints for UAV–obstacle, payload–obstacle, and cable–obstacle separation, including how safety constraints should be allocated across the vehicles."
+      ]
+    },
     {
       "slug": "seamlis",
       "categories": ["control", "perception"],

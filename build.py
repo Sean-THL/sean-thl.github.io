@@ -34,7 +34,8 @@ def picture(item, prefix="", cover=False):
     if cover and item.get("cover_video"):
         poster_name = item.get("video_poster", item.get("cover_image", item.get("image", "")))
         poster = f' poster="{prefix}assets/{escape(poster_name)}"' if poster_name else ""
-        return f'<video class="project-cover-video" autoplay muted loop playsinline preload="metadata"{poster} aria-hidden="true"><source src="{prefix}videos/{escape(item["cover_video"])}" type="video/mp4"></video>'
+        fit = ' style="object-fit:contain"' if item.get("cover_fit") == "contain" else ""
+        return f'<video class="project-cover-video"{fit} autoplay muted loop playsinline preload="metadata"{poster} aria-hidden="true"><source src="{prefix}videos/{escape(item["cover_video"])}" type="video/mp4"></video>'
     image_name = item.get("cover_image", item.get("image")) if cover else item.get("image")
     if not image_name:
         return '<div class="image-placeholder">Project image forthcoming</div>'
