@@ -21,7 +21,7 @@ def page_head(title, prefix=""):
 
 
 def sidebar(prefix=""):
-    nav = f'<a href="{prefix}about/">Beyond Research</a><a href="{prefix}index.html#research">Research</a><a href="{prefix}projects/">Projects</a><a href="{prefix}assets/Sean-Lin-Robotics-Resume.pdf">CV</a>'
+    nav = f'<a href="{prefix}about/">Personal Life</a><a href="{prefix}index.html#research">Research</a><a href="{prefix}projects/">Projects</a><a href="{prefix}assets/Sean-Lin-Robotics-Resume.pdf">CV</a>'
     previous_role = f'<p class="previous-role"><a href="{prefix}{escape(data["previous_role_url"])}">{escape(data["previous_role"])}</a></p>'
     return f'''<aside class="sidebar"><a class="portrait-link" href="{prefix}index.html"><img class="portrait" src="{prefix}assets/{escape(data['profile_image'])}" alt="{escape(data['profile_image_alt'])}" width="200" height="200"></a><h1>{escape(data['short_name'])}</h1><p class="full-name">{escape(data['name'])}</p><p class="position"><span>{escape(data['role'])}</span><span>{escape(data['program'])}</span><strong>{escape(data['university'])}</strong></p>{previous_role}<nav aria-label="Main navigation">{nav}</nav><div class="socials"><a href="{escape(data['github'])}" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-1.8-.8-2.3 3-.3 6-1.5 6-5.6 0-1.2-.4-2.3-1.1-3.1.1-.8.1-1.8-.5-3-1.8-.1-3.2.9-3.8 1.3a13 13 0 0 0-6.8 0C7.4 4.9 6 3.9 4.2 4c-.6 1.2-.6 2.2-.5 3C3 7.8 2.6 8.9 2.6 10.1c0 4.1 3 5.3 6 5.6-.5.5-.8 1.3-.8 2.3v4"/></svg></a><a href="{escape(data['linkedin'])}" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10v.1M11 17v-7m0 3c0-4 6-4 6 0v4"/></svg></a><a href="mailto:{escape(data['email'])}" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a></div><a class="email" href="mailto:{escape(data['email'])}">{escape(data['email'])}</a><p class="location">{escape(data['location'])}</p><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button></aside>'''
 
@@ -125,7 +125,7 @@ parts += ['</div></section>', footer(), '</main></div></body></html>']
 
 about_target = ROOT / "about"
 about_target.mkdir(parents=True, exist_ok=True)
-about_body = page_head("About", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><header class="personal-header"><p class="about-eyebrow">Beyond engineering</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</header>'
+about_body = page_head("Personal Life", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><header class="personal-header"><p class="about-eyebrow">Personal Life</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</header>'
 for index, interest in enumerate(data.get("personal_interests", [])):
     images = "".join(f'<img src="../assets/{escape(image["file"])}" alt="{escape(image["alt"])}" loading="lazy">' for image in interest.get("images", []))
     about_body += f'<section class="personal-interest{" reverse" if index % 2 else ""}"><div class="personal-interest-media count-{len(interest.get("images", []))}">{images}</div><div class="personal-interest-copy"><h3>{escape(interest["title"])}</h3><p>{inline(interest["summary"])}</p></div></section>'
