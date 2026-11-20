@@ -31,12 +31,12 @@
     "Outside research and engineering, I enjoy learning through sports, travel, and hands-on hobbies. I particularly enjoy water sports, tennis, and golf."
   ],
   "personal_places": [
-    {"city": "Kaohsiung", "country": "Taiwan", "latitude": 22.6273, "longitude": 120.3014},
-    {"city": "Shanghai", "country": "China", "latitude": 31.2304, "longitude": 121.4737},
-    {"city": "Ningbo", "country": "China", "latitude": 29.8683, "longitude": 121.5440},
-    {"city": "Nottingham", "country": "United Kingdom", "latitude": 52.9548, "longitude": -1.1581},
-    {"city": "Ann Arbor, Michigan", "country": "United States", "latitude": 42.2808, "longitude": -83.7430},
-    {"city": "Bangkok", "country": "Thailand", "latitude": 13.7563, "longitude": 100.5018}
+    {"city": "Taiwan", "latitude": 22.6273, "longitude": 120.3014},
+    {"city": "Shanghai", "latitude": 31.2304, "longitude": 121.4737},
+    {"city": "Bangkok", "latitude": 13.7563, "longitude": 100.5018},
+    {"city": "Ningbo", "latitude": 29.8683, "longitude": 121.5440},
+    {"city": "Nottingham", "latitude": 52.9548, "longitude": -1.1581},
+    {"city": "Ann Arbor, Michigan", "latitude": 42.2808, "longitude": -83.7430}
   ],
   "personal_interests": [
     {

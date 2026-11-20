@@ -71,15 +71,14 @@ def personal_map():
                 rings.append("M" + "L".join(f'{x:.1f},{y:.1f}' for x, y in points) + "Z")
             outlines.append('<path d="' + "".join(rings) + '"/>')
     markers = []
-    label_offsets = {"Kaohsiung": (32, 36), "Shanghai": (-65, -28), "Ningbo": (36, -8), "Nottingham": (16, -20), "Ann Arbor, Michigan": (-38, 32), "Bangkok": (-30, 38)}
+    label_offsets = {"Taiwan": (32, 36), "Shanghai": (-65, -28), "Ningbo": (36, -8), "Nottingham": (16, -20), "Ann Arbor, Michigan": (-38, 32), "Bangkok": (-30, 38)}
     for place in places:
         x, y = project(place["longitude"], place["latitude"])
         city = escape(place["city"])
-        country = escape(place.get("country", ""))
         dx, dy = label_offsets.get(place["city"], (14, -16))
         lx, ly = x + dx, y + dy
-        markers.append(f'<g class="map-place"><title>{city}, {country}</title><circle class="map-halo" cx="{x:.1f}" cy="{y:.1f}" r="11"/><circle class="map-dot" cx="{x:.1f}" cy="{y:.1f}" r="3.5"/><path class="map-leader" d="M{x:.1f},{y:.1f} L{lx:.1f},{ly:.1f}"/><text x="{lx:.1f}" y="{ly - 5:.1f}" text-anchor="middle">{city}</text></g>')
-    labels = "".join(f'<li>{escape(place["city"])} · {escape(place.get("country", ""))}</li>' for place in places)
+        markers.append(f'<g class="map-place"><title>{city}</title><circle class="map-halo" cx="{x:.1f}" cy="{y:.1f}" r="11"/><circle class="map-dot" cx="{x:.1f}" cy="{y:.1f}" r="3.5"/><path class="map-leader" d="M{x:.1f},{y:.1f} L{lx:.1f},{ly:.1f}"/><text x="{lx:.1f}" y="{ly - 5:.1f}" text-anchor="middle">{city}</text></g>')
+    labels = "".join(f'<li>{escape(place["city"])}</li>' for place in places)
     return '<section class="places-lived"><h3>' + escape(data.get("personal_map_heading", "Places I’ve lived")) + '</h3><div class="world-map"><svg viewBox="0 0 1000 430" role="img" aria-labelledby="world-map-title"><title id="world-map-title">Places I have lived: ' + escape(", ".join(place["city"] for place in places)) + '</title><rect width="1000" height="430" fill="white"/><g class="map-land">' + "".join(outlines) + '</g>' + "".join(markers) + '</svg></div><ul class="place-names">' + labels + '</ul><p class="map-credit">Map outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p></section>'
 
 
