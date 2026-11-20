@@ -28,6 +28,13 @@
   "personal_about": [
     "Outside research and engineering, I enjoy learning through sports, travel, and hands-on hobbies. I particularly enjoy water sports, tennis, and golf."
   ],
+  "personal_places": [
+    {"city": "Kaohsiung", "latitude": 22.6273, "longitude": 120.3014, "label_dx": 32, "label_dy": 36},
+    {"city": "Shanghai", "latitude": 31.2304, "longitude": 121.4737, "label_dx": -65, "label_dy": -28},
+    {"city": "Ningbo", "latitude": 29.8683, "longitude": 121.5440, "label_dx": 36, "label_dy": -8},
+    {"city": "Nottingham", "latitude": 52.9548, "longitude": -1.1581, "label_dx": 16, "label_dy": -20},
+    {"city": "Ann Arbor, Michigan", "latitude": 42.2808, "longitude": -83.7430, "label_dx": -38, "label_dy": 32}
+  ],
   "personal_interests": [
     {
       "title": "Scuba Diving",
@@ -483,7 +490,8 @@
       ],
       "fit": "contain",
       "image": "project-centrifugal-clutch-cover.png",
-      "cover_zoom": 1.16,
+      "cover_zoom": 1.32,
+      "cover_fill": true,
       "alt": "Annotated centrifugal-clutch assembly and component layout.",
       "caption": "Annotated centrifugal-clutch assembly and component layout.",
       "gallery": [
@@ -529,6 +537,7 @@
       ],
       "fit": "contain",
       "image": "project-opad-square.png",
+      "cover_fill": true,
       "alt": "OPAD Nordic walking sensor enclosure: CAD, electronics packaging and pole attachment.",
       "caption": "OPAD Nordic walking sensor enclosure: CAD, electronics packaging and pole attachment.",
       "width": 1200,
@@ -562,6 +571,7 @@
       ],
       "fit": "contain",
       "image": "project-manta-ray.png",
+      "cover_fill": true,
       "alt": "Abaqus finite-element analysis of the manta-ray soft robot.",
       "caption": "Manta-ray actuator and body analysis in Abaqus.",
       "gallery": [
@@ -599,6 +609,7 @@
       "categories": ["mechatronics"],
       "name": "Bladeless Drone System Development",
       "image": "project-bladeless-drone-cover.png",
+      "cover_fill": true,
       "alt": "ANSYS particle-path visualization for the bladeless-drone flow simulation.",
       "caption": "ANSYS particle-path visualization from the bladeless-drone system study.",
       "width": 1586,
@@ -665,6 +676,8 @@
       "categories": ["mechatronics"],
       "name": "Tactile Sensors & Walking Robot Control",
       "image": "project-haptic-sensor-camera.jpg",
+      "cover_fill": true,
+      "cover_position": "50% 65%",
       "alt": "Camera and 3D-printed fixture used for tactile-sensor displacement tracking.",
       "caption": "Camera and custom fixture for tactile-sensor tracking experiments.",
       "width": 1500,

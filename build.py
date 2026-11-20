@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=project-categories-2"><script src="{prefix}script.js?v=20261024-2" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=personal-map-1"><script src="{prefix}script.js?v=20261024-2" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -40,9 +40,44 @@ def picture(item, prefix="", cover=False):
     if not image_name:
         return '<div class="image-placeholder">Project image forthcoming</div>'
     note = f'<span class="image-note">{escape(item["image_note"])}</span>' if item.get("image_note") else ""
-    zoom = f' class="cover-zoom" style="--cover-zoom:{float(item["cover_zoom"]):.2f}"' if cover and item.get("cover_zoom") else ""
+    styles = []
+    if cover and item.get("cover_zoom"):
+        styles.append(f'transform:scale({float(item["cover_zoom"]):.2f})')
+    if cover and item.get("cover_fill"):
+        styles.append('object-fit:cover')
+        styles.append(f'object-position:{escape(item.get("cover_position", "center"))}')
+    zoom = f' style="{";".join(styles)}"' if styles else ""
     alt = item.get("cover_alt", item.get("alt", item.get("title", item.get("name", "Project image")))) if cover else item.get("alt", item.get("title", item.get("name", "Project image")))
     return f'<img{zoom} src="{prefix}assets/{escape(image_name)}" alt="{escape(alt)}" loading="lazy">{note}'
+
+
+def personal_map():
+    places = data.get("personal_places", [])
+    if not places:
+        return ""
+    countries = json.loads((ROOT / "assets/world-countries.geojson").read_text())
+    def project(lon, lat):
+        return ((lon + 180) * 1000 / 360, (85 - lat) * 430 / 145)
+    outlines = []
+    for feature in countries["features"]:
+        if feature["properties"].get("ADMIN") == "Antarctica":
+            continue
+        geometry = feature["geometry"]
+        polygons = geometry["coordinates"] if geometry["type"] == "MultiPolygon" else [geometry["coordinates"]]
+        for polygon in polygons:
+            rings = []
+            for ring in polygon:
+                points = [project(*point[:2]) for point in ring]
+                rings.append("M" + "L".join(f'{x:.1f},{y:.1f}' for x, y in points) + "Z")
+            outlines.append('<path d="' + "".join(rings) + '"/>')
+    markers = []
+    for place in places:
+        x, y = project(place["longitude"], place["latitude"])
+        lx, ly = x + place.get("label_dx", 14), y + place.get("label_dy", -16)
+        city = escape(place["city"])
+        markers.append(f'<g class="map-place"><title>{city}</title><circle class="map-halo" cx="{x:.1f}" cy="{y:.1f}" r="11"/><circle class="map-dot" cx="{x:.1f}" cy="{y:.1f}" r="3.5"/><path class="map-leader" d="M{x:.1f},{y:.1f} L{lx:.1f},{ly:.1f}"/><text x="{lx:.1f}" y="{ly - 5:.1f}" text-anchor="middle">{city}</text></g>')
+    labels = "".join(f'<li>{escape(place["city"])}</li>' for place in places)
+    return '<section class="places-lived"><h3>Places I’ve called home</h3><div class="world-map"><svg viewBox="0 0 1000 430" role="img" aria-labelledby="world-map-title"><title id="world-map-title">Places I have lived: ' + escape(", ".join(place["city"] for place in places)) + '</title><rect width="1000" height="430" fill="white"/><g class="map-land">' + "".join(outlines) + '</g>' + "".join(markers) + '</svg></div><ul class="place-names">' + labels + '</ul><p class="map-credit">Map outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p></section>'
 
 
 def gallery_item(item, prefix="../../"):
@@ -126,6 +161,7 @@ parts += ['</div></section>', footer(), '</main></div></body></html>']
 about_target = ROOT / "about"
 about_target.mkdir(parents=True, exist_ok=True)
 about_body = page_head("Personal Life", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><header class="personal-header"><p class="about-eyebrow">Personal Life</p><h2>' + escape(data["name"]) + '</h2>' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</header>'
+about_body += personal_map()
 for index, interest in enumerate(data.get("personal_interests", [])):
     images = "".join(f'<img src="../assets/{escape(image["file"])}" alt="{escape(image["alt"])}" loading="lazy">' for image in interest.get("images", []))
     about_body += f'<section class="personal-interest{" reverse" if index % 2 else ""}"><div class="personal-interest-media count-{len(interest.get("images", []))}">{images}</div><div class="personal-interest-copy"><h3>{escape(interest["title"])}</h3><p>{inline(interest["summary"])}</p></div></section>'

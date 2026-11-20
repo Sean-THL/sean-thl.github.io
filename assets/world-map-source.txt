@@ -1,0 +1,4 @@
+World map country outlines: Natural Earth, 1:110m Admin 0 Countries.
+Public-domain geographic data: https://www.naturalearthdata.com/about/terms-of-use/
+Source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson
+The portfolio generator projects these outlines into the Personal Life map.
