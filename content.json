@@ -1176,6 +1176,10 @@
   ],
   "resumes": [
     {
+      "label": "PhD résumé",
+      "file": "Sean-Lin-PhD-Resume.pdf"
+    },
+    {
       "label": "Robotics résumé",
       "file": "Sean-Lin-Robotics-Resume.pdf"
     },
