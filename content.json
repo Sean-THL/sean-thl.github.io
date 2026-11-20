@@ -106,9 +106,9 @@
       "categories": ["control", "perception"],
       "name": "Safe Visual Navigation for Multi-Robot Search & Rescue",
       "image": "project-safe-visual-navigation-pipeline.png",
-      "cover_video": "safe-visual-navigation.mp4",
+      "cover_video": "safe-visual-navigation-v2.mp4",
       "cover_fit": "contain",
-      "video_poster": "project-safe-visual-navigation-poster.jpg",
+      "video_poster": "project-safe-visual-navigation-poster-v2.jpg",
       "category": "Project · Multi-robot aerial autonomy",
       "summary": "Work in progress on visual navigation and cooperative payload transport for multi-robot search-and-rescue applications.",
       "card_summary": "Developing a four-UAV cooperative transport pipeline that connects visual obstacle perception, payload trajectory planning, coupled UAV–cable–payload dynamics, and state estimation. Ongoing work investigates MPC planning and CBF safety constraints for the vehicles, payload, and cables.",
@@ -118,9 +118,14 @@
       "caption": "Proposed pipeline for navigation toward a known goal with unknown obstacles. Safety-filter integration and constraint allocation across the four UAVs remain under investigation.",
       "gallery": [
         {
-          "video": "safe-visual-navigation.mp4",
-          "poster": "project-safe-visual-navigation-poster.jpg",
-          "caption": "Five-second excerpt from the middle of the cooperative payload-transport simulation. This demonstration runs with safety bypassed; obstacle-avoidance safety filtering is ongoing work."
+          "video": "safe-visual-navigation-v2.mp4",
+          "poster": "project-safe-visual-navigation-poster-v2.jpg",
+          "caption": "Cooperative payload-transport simulation, excerpted from 7–14 seconds of the recording."
+        },
+        {
+          "image": "project-safe-visual-navigation-baseline.png",
+          "alt": "Updated cooperative transport pipeline connecting perception, payload reference trajectory, centralized MPC, four UAVs, trajectory tracking, a CBF-QP safety filter, and coupled UAV–cable–payload dynamics.",
+          "caption": "Updated baseline architecture with a trajectory-tracking controller and CBF-QP safety filter; perception inputs support obstacle-aware planning."
         }
       ],
       "paragraphs": [
@@ -214,6 +219,8 @@
       "categories": ["perception"],
       "name": "TEG-SLAM",
       "image": "project-teg-slam-analysis.png",
+      "cover_image": "project-teg-slam-pipeline.png",
+      "cover_alt": "TEG-SLAM pipeline: temporal evidence accumulation, posterior-guided optimization, and Gaussian-level post-cleanup.",
       "category": "Project · Perception",
       "summary": "Temporal evidence and memory-aware pose estimation in a 3D Gaussian SLAM pipeline.",
       "tags": [
