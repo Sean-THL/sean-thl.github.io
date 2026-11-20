@@ -83,13 +83,14 @@ def personal_map():
 
 
 def gallery_item(item, prefix="../../"):
+    heading = f'<h3>{escape(item["title"])}</h3>' if item.get("title") else ""
     caption = f'<figcaption>{escape(item["caption"])}</figcaption>' if item.get("caption") else ""
     if item.get("video"):
         poster = f' poster="{prefix}assets/{escape(item["poster"])}"' if item.get("poster") else ""
         media = f'<video controls muted loop playsinline preload="metadata"{poster}><source src="{prefix}videos/{escape(item["video"])}" type="video/mp4"></video>'
     else:
         media = f'<img src="{prefix}assets/{escape(item["image"])}" alt="{escape(item.get("alt", "Project media"))}" loading="lazy">'
-    return f'<figure>{media}{caption}</figure>'
+    return f'<figure>{heading}{media}{caption}</figure>'
 
 
 def logo_entry(item, css_class="entry-row"):

@@ -573,19 +573,36 @@
         "Pneumatic actuation"
       ],
       "fit": "contain",
-      "image": "project-manta-ray.png",
-      "cover_fill": true,
-      "alt": "Abaqus finite-element analysis of the manta-ray soft robot.",
-      "caption": "Manta-ray actuator and body analysis in Abaqus.",
+      "image": "project-manta-ray-design.png",
+      "alt": "Manta-ray soft-robot CAD design showing the main body, pectoral fins, soft actuators, and clamping details.",
+      "caption": "Bio-inspired manta-ray design and soft-actuator integration.",
       "gallery": [
+        {
+          "title": "Theoretical Results",
+          "image": "project-manta-ray-theoretical.png",
+          "alt": "Eight timesteps showing modeled actuator motion and reference points.",
+          "caption": "Modeled motion across eight timesteps."
+        },
+        {
+          "title": "Experimental Results",
+          "image": "project-manta-ray-experimental.png",
+          "alt": "Four photographs showing a fabricated soft pneumatic actuator bending during a bench experiment.",
+          "caption": "Bench testing of the fabricated soft pneumatic actuator."
+        },
+        {
+          "title": "Simulation Results",
+          "image": "project-manta-ray-simulation.png",
+          "alt": "Abaqus finite-element simulation of the manta-ray soft robot showing deformation and von Mises stress.",
+          "caption": "Deformation and stress distribution in the Abaqus finite-element model."
+        },
         {
           "video": "manta-ray.mp4",
           "poster": "project-manta-ray.png",
           "caption": "Manta-ray soft-robot prototype demonstration."
         }
       ],
-      "width": 606,
-      "height": 290,
+      "width": 690,
+      "height": 558,
       "group": "mechanical",
       "paragraphs": [
         "Developed a bio-inspired manta-ray locomotion system using pneumatic actuators. Implemented Piecewise Constant Curvature kinematics in MATLAB for undulation and oscillation control.",
@@ -1086,6 +1103,14 @@
       "project": "gnn-robustness",
       "image": "project-gnn-robustness.png",
       "summary": "Investigating graph neural networks for distributed robot coordination and communication-network r-robustness using local interaction structure."
+    },
+    {
+      "title": "Bio-Inspired Manta-Ray Soft Robotics: Design, Modelling, Simulation and Control",
+      "status": "Research project · Aug 2024–Jun 2025 · University of Nottingham",
+      "project": "manta-ray",
+      "image": "project-manta-ray-design.png",
+      "alt": "Manta-ray soft-robot CAD design and pneumatic actuator integration.",
+      "summary": "Developed a bio-inspired manta-ray locomotion system using soft pneumatic actuators, combining MATLAB kinematic modeling, Abaqus simulation, and actuator fabrication and testing."
     }
   ],
   "news": [
