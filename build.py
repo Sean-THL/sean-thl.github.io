@@ -145,7 +145,7 @@ filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-presse
 featured_slugs = data.get("featured_projects", [])
 projects_by_slug = {project["slug"]: project for project in data["projects"]}
 featured_projects = [projects_by_slug[slug] for slug in featured_slugs if slug in projects_by_slug]
-parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(featured_projects)} projects</span></div><div class="filters" role="group" aria-label="Filter selected projects">{filter_buttons}</div>']
+parts += [f'</section><section id="projects"><div class="heading-row"><h2>Selected Projects</h2><span id="project-count">{len(featured_projects)} projects</span></div>']
 parts += [project_card(project) for project in featured_projects]
 parts += [f'<p class="all-projects-link"><a href="projects/">View all {len(data["projects"])} projects →</a></p>']
 parts += ['</section><section id="experience"><h2>Experience</h2><h3 class="subsection-title">Work Experience</h3>'] + [logo_entry(item, "entry-row experience-row") for item in data["experience"]]
