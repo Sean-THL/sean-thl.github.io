@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=personal-map-2"><script src="{prefix}script.js?v=personal-map-2" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=personal-map-static-3"><script src="{prefix}script.js?v=personal-map-static-3" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -71,13 +71,16 @@ def personal_map():
                 rings.append("M" + "L".join(f'{x:.1f},{y:.1f}' for x, y in points) + "Z")
             outlines.append('<path d="' + "".join(rings) + '"/>')
     markers = []
-    for index, place in enumerate(places):
+    label_offsets = {"Kaohsiung": (32, 36), "Shanghai": (-65, -28), "Ningbo": (36, -8), "Nottingham": (16, -20), "Ann Arbor, Michigan": (-38, 32), "Bangkok": (-30, 38)}
+    for place in places:
         x, y = project(place["longitude"], place["latitude"])
         city = escape(place["city"])
         country = escape(place.get("country", ""))
-        markers.append(f'<g class="map-place" data-place="{index}" data-city="{city}" data-country="{country}" data-x="{x / 10:.2f}" data-y="{y / 4.3:.2f}" style="--pin-delay:{index * .18:.2f}s" role="button" tabindex="0" aria-label="{city}, {country}" aria-pressed="false"><title>{city}, {country}</title><circle class="map-halo" cx="{x:.1f}" cy="{y:.1f}" r="11"/><circle class="map-dot" cx="{x:.1f}" cy="{y:.1f}" r="3.5"/></g>')
-    labels = "".join(f'<li><button type="button" data-place-select="{index}" aria-pressed="false"><strong>{escape(place["city"])}</strong><span>{escape(place.get("country", ""))}</span></button></li>' for index, place in enumerate(places))
-    return '<section class="places-lived"><h3>' + escape(data.get("personal_map_heading", "Places I’ve lived")) + '</h3><div class="world-map"><svg viewBox="0 0 1000 430" role="group" aria-labelledby="world-map-title"><title id="world-map-title">Places I have lived</title><rect width="1000" height="430" fill="white"/><g class="map-land">' + "".join(outlines) + '</g>' + "".join(markers) + '</svg><div class="map-popup" hidden><strong></strong><span></span></div></div><ul class="place-names">' + labels + '</ul><button type="button" class="map-animation-toggle" hidden>Pause map animation</button><p class="map-credit">Map outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p></section>'
+        dx, dy = label_offsets.get(place["city"], (14, -16))
+        lx, ly = x + dx, y + dy
+        markers.append(f'<g class="map-place"><title>{city}, {country}</title><circle class="map-halo" cx="{x:.1f}" cy="{y:.1f}" r="11"/><circle class="map-dot" cx="{x:.1f}" cy="{y:.1f}" r="3.5"/><path class="map-leader" d="M{x:.1f},{y:.1f} L{lx:.1f},{ly:.1f}"/><text x="{lx:.1f}" y="{ly - 5:.1f}" text-anchor="middle">{city}</text></g>')
+    labels = "".join(f'<li>{escape(place["city"])} · {escape(place.get("country", ""))}</li>' for place in places)
+    return '<section class="places-lived"><h3>' + escape(data.get("personal_map_heading", "Places I’ve lived")) + '</h3><div class="world-map"><svg viewBox="0 0 1000 430" role="img" aria-labelledby="world-map-title"><title id="world-map-title">Places I have lived: ' + escape(", ".join(place["city"] for place in places)) + '</title><rect width="1000" height="430" fill="white"/><g class="map-land">' + "".join(outlines) + '</g>' + "".join(markers) + '</svg></div><ul class="place-names">' + labels + '</ul><p class="map-credit">Map outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p></section>'
 
 
 def gallery_item(item, prefix="../../"):
