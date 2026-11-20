@@ -103,7 +103,7 @@
   "projects": [
     {
       "slug": "safe-visual-navigation",
-      "categories": ["control", "perception"],
+      "categories": ["perception"],
       "name": "Safe Visual Navigation for Multi-Robot Search & Rescue",
       "image": "project-safe-visual-navigation-pipeline.png",
       "cover_video": "safe-visual-navigation-v2.mp4",
@@ -134,7 +134,7 @@
     },
     {
       "slug": "seamlis",
-      "categories": ["control", "perception"],
+      "categories": ["control"],
       "name": "SEAMLiS",
       "image": "project-seamlis.png",
       "cover_image": "project-seamlis-combined.png",
@@ -248,7 +248,7 @@
     },
     {
       "slug": "robot-arm",
-      "categories": ["control", "perception", "mechatronics"],
+      "categories": ["perception"],
       "name": "5-DoF Robotics Arm Perception and Control",
       "image": "project-robot-arm.jpeg",
       "cover_video": "robot-arm.mp4",
@@ -290,7 +290,7 @@
     },
     {
       "slug": "mobile-robot",
-      "categories": ["control", "perception", "mechatronics"],
+      "categories": ["control"],
       "name": "Mobile Robot Autonomy System",
       "image": "project-mobile-robot.png",
       "cover_video": "mobile-robot-new.mp4",
@@ -333,7 +333,7 @@
     },
     {
       "slug": "micro-soft-robotics",
-      "categories": ["control", "mechatronics"],
+      "categories": ["control"],
       "name": "Microscale Bio-Inspired Soft Aerial Robotics",
       "image": "project-micro-soft-robotics-reference.jpeg",
       "category": "Project · Mechanical design",
@@ -518,7 +518,7 @@
     },
     {
       "slug": "opad",
-      "categories": ["perception", "mechatronics"],
+      "categories": ["mechatronics"],
       "name": "OPAD · Assistive Design — Nordic Walking Sticks",
       "category": "Project · Mechanical design",
       "summary": "Grip design and force analysis for an instrumented Nordic walking aid.",
@@ -551,7 +551,7 @@
     },
     {
       "slug": "manta-ray",
-      "categories": ["control", "mechatronics"],
+      "categories": ["mechatronics"],
       "name": "Bio-Inspired Manta-Ray Soft Robotics: Design, Modelling, Simulation and Control",
       "category": "Project · Mechanical design",
       "summary": "Modeling, fabrication and testing of soft pneumatic locomotion.",
@@ -662,7 +662,7 @@
     },
     {
       "slug": "haptic-sensors",
-      "categories": ["perception", "mechatronics"],
+      "categories": ["mechatronics"],
       "name": "Tactile Sensors & Walking Robot Control",
       "image": "project-haptic-sensor-camera.jpg",
       "alt": "Camera and 3D-printed fixture used for tactile-sensor displacement tracking.",
@@ -732,7 +732,7 @@
     },
     {
       "slug": "sam-microrobotics",
-      "categories": ["control", "mechatronics"],
+      "categories": ["control"],
       "name": "Magnetic Microrobot Swarm Control",
       "cover_video": "microrobot-swarm.mp4",
       "video_poster": "project-microrobot-swarm-poster.jpg",
@@ -763,7 +763,7 @@
     },
     {
       "slug": "uav-team",
-      "categories": ["control", "mechatronics"],
+      "categories": ["control"],
       "name": "UAV Aircraft Dynamics & Simulation",
       "image": "project-uav-dynamics-cover.png",
       "alt": "UAV aerodynamic coefficient plots in FoilTrans.",
@@ -803,11 +803,11 @@
     {
       "slug": "yolov12-aerial-detection",
       "categories": ["perception"],
-      "name": "YOLOv12-Based Aerial Traffic Object Detection",
+      "name": "YOLOv8-Based Aerial Traffic Object Detection",
       "image": "project-yolov12-detection.png",
       "cover_video": "yolov12-detection.mp4",
       "video_poster": "project-yolov12-detection.png",
-      "alt": "YOLOv12 detections for pedestrians and vehicles in an aerial traffic scene.",
+      "alt": "YOLOv8 detections for pedestrians and vehicles in an aerial traffic scene.",
       "caption": "Object detections and confidence scores in aerial urban footage.",
       "width": 1360,
       "height": 765,
@@ -815,26 +815,26 @@
         {
           "video": "yolov12-detection.mp4",
           "poster": "project-yolov12-detection.png",
-          "caption": "YOLOv12 inference across aerial urban traffic footage."
+          "caption": "YOLOv8 inference across aerial urban traffic footage."
         }
       ],
-      "summary": "Applying YOLOv12 to aerial urban footage for vehicle and pedestrian detection.",
+      "summary": "Applying YOLOv8 to aerial urban footage for vehicle and pedestrian detection.",
       "group": "robotics",
       "category": "Project · Perception",
       "tags": [
-        "YOLOv12",
+        "YOLOv8",
         "Object detection",
         "Aerial vision"
       ],
       "fit": "contain",
       "paragraphs": [
-        "This project applies YOLOv12 inference to aerial urban footage and visualizes detected road users with class labels, bounding boxes and confidence scores.",
+        "This project applies YOLOv8 inference to aerial urban footage and visualizes detected road users with class labels, bounding boxes and confidence scores.",
         "The current demonstration covers cars, pedestrians and other traffic participants across changes in viewpoint, object scale, lighting and traffic density. The next step is quantitative evaluation on a labeled test split."
       ],
-      "card_summary": "Applied YOLOv12 to aerial urban footage for traffic-scene perception. The visualization pipeline displays class predictions, bounding boxes and confidence scores for vehicles, pedestrians and other road users across varied viewpoints and lighting conditions.",
+      "card_summary": "Applied YOLOv8 to aerial urban footage for traffic-scene perception. The visualization pipeline displays class predictions, bounding boxes and confidence scores for vehicles, pedestrians and other road users across varied viewpoints and lighting conditions.",
       "affiliation": "Computer Vision Project",
       "keywords": [
-        "YOLOv12",
+        "YOLOv8",
         "Object Detection",
         "Aerial Perception"
       ]
@@ -873,7 +873,7 @@
     },
     {
       "slug": "uncertainty-aware-dino-wm",
-      "categories": ["control", "perception"],
+      "categories": ["control"],
       "name": "Uncertainty-Aware Visual Planning with DINO World Models",
       "image": "project-uncertainty-dino-wm.png",
       "alt": "Architecture for uncertainty-aware visual planning with ensemble DINO world models and risk-aware MPPI.",

@@ -17,7 +17,7 @@ def inline(value):
 
 
 def page_head(title, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=20261024-3"><script src="{prefix}script.js?v=20261024-2" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(data['meta_description'])}"><title>{escape(title)} | {escape(data['short_name'])}</title><link rel="stylesheet" href="{prefix}style.css?v=project-categories-2"><script src="{prefix}script.js?v=20261024-2" defer></script></head><body><a class="skip" href="#main">Skip to content</a>'''
 
 
 def sidebar(prefix=""):
@@ -105,7 +105,7 @@ for publication in data["publications"]:
     publication_href = escape(publication.get("url", f'projects/{publication["project"]}/'))
     external = ' target="_blank" rel="noopener noreferrer"' if publication.get("url") else ""
     parts.append(f'<article class="media-row publication"><a class="media" href="{publication_href}"{external}>{picture(publication)}</a><div><h3><a href="{publication_href}"{external}>{escape(publication["title"])}</a></h3>{authors_line}{summary_line}<p class="status">{escape(publication["status"])}</p></div></article>')
-project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design & Mechatronics"))
+project_filters = (("all", "All"), ("control", "Control & Planning"), ("perception", "Perception & Sensing"), ("mechatronics", "Mechanical Design"))
 filter_buttons = "".join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{escape(label)}</button>' for key, label in project_filters)
 featured_slugs = data.get("featured_projects", [])
 projects_by_slug = {project["slug"]: project for project in data["projects"]}
