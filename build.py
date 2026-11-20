@@ -164,7 +164,7 @@ about_body = page_head("Personal Life", "../") + '<div class="layout">' + sideba
 about_body += personal_map()
 about_body += '<div class="personal-hobbies-intro">' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</div>'
 for index, interest in enumerate(data.get("personal_interests", [])):
-    images = "".join(f'<img src="../assets/{escape(image["file"])}" alt="{escape(image["alt"])}" loading="lazy">' for image in interest.get("images", []))
+    images = "".join(f'<img src="../assets/{escape(image["file"])}" alt="{escape(image["alt"])}" style="object-position:{escape(image.get("position", "center"))}" loading="lazy">' for image in interest.get("images", []))
     about_body += f'<section class="personal-interest{" reverse" if index % 2 else ""}"><div class="personal-interest-media count-{len(interest.get("images", []))}">{images}</div><div class="personal-interest-copy"><h3>{escape(interest["title"])}</h3><p>{inline(interest["summary"])}</p></div></section>'
 other_interests = "".join(f'<li>{escape(interest)}</li>' for interest in data.get("other_interests", []))
 about_body += '<section class="other-interests"><h3>Other interests</h3><ul>' + other_interests + '</ul></section>' + footer() + '</main></div></body></html>'

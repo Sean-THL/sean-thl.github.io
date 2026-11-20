@@ -52,7 +52,7 @@
       "title": "Skiing",
       "summary": "Skiing challenges me to stay focused, adapt quickly, and keep improving through practice. I enjoy the combination of speed, technique, and time outdoors.",
       "images": [
-        {"file": "personal-ski.jpg", "alt": "Sean skiing in the mountains."}
+        {"file": "personal-ski.jpg", "alt": "Sean with friends in ski gear on the slopes.", "position": "50% 100%"}
       ]
     },
     {
@@ -771,7 +771,7 @@
       ],
       "card_summary": "Experimental systems for magnetically actuated microrobots, linking high-level magnetic-field control with locomotion. Work includes experimental setup and control-circuit design to support repeatable microrobot manipulation.",
       "affiliation": "SAM Lab · University of Michigan",
-      "time": "Sep 2025–present",
+      "time": "Sep 2025–Dec 2026",
       "keywords": [
         "Microrobotics",
         "Swarm Control",
@@ -1131,7 +1131,7 @@
     {
       "name": "SAM Lab",
       "role": "University of Michigan · Prof. Steven Ceron",
-      "dates": "Sep 2025–present",
+      "dates": "Sep 2025–Dec 2026",
       "summary": "Magnetic microrobot locomotion, experimental systems and high-level field control.",
       "logo": "sam-logo.webp",
       "logo_alt": "Synergetic Adaptive Machinas Lab logo"
