@@ -163,7 +163,7 @@ parts += ['</div></section>', footer(), '</main></div></body></html>']
 
 about_target = ROOT / "about"
 about_target.mkdir(parents=True, exist_ok=True)
-about_body = page_head("Personal Life", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><header class="personal-header"><p class="about-eyebrow">Personal Life</p><h2>' + escape(data["name"]) + '</h2><p class="personal-tagline">' + inline(data.get("personal_tagline", "")) + '</p><p>' + inline(data.get("personal_intro", "")) + '</p></header>'
+about_body = page_head("Personal Life", "../") + '<div class="layout">' + sidebar("../") + '<main id="main" class="about-page"><header class="personal-header"><p class="about-eyebrow">Personal Life</p><h2>' + escape(data["name"]) + '</h2><p>' + inline(data.get("personal_intro", "")) + '</p></header>'
 about_body += personal_map()
 about_body += '<div class="personal-hobbies-intro">' + "".join(f'<p>{inline(text)}</p>' for text in data.get("personal_about", [])) + '</div>'
 for index, interest in enumerate(data.get("personal_interests", [])):
