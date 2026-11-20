@@ -240,6 +240,14 @@
       ],
       "alt": "TEG-SLAM rendering, depth, uncertainty and reconstruction-error analysis.",
       "caption": "TEG-SLAM qualitative analysis of rendered RGB, metric depth, uncertainty and reconstruction error.",
+      "gallery": [
+        {
+          "title": "TEG-SLAM Pipeline",
+          "image": "project-teg-slam-pipeline.png",
+          "alt": "TEG-SLAM pipeline showing temporal evidence accumulation, posterior-guided optimization, and Gaussian-level post-cleanup.",
+          "caption": "Temporal evidence accumulation, posterior-guided optimization, and Gaussian-level post-cleanup."
+        }
+      ],
       "fit": "contain",
       "width": 2048,
       "height": 944,
