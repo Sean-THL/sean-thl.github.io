@@ -209,8 +209,8 @@
         }
       ],
       "fit": "contain",
-      "width": 2048,
-      "height": 1079,
+      "width": 1672,
+      "height": 941,
       "group": "robotics",
       "research_question": "Can a photorealistic 3D Gaussian Splatting environment provide useful visual observations for training aerial-robot policies and evaluating their path to hardware?",
       "my_contribution": [
