@@ -273,6 +273,9 @@
     },
     {
       "slug": "robot-arm",
+      "documents": [
+        {"label": "5-DoF Robotics Arm Project Report (PDF)", "file": "5-DoF-Robotics-Arm-Report.pdf"}
+      ],
       "categories": ["perception"],
       "name": "5-DoF Robotics Arm Perception and Control",
       "image": "project-robot-arm.jpeg",
@@ -315,6 +318,9 @@
     },
     {
       "slug": "mobile-robot",
+      "documents": [
+        {"label": "Mobile Robot Project Report (PDF)", "file": "Mobile-Robot-Project-Report.pdf"}
+      ],
       "categories": ["control"],
       "name": "Mobile Robot Autonomy System",
       "image": "project-mobile-robot.png",
@@ -402,6 +408,9 @@
     },
     {
       "slug": "variable-pitch",
+      "documents": [
+        {"label": "Variable-Pitch Propeller Project Report (PDF)", "file": "Variable-Pitch-Propeller-Report.pdf"}
+      ],
       "categories": ["mechatronics"],
       "name": "Variable-Pitch Propeller",
       "category": "Project · Mechanical design",
@@ -497,6 +506,9 @@
     },
     {
       "slug": "centrifugal-clutch",
+      "documents": [
+        {"label": "Centrifugal Clutch Critical Design Review (PDF)", "file": "Centrifugal-Clutch-CDR-Report.pdf"}
+      ],
       "categories": ["mechatronics"],
       "name": "Centrifugal Clutch",
       "category": "Project · Mechanical design",
@@ -578,6 +590,9 @@
     },
     {
       "slug": "manta-ray",
+      "documents": [
+        {"label": "Manta-Ray Dissertation (PDF)", "file": "Manta-Ray-Dissertation.pdf"}
+      ],
       "categories": ["mechatronics"],
       "name": "Bio-Inspired Manta-Ray Soft Robotics: Design, Modelling, Simulation and Control",
       "category": "Project · Mechanical design",
