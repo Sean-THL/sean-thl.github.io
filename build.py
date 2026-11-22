@@ -194,6 +194,12 @@ for project in data["projects"]:
     target = ROOT / "projects" / project["slug"]
     target.mkdir(parents=True, exist_ok=True)
     body = page_head(project["name"], "../../") + '<div class="layout">' + sidebar("../../") + '<main id="main" class="project-detail"><a class="back-link" href="../">← All projects</a><p class="category">' + escape(project["category"]) + '</p><h2>' + escape(project["name"]) + '</h2><p class="detail-lead">' + inline(project["summary"]) + '</p>'
+    if project.get("documents"):
+        body += '<section class="project-documents"><h3>Project documents</h3>'
+        for document in project["documents"]:
+            document_href = '../../assets/' + escape(document["file"])
+            body += f'<p><a href="{document_href}" target="_blank" rel="noopener noreferrer">{escape(document["label"])}</a> · <a href="{document_href}" download>Download PDF</a></p>'
+        body += '</section>'
     if project.get("image"):
         body += '<figure class="detail-image">' + picture(project, "../../") + f'<figcaption>{escape(project.get("caption", ""))}</figcaption></figure>'
     if project.get("gallery"):

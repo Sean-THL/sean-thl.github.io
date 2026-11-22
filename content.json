@@ -232,6 +232,9 @@
       "slug": "teg-slam",
       "categories": ["perception"],
       "name": "TEG-SLAM",
+      "documents": [
+        {"label": "Project report (PDF)", "file": "TEG-SLAM-Project-Report.pdf"}
+      ],
       "image": "project-teg-slam-analysis.png",
       "cover_image": "project-teg-slam-pipeline.png",
       "cover_alt": "TEG-SLAM pipeline: temporal evidence accumulation, posterior-guided optimization, and Gaussian-level post-cleanup.",
