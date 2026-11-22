@@ -669,9 +669,9 @@
       "slug": "gnn-robustness",
       "categories": ["control"],
       "name": "GNN-Based r-Robustness for Multi-Robot Aerial Systems",
-      "image": "project-gnn-robustness.png",
-      "alt": "GNN-based r-robustness concept showing a connected network of aerial robots.",
-      "caption": "Graph-neural-network-based coordination and r-robustness for multi-robot aerial systems.",
+      "image": "project-gnn-robustness-navigation.png",
+      "alt": "Concept illustration of a connected aerial robot team navigating from start to goal around obstacles with graph-based coordination.",
+      "caption": "Concept illustration of GNN-based coordination and r-robustness for an aerial robot team navigating from start to goal.",
       "width": 1672,
       "height": 941,
       "summary": "Exploring learned graph representations for distributed robot coordination.",
@@ -1109,7 +1109,8 @@
       "title": "GNN-Based r-Robustness for Multi-Robot Aerial Systems",
       "status": "Ongoing research · DASC Lab · University of Michigan",
       "project": "gnn-robustness",
-      "image": "project-gnn-robustness.png",
+      "image": "project-gnn-robustness-navigation.png",
+      "alt": "Concept illustration of graph-based aerial robot coordination from start to goal.",
       "summary": "Investigating graph neural networks for distributed robot coordination and communication-network r-robustness using local interaction structure."
     },
     {
