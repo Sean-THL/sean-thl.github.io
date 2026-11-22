@@ -186,8 +186,7 @@
       "slug": "gaussian-aerial",
       "categories": ["perception"],
       "name": "Toward Safe Sim-to-Real Visual Control Using a 3DGS Aerial Simulator",
-      "image": "project-gaussian-aerial.png",
-      "cover_zoom": 1.18,
+      "image": "project-gaussian-aerial-sim2real.png",
       "category": "Research · Sim-to-real",
       "summary": "Building a photorealistic simulation pipeline for visual policies and aerial robot deployment.",
       "tags": [
@@ -195,9 +194,14 @@
         "Visual policies",
         "Sim-to-real"
       ],
-      "alt": "3DGS aerial-simulator project outline with reconstruction, visual-policy training and sim-to-real stages.",
-      "caption": "Project outline and related work. Visual-policy training, sim-to-real and safety-filter integration are development goals.",
+      "alt": "Concept illustration connecting a 3D Gaussian Splatting aerial simulation with a physical drone platform and planned sim-to-real transfer.",
+      "caption": "Research concept: 3DGS aerial simulation and a physical platform connected by planned sim-to-real transfer. Research in progress.",
       "gallery": [
+        {
+          "image": "project-gaussian-aerial.png",
+          "alt": "Original aerial-simulator project outline and related work.",
+          "caption": "Project outline and related work for visual simulation, policy training, and safety-filter integration."
+        },
         {
           "image": "project-gaussian-aerial-lab.jpg",
           "alt": "Aerial robot in the DASC Lab flight-testing space.",
@@ -1102,7 +1106,8 @@
       "title": "Toward Safe Sim-to-Real Visual Control Using a 3DGS Aerial Simulator",
       "status": "Ongoing research · DASC Lab · University of Michigan",
       "project": "gaussian-aerial",
-      "image": "project-gaussian-aerial.png",
+      "image": "project-gaussian-aerial-sim2real.png",
+      "alt": "Concept illustration of 3DGS aerial simulation and planned sim-to-real transfer to a physical drone platform.",
       "summary": "Developing a photorealistic aerial simulation pipeline that connects 3D Gaussian Splatting scene reconstruction, visual simulation, and future sim-to-real deployment."
     },
     {
